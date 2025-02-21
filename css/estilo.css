@@ -5,6 +5,8 @@ body, html {
     font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
 }
 
+
+
 :root{
     --cor-base: rgb(92, 92, 92);
 }
@@ -27,11 +29,12 @@ body, html {
 
 a:link,
 a:visited {
-    color: #f7b600;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #4e4e4e;
+    color: #ffffff;
 }
 
 /* Header ------------------------------------------------------------*/
@@ -70,7 +73,7 @@ header #escrito {
 #logo img {
     display: block;
     float: left;
-    height: 80px;
+    height: 65px;
     margin-top: 5px;
     filter: invert(100%);
     margin-left: 30px;
@@ -462,6 +465,10 @@ header a:active {
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
+.agende a{
+    color: var(--cor-base);
+}
+
 .agende i{
     font-size: 1.3em;
     margin: 0 8px;
@@ -609,11 +616,11 @@ header a:active {
 }
 
 .faq-item {
-    border: 2px solid yellow;
     width: 100%;
     min-height: 50px;
     max-height: 50px;
-    background-color: #38dff5;
+    background-color: gray;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
     margin-bottom: 15px;
     border-radius: 10px;
     overflow: hidden;
@@ -621,6 +628,8 @@ header a:active {
 }
 
 .faq-question {
+    color: #FFF;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -642,7 +651,7 @@ header a:active {
 .faq-answer {
     display: none;
     padding: 15px;
-    background-color: #f8d3d3;
+    background-color: #d1d1d1;
     font-size: 1em;
 }
 
@@ -667,7 +676,6 @@ header a:active {
     
     .faq-item {
 
-        border: 1px solid rgb(1, 255, 22);
     }
 }
 
