@@ -48,7 +48,6 @@ header {
     color: white;
     padding: 0 30px;
     box-sizing: border-box;
-
 }
 
 header ul {
@@ -89,12 +88,10 @@ header a:hover {
     color: #3d3d3d;
     background: rgb(148, 148, 148);
     transition: background-color 0.3s ease, color 0.3s ease-in-out;
-
 }
 
 header a:active {
     color: #4e4e4e;
-    
 }
 
 #menu-btn{
@@ -611,8 +608,16 @@ header a:active {
 /* FAQ ---------------------------------------------------------------*/
 
 #faq {
-    margin: 50px auto;
+    margin: 30px auto;
     width: 90%;
+}
+
+.text-faq{
+    text-align: center;
+    font-family: 'Playfair Display', Times, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 34px;
 }
 
 .faq-item {
@@ -693,16 +698,86 @@ header a:active {
 
 /* Contato------------------------------------------------------------ */
 
-#contato{
-    height: 400px;
-    width: auto;
-    background-color: rgb(137, 243, 169);
-    font-size: 13vw;
-    font-style: italic;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+.contato{
+    text-align: start;
+    padding: 0px 20px 20px 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
 }
+
+.contato h1 {
+    font-family: 'Playfair Display', Times, serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 40px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contato-item {
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+
+}
+
+.contato-item:hover {
+    background-color: #ddd;
+}
+
+.contato a:link{
+    color: rgb(88, 88, 88);
+}
+
+.redes-sociais{
+    display: flex;
+    color: rgb(88, 88, 88);
+    justify-content: space-around;
+    box-sizing: border-box;
+
+}
+
+.redes-sociais ul {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0 5px 0;
+}
+
+.redes-sociais ul li {
+    font-size: 30px;
+}
+
+.redes-sociais ul li a{
+    color: var(--cor-base);
+    position: relative;
+}
+
+.redes-sociais a:link,
+.redes-sociais a:visited {
+    padding: 15px;
+    border-radius: 45px;
+}
+
+.redes-sociais a:hover{
+    background-color: #ddd;
+    transition: 0.3s ease-in-out;
+
+}
+
 
 /* Rodapé ------------------------------------------------------------*/
 
