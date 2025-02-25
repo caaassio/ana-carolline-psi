@@ -117,8 +117,8 @@ header a:active {
         justify-content: center;
     }
     
-    #menu-btn:hover {
-        color: #3d3d3d; 
+    #menu-btn :hover {
+        color: #d3d3d3; 
     }
     
     #menu-btn::before {
@@ -128,7 +128,7 @@ header a:active {
         left: 50%;
         width: 0;
         height: 0;
-        background-color: rgb(148, 148, 148); 
+        background-color: rgba(148, 148, 148, 0.1); 
         border-radius: 50%;
         transform: translate(-50%, -50%);
         transition: width 0.3s ease, height 0.3s ease;
