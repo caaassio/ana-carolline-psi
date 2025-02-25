@@ -5,8 +5,6 @@ body, html {
     font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
 }
 
-
-
 :root{
     --cor-base: rgb(92, 92, 92);
 }
@@ -495,103 +493,103 @@ header a:active {
 /* Depoimentos -------------------------------------------------------*/
 #depoimentos{
     padding: 45px 0;
-    background-color:  #f0f0f0;
     width: 100%;
     align-items: center;
     display: flex;
+    margin: 0;
 }
 
-.carrossel {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+.carousel {
     position: relative;
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+    
 }
 
-.carrossel-container {
+.carousel-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    margin: 0;
+    
 }
 
-.carrossel-item {
-    display: none; 
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px; 
-    animation: fadeIn 2s ease-in-out forwards, stayVisible 8s forwards; 
-}
-
-.caixa {
-    width: 100%;
-    max-width: 500px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+.slide {
+    min-width: 100%;
+    padding: 60px;
+    box-sizing: border-box;
     text-align: center;
 }
 
-.citacao {
-    font-size: 1.5em;
+/* Setas de navegação */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bbbbbb;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 50px;
+    z-index: 1;
+    background-color: rgba(153, 205, 50, 0);
+}
+
+.prev { 
+    left: 0px; 
+}
+
+.next { 
+    right: 0px; 
+}
+
+/* Bolinhas (indicadores) */
+.dots {
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 5px;
+    background-color: #bbbbbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background-color: rgb(61, 61, 61);
+}
+
+.quote{
     font-style: italic;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 22px;
+    font-family: 'Playfair Display', Times, serif;
+
 }
 
-.autor {
-    font-size: 1.2em;
-    color: #555;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes stayVisible {
-    0% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+.autor{
+    font-size: 18px;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 768px){
-    .caixa {
-        width: 250px;
-        background-color: rgb(255, 255, 255);
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-    
-    .citacao {
-        font-size: 1.2em;
-        font-style: italic;
-        color: #333;
-        margin-bottom: 10px;
-    }
-    
-    .autor {
-        font-size: 0.9em;
-        color: #555;
-    }
 
+    .carousel {
+        position: relative;
+        width: 95%;
+        margin: auto;
+        overflow: hidden;
+    }
 }
+
 
 /* Serviços ----------------------------------------------------------*/
 #servicos{
@@ -678,10 +676,7 @@ header a:active {
         width: auto;
         margin: 10px;
     }
-    
-    .faq-item {
 
-    }
 }
 
 @media (max-width: 992px) and (min-width: 768px)  {

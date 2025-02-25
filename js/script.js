@@ -14,28 +14,38 @@ document.addEventListener("DOMContentLoaded", function() {
 });  
 
 // Carrossel
-window.onload = () => {
-  const carrosselItems = document.querySelectorAll('.carrossel-item');
-  let currentIndex = 0;
+    // Move os slides
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
 
-  const hideAllItems = () => {
-      carrosselItems.forEach(item => {
-          item.style.display = 'none';
-      });
-  };
+    function showSlide(index) {
+        if (index < 0) {
+            currentIndex = slides.length - 1;
+        } else if (index >= slides.length) {
+            currentIndex = 0;
+        } else {
+            currentIndex = index;
+        }
 
-  const showCurrentItem = () => {
-      hideAllItems(); 
-      carrosselItems[currentIndex].style.display = 'flex'; 
-  };
+// Move os slides
+document.querySelector(".carousel-container").style.transform = 
+    `translateX(${-currentIndex * 100}%)`;
 
-  showCurrentItem();
+// Atualiza os indicadores (bolinhas)
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[currentIndex].classList.add("active");
+    }
 
-  setInterval(() => {
-      currentIndex = (currentIndex + 1) % carrosselItems.length; 
-      showCurrentItem(); 
-  }, 9000); 
-};
+    document.querySelector(".prev").addEventListener("click", () => showSlide(currentIndex - 1));
+    document.querySelector(".next").addEventListener("click", () => showSlide(currentIndex + 1));
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => showSlide(i));
+    });
+
+    // Inicializa o carrossel no primeiro slide
+    showSlide(currentIndex);
 
 // FAQ
 
