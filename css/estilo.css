@@ -23,7 +23,7 @@ body, html {
     flex-direction: column;
 }
 
-/* Links -------------------------------------------------------------*/
+/* Links -------------------------------------------------------*/
 
 a:link,
 a:visited {
@@ -35,7 +35,7 @@ a:hover {
     color: #ffffff;
 }
 
-/* Header ------------------------------------------------------------*/
+/* Header -------------------------------------------------------*/
 
 header {
     background-color: var(--cor-base);
@@ -96,7 +96,7 @@ header a:active {
     display: none;
 }
 
-/* Queries do Header --------------------------------------------------*/
+/* Queries do Header ---------------------------------------------*/
 
 @media screen and (max-width: 768px) {
 
@@ -107,10 +107,10 @@ header a:active {
         color: white;
         font-size: 1.8rem;
         cursor: pointer;
-        position: relative; /* Garante que o ::before fique posicionado corretamente */
+        position: relative; 
         z-index: 10;
         transition: color 0.3s ease;
-        width: 50px; /* Define um tamanho mínimo */
+        width: 50px; 
         height: 50px;
         display: flex;
         align-items: center;
@@ -118,7 +118,7 @@ header a:active {
     }
     
     #menu-btn:hover {
-        color: #3d3d3d; /* Um tom de azul para o ícone */
+        color: #3d3d3d; 
     }
     
     #menu-btn::before {
@@ -128,7 +128,7 @@ header a:active {
         left: 50%;
         width: 0;
         height: 0;
-        background-color: rgb(148, 148, 148); /* Azul semi-transparente */
+        background-color: rgb(148, 148, 148); 
         border-radius: 50%;
         transform: translate(-50%, -50%);
         transition: width 0.3s ease, height 0.3s ease;
@@ -141,7 +141,6 @@ header a:active {
     }
 
     header ul {
-        /* display: none; */
         flex-direction: column;
         position: absolute;
         top: 4em;
@@ -162,8 +161,6 @@ header a:active {
     }
     
     header ul.show {
-        /* display: flex;
-        flex-direction: column; */
         opacity: 1;
         visibility: visible;
         transform: translateX(0)
@@ -189,9 +186,8 @@ header a:active {
     }
 }
 
-/* Home ---------------------------------------------------------------*/
+/* Home ----------------------------------------------------------*/
 #home{
-    /* margin-top:6em; */
     padding: 30px 0 30px 0;
     justify-content: space-around;
     align-items: center;
@@ -207,7 +203,6 @@ header a:active {
     font-weight: 500;
     text-align: center;
     padding: 15px;
-
     display: flex;
     flex-direction: column; 
     align-items: center; 
@@ -290,7 +285,6 @@ header a:active {
         height: auto; 
         width: auto;
     }
-
 }
 
 @media screen and (max-width: 768px) {
@@ -311,10 +305,9 @@ header a:active {
     .foto-home img{
         display: none;
     }
-
 }
 
-/* Sobre -------------------------------------------------------------*/
+/* Sobre ---------------------------------------------------------*/
 
 #sobre{
     background-color:  #f0f0f0;
@@ -329,12 +322,10 @@ header a:active {
     font-style: italic;
     font-weight: 500;
     text-align: center;
-
     display: flex;
     flex-direction: column; 
     align-items: center; 
     padding: 30px 0 30px 0;
-
 }
 
 .content-sobre h1{
@@ -348,7 +339,6 @@ header a:active {
 .foto-sobre{
     padding: 30px 0 30px 0;
     border-radius: 20px;
-
 }
 
 .foto-sobre img{
@@ -368,7 +358,7 @@ header a:active {
     }
 
     .content-sobre h1{
-        margin: 5px;
+        margin: 5px; 
     }
 }
 
@@ -428,11 +418,15 @@ header a:active {
     }
 
     .content-sobre h1{
-        margin: 10px;
+        margin: 15px;
+    }
+
+    .content-sobre p{
+        margin: 15px 0;
     }
 }
 
-/* Agende ------------------------------------------------------------*/
+/* Agende --------------------------------------------------------*/
 .agende{
     display: flex;
     background-color: var(--cor-base);
@@ -490,9 +484,9 @@ header a:active {
     display: flex;
 }
 
-/* Depoimentos -------------------------------------------------------*/
+/* Depoimentos --------------------------------------------------*/
 #depoimentos{
-    padding: 45px 0;
+    padding: 0 0 45px 0;
     width: 100%;
     align-items: center;
     display: flex;
@@ -504,14 +498,12 @@ header a:active {
     width: 70%;
     margin: auto;
     overflow: hidden;
-    
 }
 
 .carousel-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
     margin: 0;
-    
 }
 
 .slide {
@@ -526,7 +518,7 @@ header a:active {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: #bbbbbb;
+    color: #00000054;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
@@ -543,7 +535,6 @@ header a:active {
     right: 0px; 
 }
 
-/* Bolinhas (indicadores) */
 .dots {
     text-align: center;
     padding: 10px;
@@ -572,7 +563,6 @@ header a:active {
     font-style: italic;
     font-size: 22px;
     font-family: 'Playfair Display', Times, serif;
-
 }
 
 .autor{
@@ -590,7 +580,6 @@ header a:active {
     }
 }
 
-
 /* Serviços ----------------------------------------------------------*/
 #servicos{
     height: 700px;
@@ -604,7 +593,6 @@ header a:active {
 }
 
 /* FAQ ---------------------------------------------------------------*/
-
 #faq {
     margin: 30px auto;
     width: 90%;
@@ -616,6 +604,10 @@ header a:active {
     font-style: italic;
     font-weight: 500;
     font-size: 34px;
+}
+
+.text-faq h1{
+    margin: 0 0 30px 0;
 }
 
 .faq-item {
@@ -632,7 +624,6 @@ header a:active {
 
 .faq-question {
     color: #FFF;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -676,23 +667,23 @@ header a:active {
         width: auto;
         margin: 10px;
     }
-
 }
 
 @media (max-width: 992px) and (min-width: 768px)  {
+
     #faq {
         width: 80%;
     }
 }
 
 @media (max-width: 768px) and (min-width: 456px)  {
+
     #faq {
         width: 70%;
     }
 }
 
 /* Contato------------------------------------------------------------ */
-
 .contato{
     text-align: start;
     padding: 0px 20px 20px 20px;
@@ -706,8 +697,9 @@ header a:active {
     font-style: italic;
     font-weight: 700;
     font-size: 40px;
-    padding: 10px;
-    margin: 10px;
+    padding: 0px 0px 30px 0;
+    margin: 0px;
+    flex-wrap: nowrap;
 }
 
 .contato-info {
@@ -724,7 +716,6 @@ header a:active {
     border-radius: 5px;
     transition: 0.3s ease-in-out;
     text-align: center;
-
 }
 
 .contato-item:hover {
@@ -740,7 +731,6 @@ header a:active {
     color: rgb(88, 88, 88);
     justify-content: space-around;
     box-sizing: border-box;
-
 }
 
 .redes-sociais ul {
@@ -770,12 +760,9 @@ header a:active {
 .redes-sociais a:hover{
     background-color: #ddd;
     transition: 0.3s ease-in-out;
-
 }
 
-
 /* Rodapé ------------------------------------------------------------*/
-
 footer {
     position: relative;
     z-index: 2;
@@ -814,5 +801,4 @@ footer {
     footer {
         white-space: pre-wrap;
     }
-
 }
