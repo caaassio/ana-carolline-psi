@@ -7,6 +7,8 @@ body, html {
 
 :root{
     --cor-base: rgb(92, 92, 92);
+    --josefin: 'Josefin Sans', Arial, Helvetica, sans-serif;
+    --playfair: 'Playfair Display', Times, serif;
 }
 
 .content-wrapper {
@@ -198,7 +200,7 @@ header a:active {
 .texto-home{
     width: 500px;
     height: 500px;
-    font-family: 'Playfair Display', Times, serif;
+    font-family: var(--playfair);
     font-style: italic;
     font-weight: 500;
     text-align: center;
@@ -226,7 +228,7 @@ header a:active {
     padding: 15px 35px;
     background-color: var(--cor-base);
     font-size: 16px;
-    font-family: 'Josefin', sans-serif;
+    font-family: var(--josefin);
     font-weight: 600;
     color: white;
     border: none;
@@ -318,7 +320,7 @@ header a:active {
 
 .content-sobre{
     width: 500px;
-    font-family: 'Playfair Display', Times, serif;
+    font-family: var(--playfair);
     font-style: italic;
     font-weight: 500;
     text-align: center;
@@ -440,7 +442,7 @@ header a:active {
     padding: 15px 35px;
     background-color: #f0f0f0;
     font-size: 16px;
-    font-family: 'Josefin', sans-serif;
+    font-family: var(--josefin);
     font-weight: 600;
     color: var(--cor-base);
     border: none;
@@ -472,16 +474,6 @@ header a:active {
     .agende p{
         display: none;
     }
-}
-
-/* Serviços ----------------------------------------------------------*/
-.servicos{
-    background-color: rgb(176, 241, 193);
-    height: 80vh;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    display: flex;
 }
 
 /* Depoimentos --------------------------------------------------*/
@@ -562,7 +554,7 @@ header a:active {
 .quote{
     font-style: italic;
     font-size: 22px;
-    font-family: 'Playfair Display', Times, serif;
+    font-family: var(--playfair);
 }
 
 .autor{
@@ -580,16 +572,89 @@ header a:active {
     }
 }
 
-/* Serviços ----------------------------------------------------------*/
+/* Serviços ------------------------------------------------------*/
+
 #servicos{
-    height: 700px;
-    width: auto;
-    background-color: coral;
-    font-size: 13vw;
-    font-style: italic;
-    align-items: center;
-    justify-content: center;
+    background-color:  #f0f0f0;
+    justify-content: space-around;
     display: flex;
+    gap: 30px;
+}
+
+.content-servicos{
+    width: 800px;
+    font-family: var(--playfair);
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 30px 0 30px 0;
+}
+
+.content-servicos h1{
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.content-servicos p{
+    font-size: 1.2em;
+}
+
+@media (max-width: 1200px) and (min-width: 992px){
+
+    .content-servicos{
+        font-size: 0.9em;
+    }
+
+    .content-servicos h1{
+        margin: 5px; 
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px){
+
+    #servicos{
+        display: flex;
+        height: auto;
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+        gap: 0px;
+    }
+
+    .content-servicos{
+        margin: auto;
+        width: 500px;
+        height: auto;
+    }
+
+    .content-servicos h1{
+        margin: 15px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    
+    #servicos{
+        display: flex;
+        align-items: start;
+        text-align: center;
+        justify-content: center;
+        gap: 0;
+    }
+    
+    .content-servicos {
+        width: 500px;
+        box-sizing: border-box; 
+        padding: 15px;
+        text-align: center;
+    }
+
+    .content-servicos h1{
+        margin: 15px;
+    }
 }
 
 /* FAQ ---------------------------------------------------------------*/
@@ -600,7 +665,7 @@ header a:active {
 
 .text-faq{
     text-align: center;
-    font-family: 'Playfair Display', Times, serif;
+    font-family: var(--playfair);
     font-style: italic;
     font-weight: 500;
     font-size: 34px;
@@ -684,7 +749,7 @@ header a:active {
 }
 
 /* Contato------------------------------------------------------------ */
-.contato{
+#contato{
     text-align: start;
     padding: 0px 20px 20px 20px;
     border-radius: 10px;
@@ -692,14 +757,18 @@ header a:active {
     margin: 0 auto;
 }
 
-.contato h1 {
-    font-family: 'Playfair Display', Times, serif;
+#contato h1 {
+    font-family: var(--playfair);
     font-style: italic;
     font-weight: 700;
     font-size: 40px;
     padding: 0px 0px 30px 0;
     margin: 0px;
     flex-wrap: nowrap;
+}
+
+#contato a{
+    color: #3b3b3b;
 }
 
 .contato-info {
@@ -747,14 +816,16 @@ header a:active {
 }
 
 .redes-sociais ul li a{
+    display: flex;
     color: var(--cor-base);
     position: relative;
 }
 
 .redes-sociais a:link,
 .redes-sociais a:visited {
+    color: #000;
     padding: 15px;
-    border-radius: 45px;
+    border-radius: 50px;
 }
 
 .redes-sociais a:hover{
@@ -768,7 +839,7 @@ footer {
     z-index: 2;
     height:6em;
     background-color: var(--cor-base);
-    font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+    font-family: var(--josefin);
     text-transform: uppercase;
     color: white;
     display: flex;
