@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Psicóloga Ana Carolline</title>
     <link rel="stylesheet" href="./css/estilo-blog.css">
+    <link rel="stylesheet" href="./css/estilo.css">
 
     <link rel="shortcut icon" href="./components/img/fav-icon.png">
     
@@ -13,41 +14,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <script>
+        fetch("header.html")
+          .then(response => response.text())
+          .then(data => document.getElementById("header-container").innerHTML = data);
+
+        fetch("footer.html")
+          .then(response => response.text())
+          .then(data => document.getElementById("footer-container").innerHTML = data);
+
+    </script>
+
 </head>
 <body>
+
     <!-- Começo do Header -->
-    <header>
-        <div id="logo">
-            <img src="./components/img/logo.png">
-        </div>
-        <nav>
-            <button id="menu-btn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <ul id="menu">
-                <li>
-                    <a href="./index.html#home">HOME</a>
-                </li>
-                <li>
-                    <a href="./index.html#sobre">SOBRE</a>
-                </li>
-                <li>
-                    <a href="./index.html#depoimentos">DEPOIMENTOS</a>
-                </li>
-                <li>
-                    <a href="./index.html#servicos">SERVIÇOS</a>
-                </li>
-                <li>
-                    <a href="./index.html#contato">CONTATO</a>
-                </li>
-                <li>
-                    <a href="#">BLOG</a>
-                </li>
-    
-            </ul>
-        </nav>
-    </header>
+
+    <div id="header-container"></div>
+
     <!-- Fim do Header -->
+
+        <!-- Começo Botão back to top -->
+
+        <a href="#logo">
+            <div class="btt">
+                <i class="fa-solid fa-chevron-up"></i>
+            </div>
+        </a>
+    
+        <!-- Fim Botão back to the top -->
 
     <div class="content-wrapper">
         <article class="container">
@@ -55,7 +50,7 @@
             <!-- Heading -->
             <section id="blog">
                 <div class="blog-heading">
-                    <H3>My blog</H3>
+                    <H3>Eu blogueirinha</H3>
                 </div>
             </section>
 
@@ -67,15 +62,21 @@
 
                     <!-- img -->
                     <div class="blog-img">
+
                         <img src="./components/img/blog1-img.jpg" alt="">
+
                     </div>
 
                     <!-- text -->
                      <div class="blog-text">
                         <span>24 de fevereiro de 2025 por João do Caminhão</span>
-                        <a href="#" class="blog-title">What has happened of all the web</a>
+
+                        <a href="#" class="blog-title">Você tá depresso?</a>
+
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas deleniti, eum nesciunt ullam reiciendis, sint exercitationem officia modi cumque labore voluptas porro praesentium provident tempora perspiciatis omnis temporibus. Tempora, quasi.</p>
+
                         <span><a href="#" class="read-more">Leia mais</a></span>
+
                      </div>
 
                 </div>
@@ -124,9 +125,9 @@
     </div>
     
     <!-- Começo do Footer -->
-    <footer>
-    <span id="nome">Ana Carolline Coelho da Silva Rodrigues - </span><span id="crp">&nbspCRP 06/154233</span>
-    </footer>
+
+    <div id="footer-container"></div>
+
     <!-- Fim do Footer -->
     
     <script src="./js/script.js"></script>

@@ -1,190 +1,3 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
-}
-
-:root{
-    --cor-base: rgb(92, 92, 92);
-}
-
-.content-wrapper {
-    width: 100%;
-    background-color: #f0f0f0; 
-    display: flex;
-    justify-content: center; 
-  }
-
-.container {
-    width: 70%;
-    background-color: white; 
-    display: flex;
-    flex-direction: column;
-}
-
-/* Links -------------------------------------------------------*/
-
-a:link,
-a:visited {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #ffffff;
-}
-
-/* Header -------------------------------------------------------*/
-
-header {
-    background-color: var(--cor-base);
-    display: flex;
-    height: 5em;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-    padding: 0 30px;
-    box-sizing: border-box;
-}
-
-header ul {
-    display: flex;
-    list-style: none;
-}
-
-header ul li {
-    position: relative;
-    margin: 0 15px;
-    transition: all 0.3s ease;
-}
-
-header ul li a {
-    text-decoration: none;
-}
-
-header #escrito {
-    height: 60px;
-}
-
-#logo img {
-    display: block;
-    float: left;
-    height: 65px;
-    margin-top: 5px;
-    filter: invert(100%);
-    margin-left: 30px;
-}
-
-header a:link,
-header a:visited {
-    color: white;
-    padding: 15px;
-}
-
-header a:hover {
-    color: #3d3d3d;
-    background: rgb(148, 148, 148);
-    transition: background-color 0.3s ease, color 0.3s ease-in-out;
-}
-
-header a:active {
-    color: #4e4e4e;
-}
-
-#menu-btn{
-    display: none;
-}
-
-/* Queries do Header ---------------------------------------------*/
-
-@media screen and (max-width: 768px) {
-
-    #menu-btn {
-        display: none;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.8rem;
-        cursor: pointer;
-        position: relative; 
-        z-index: 10;
-        transition: color 0.3s ease;
-        width: 50px; 
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    #menu-btn :hover {
-        color: #d3d3d3; 
-    }
-    
-    #menu-btn::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background-color: rgba(148, 148, 148, 0.1); 
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        transition: width 0.3s ease, height 0.3s ease;
-        z-index: -1;
-    }
-    
-    #menu-btn:hover::before {
-        width: 50px;
-        height: 50px;
-    }
-
-    header ul {
-        flex-direction: column;
-        position: absolute;
-        top: 4em;
-        right: 0;
-        width: 100%;
-        background-color: rgb(92, 92, 92);
-        padding: 10px 0;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(-100%);
-        transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
-    }
-    
-    header ul li {
-        text-align: center;
-        margin: 10px 0;
-        padding: 10px;
-    }
-    
-    header ul.show {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0)
-    }
-}
-
-@media (max-width: 1200px) and (min-width: 992px){
-    header ul li{
-        margin: 0 5px;
-    }
-}
-
-@media (max-width: 992px) and (min-width: 768px){
-    header ul li{
-        margin: 0 0;
-        font-size: 12px;
-    }
-
-    header a:link,
-    header a:visited {
-    color: white;
-    padding: 12px 8px;
-    }
-}
 
 /* Blog ----------------------------------------------------------*/
 
@@ -206,6 +19,7 @@ header a:active {
     font-size: 2.4rem;
     color: #2b2b2b;
     font-weight: 600;
+    margin: 25px 0 5px 0;
 }
 
 .blog-container{
@@ -226,6 +40,7 @@ header a:active {
 .blog-img{
     width: 100%;
     height: auto;
+    padding: 10px;
 
 }
 
@@ -238,7 +53,7 @@ header a:active {
 }
 
 .blog-text{
-    padding: 25px;
+    padding: 5px 20px 20px 20px;
     display: flex;
     flex-direction: column;
 }
@@ -246,11 +61,11 @@ header a:active {
 .blog-text span{
     color: var(--cor-base);
     font-size: 0.9rem;
-    padding: 10px 0;
+    padding: 10px 0 10px 0;
 }
 
 .blog-text .blog-title{
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     font-weight: 500;
     color: #272727;
 }
@@ -262,13 +77,13 @@ header a:active {
 
 .blog-text p{
     color: #9b9b9b;
-    font-size: 0.9rem;
+    font-size: 1rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: 20px 0;
+    margin: 10px 0 15px 0;
 }
 
 .blog-text a{
@@ -281,12 +96,12 @@ header a:active {
 }
 
 .read-more{
-    background-color: #0f0f0f;
+    background-color: var(--cor-base);
+    font-size: 1rem;
     border-radius: 7px;
     color: #f0f0f0;
     padding: 15px;
 }
-
 
 
 /* @media(max-width: 1250px){
@@ -299,7 +114,7 @@ header a:active {
     .blog-box{
         width: 70%;
     }
-}
+} */
 
 @media(max-width: 550px){
     .blog-box{
@@ -310,45 +125,13 @@ header a:active {
     #blog{
         padding: 20px;
     }
-} */
 
-/* Rodapé ------------------------------------------------------------*/
-footer {
-    position: relative;
-    z-index: 2;
-    height:6em;
-    background-color: var(--cor-base);
-    font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-@media screen and (max-width: 768px) {
-
-    footer {
-        display: block;
-        text-transform:inherit;
-        text-align: center;
+    .read-more{
+        display: flex;
+        background-color: var(--cor-base);
+        border-radius: 7px;
+        color: #f0f0f0;
+        padding: 15px;
         justify-content: center;
-    }
-    
-    footer span{
-        align-items: center;
-    }
-
-    footer #nome {
-        display: block;
-    }
-
-    footer #crp {
-        margin-top: 0.3em;
-        display: block;
-    }
-
-    footer {
-        white-space: pre-wrap;
     }
 }

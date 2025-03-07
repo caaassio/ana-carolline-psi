@@ -1,5 +1,12 @@
 // Dropdown button
+
 document.addEventListener("DOMContentLoaded", function() {
+
+    fetch("header.html")
+        .then(response => response.text())
+        .then(data =>{
+            document.getElementById('header-container').innerHTML = data;
+
     const menuBtn = document.getElementById('menu-btn');
     const menu = document.querySelector('header ul');
 
@@ -7,14 +14,17 @@ document.addEventListener("DOMContentLoaded", function() {
       menu.classList.toggle('show');
     });
   });
+});
+
 
 // Show foto  
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelector(".foto-home").classList.add("show");
 });  
 
+
 // Carrossel
-    // Move os slides
+
     let currentIndex = 0;
     const slides = document.querySelectorAll(".slide");
     const dots = document.querySelectorAll(".dot");
@@ -28,11 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
             currentIndex = index;
         }
 
-// Move os slides
-document.querySelector(".carousel-container").style.transform = 
-    `translateX(${-currentIndex * 100}%)`;
+    document.querySelector(".carousel-container").style.transform = 
+        `translateX(${-currentIndex * 100}%)`;
 
-// Atualiza os indicadores (bolinhas)
         dots.forEach(dot => dot.classList.remove("active"));
         dots[currentIndex].classList.add("active");
     }
@@ -44,7 +52,6 @@ document.querySelector(".carousel-container").style.transform =
         dot.addEventListener("click", () => showSlide(i));
     });
 
-    // Inicializa o carrossel no primeiro slide
     showSlide(currentIndex);
 
 // FAQ
@@ -54,4 +61,17 @@ document.querySelectorAll('.faq-question').forEach(question => {
         const faqItem = this.closest('.faq-item');
         faqItem.classList.toggle('expanded');
     });
+});
+
+
+// Transparência botão back to top
+
+window.addEventListener("scroll", function () {
+    let btt = document.querySelector(".btt");
+
+    if (window.scrollY > 0) {
+        btt.style.opacity = "0.5"; 
+    } else {
+        btt.style.opacity = "1"; 
+    }
 });
