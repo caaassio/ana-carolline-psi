@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Adicionar os links de CSS via JavaScript
                 const link1 = document.createElement("link");
                 link1.rel = "stylesheet";
-                link1.href = "/css/estilo-header.css";  // Caminho absoluto para o CSS
+                link1.href = "../css/estilo-header.css";  // Caminho absoluto para o CSS
                 document.head.appendChild(link1);
     
                 const link2 = document.createElement("link");
                 link2.rel = "stylesheet";
-                link2.href = "/css/estilo.css";  // Caminho absoluto para o CSS
+                link2.href = "../css/estilo.css";  // Caminho absoluto para o CSS
                 document.head.appendChild(link2);
 
     const menuBtn = document.getElementById('menu-btn');
