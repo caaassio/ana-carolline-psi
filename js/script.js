@@ -29,6 +29,20 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+// É github pages?
+document.addEventListener("DOMContentLoaded", function () {
+    let repoName = "/ana-carolline-psi"; // Nome do repositório no GitHub Pages
+    let basePath = window.location.hostname.includes("github.io") ? repoName + "/" : "./";
+
+    document.querySelectorAll("nav a").forEach(link => {
+        let href = link.getAttribute("href");
+        if (!href.startsWith("http")) { // Evita modificar links externos
+            link.setAttribute("href", basePath + href);
+        }
+    });
+});
+
+
 // Show foto  
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelector(".foto-home").classList.add("show");
