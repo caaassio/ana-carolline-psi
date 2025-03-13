@@ -2,10 +2,21 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    fetch("header.html")
+    fetch("../header.html")
         .then(response => response.text())
         .then(data =>{
             document.getElementById('header-container').innerHTML = data;
+
+                // Adicionar os links de CSS via JavaScript
+                const link1 = document.createElement("link");
+                link1.rel = "stylesheet";
+                link1.href = "/css/estilo-header.css";  // Caminho absoluto para o CSS
+                document.head.appendChild(link1);
+    
+                const link2 = document.createElement("link");
+                link2.rel = "stylesheet";
+                link2.href = "/css/estilo.css";  // Caminho absoluto para o CSS
+                document.head.appendChild(link2);
 
     const menuBtn = document.getElementById('menu-btn');
     const menu = document.querySelector('header ul');

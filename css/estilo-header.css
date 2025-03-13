@@ -57,6 +57,10 @@ header a:active {
     color: rgba(136, 136, 136, 0.8);
 }
 
+.link-logo:hover{
+    background-color: transparent;
+}
+
 #menu-btn{
     display: none;
 }
