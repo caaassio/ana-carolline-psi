@@ -2,9 +2,9 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    // let path = window.location.pathname.includes("/posts/") ? "../header.html" : "header.html";
-    let path = `${location.origin}/header.html`;
-    
+    let path = window.location.pathname.includes("/posts/") ? "../header.html" : "header.html";
+    // let path = `${location.origin}/header.html`;
+
     fetch(path)
         .then(response => response.text())
         .then(data =>{
