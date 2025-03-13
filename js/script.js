@@ -2,7 +2,9 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    fetch("../header.html")
+    let path = window.location.pathname.includes("/posts/") ? "../header.html" : "header.html";
+
+    fetch(path)
         .then(response => response.text())
         .then(data =>{
             document.getElementById('header-container').innerHTML = data;
