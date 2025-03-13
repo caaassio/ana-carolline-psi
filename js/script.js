@@ -3,7 +3,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     let path = window.location.pathname.includes("/posts/") ? "../header.html" : "header.html";
-    // let path = `${location.origin}/header.html`;
 
     fetch(path)
         .then(response => response.text())
@@ -29,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
-
 
 // Show foto  
 document.addEventListener("DOMContentLoaded", function() {
