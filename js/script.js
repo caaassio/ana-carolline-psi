@@ -49,6 +49,22 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             });
+
+            // Ajusta o caminho da imagem do logo
+            const logo = document.querySelector("#header-container #logo img");
+            if (logo) {
+                let src = logo.getAttribute("src");
+                if (isGitHubPages) {
+                    // No GitHub Pages, adiciona o nome do repositório ao início do caminho
+                    if (src.startsWith("../")) {
+                        src = src.replace(/^\.\.\//, "/"); // Remove o ../ e adiciona /
+                    }
+                    logo.setAttribute("src", repoName + src);
+                } else {
+                    // No Live Server, mantém o caminho como está
+                    logo.setAttribute("src", src);
+                }
+            }
         })
         .catch(error => console.error("Erro ao carregar o header:", error));
 
