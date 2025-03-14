@@ -47,10 +47,10 @@ header a:visited {
 }
 
 header a:hover {
-    color: rgba(136, 136, 136, 0.8);
     background: var(--cor-base);
-    filter: brightness(1.5);
+    filter: brightness(1.1);
     transition: background-color 0.3s ease, color 0.3s ease-in-out;
+    box-sizing: border-box;
 }
 
 header a:active {
