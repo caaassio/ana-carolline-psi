@@ -28,21 +28,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     menu.classList.toggle("show");
                 });
             }
+
+            // Ajusta os links do header para funcionar no GitHub Pages e no Live Server
+            const isGitHubPages = window.location.hostname.includes("github.io");
+            const repoName = "/ana-carolline-psi"; // Nome do repositório no GitHub Pages
+
+            document.querySelectorAll("#header-container a").forEach(link => {
+                let href = link.getAttribute("href");
+                if (!href.startsWith("http") && !href.startsWith("#")) { // Evita modificar links externos e âncoras
+                    if (isGitHubPages) {
+                        // No GitHub Pages, adiciona o nome do repositório ao início do link
+                        link.setAttribute("href", repoName + href.replace(/^\.\.\//, "/"));
+                    } else {
+                        // No Live Server, mantém o link como está
+                        link.setAttribute("href", href);
+                    }
+                }
+            });
         })
         .catch(error => console.error("Erro ao carregar o header:", error));
-
-    // Verifica se está no GitHub Pages
-    let isGitHubPages = window.location.hostname.includes("github.io");
-    let repoName = "/ana-carolline-psi"; // Nome do repositório no GitHub Pages
-    let basePathLinks = isGitHubPages ? repoName + "/" : "./";
-
-    // Ajusta os links do menu
-    document.querySelectorAll("nav a").forEach(link => {
-        let href = link.getAttribute("href");
-        if (!href.startsWith("http")) { // Evita modificar links externos
-            link.setAttribute("href", basePathLinks + href.replace(/^\//, "")); // Remove a barra inicial
-        }
-    });
 });
 
 // Show foto  
