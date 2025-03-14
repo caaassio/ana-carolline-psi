@@ -87,15 +87,23 @@
     <!-- Fim do Footer -->
     
     <script src="../js/script.js"></script>
+
     <script>
+        
         fetch("../header.html")
-            .then(response => response.text())
-            .then(data => document.getElementById("header-container").innerHTML = data);
-
-
-        fetch("../footer.html")
-          .then(response => response.text())
-          .then(data => document.getElementById("footer-container").innerHTML = data);
+            .then(response => {
+            if (!response.ok) {
+            throw new Error("Erro ao carregar o header: " + response.statusText);
+            }
+        return response.text();
+        })
+            .then(data => {
+            console.log("Header carregado com sucesso!");
+            document.getElementById("header-container").innerHTML = data;
+        })
+            .catch(error => {
+            console.error("Erro ao carregar o header:", error);
+        });
 
     </script>
     
