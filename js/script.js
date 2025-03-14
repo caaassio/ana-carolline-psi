@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(basePath + "header.html")
         .then(response => response.text())
         .then(data => {
+            // Insere o header no DOM
             document.getElementById("header-container").innerHTML = data;
 
             // Adiciona os links de CSS via JavaScript
@@ -38,7 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!href.startsWith("http") && !href.startsWith("#")) { // Evita modificar links externos e âncoras
                     if (isGitHubPages) {
                         // No GitHub Pages, adiciona o nome do repositório ao início do link
-                        link.setAttribute("href", repoName + href.replace(/^\.\.\//, "/"));
+                        if (href.startsWith("../")) {
+                            href = href.replace(/^\.\.\//, "/"); // Remove o ../ e adiciona /
+                        }
+                        link.setAttribute("href", repoName + href);
                     } else {
                         // No Live Server, mantém o link como está
                         link.setAttribute("href", href);
@@ -47,15 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         })
         .catch(error => console.error("Erro ao carregar o header:", error));
-});
 
-// Show foto  
-document.addEventListener("DOMContentLoaded", function () {
+    // Show foto  
     document.querySelector(".foto-home")?.classList.add("show");
-});
 
-// Carrossel
-document.addEventListener("DOMContentLoaded", function () {
+    // Carrossel
     let currentIndex = 0;
     const slides = document.querySelectorAll(".slide");
     const dots = document.querySelectorAll(".dot");
@@ -86,10 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         showSlide(currentIndex);
     }
-});
 
-// FAQ
-document.addEventListener("DOMContentLoaded", function () {
+    // FAQ
     document.querySelectorAll(".faq-question").forEach(question => {
         question.addEventListener("click", function () {
             const faqItem = this.closest(".faq-item");
@@ -98,17 +96,17 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-});
 
-// Transparência botão back to top
-window.addEventListener("scroll", function () {
-    let btt = document.querySelector(".btt");
+    // Transparência botão back to top
+    window.addEventListener("scroll", function () {
+        let btt = document.querySelector(".btt");
 
-    if (btt) {
-        if (window.scrollY > 0) {
-            btt.style.opacity = "0.5";
-        } else {
-            btt.style.opacity = "1";
+        if (btt) {
+            if (window.scrollY > 0) {
+                btt.style.opacity = "0.5";
+            } else {
+                btt.style.opacity = "1";
+            }
         }
-    }
+    });
 });
