@@ -31,17 +31,28 @@ a{
 .blog-container{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.btn-voltar {
+    width: 100%;
+    text-align: left;
+    color: #2b2b2b;
+    padding: 30px 20px 0 30px;
+    font-size: 20px;
+    
 }
 
 .blog-box{
     background-color: #ffffff;
-    margin: 50px;
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -146,9 +157,12 @@ a{
 @media (max-width: 765px) {
 
     .blog-box{
-        margin: 20px 10px;
         box-sizing: border-box;
         width: 100%;
+    }
+
+    .btn-voltar{
+        padding: 20px 20px 0 20px;
     }
 
     #blog{
