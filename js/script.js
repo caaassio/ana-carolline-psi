@@ -126,3 +126,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+// Tempo de leitura
+document.addEventListener("DOMContentLoaded", function () {
+    const post = document.querySelector(".blog-text"); // Seleciona o post
+    const texto = post.querySelector(".post-content").innerText; // Pega o conteúdo do post
+    const palavrasPorMinuto = 200; // Média de leitura
+    const numeroPalavras = texto.split(/\s+/).length; // Conta palavras
+    const tempoLeitura = Math.ceil(numeroPalavras / palavrasPorMinuto); // Arredonda o tempo
+
+    // Atualiza a div do tempo de leitura
+    const tempoElemento = post.querySelector(".tempo-leitura");
+    if (tempoElemento) {
+        tempoElemento.innerHTML = ` ${tempoLeitura} min`;
+    }
+});
