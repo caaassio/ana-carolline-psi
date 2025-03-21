@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Tempo de leitura
 document.addEventListener("DOMContentLoaded", function () {
-    const post = document.querySelector(".blog-text"); // Seleciona o post
+    const post = document.querySelector(".post-text"); // Seleciona o post
     const texto = post.querySelector(".post-content").innerText; // Pega o conteúdo do post
     const palavrasPorMinuto = 200; // Média de leitura
     const numeroPalavras = texto.split(/\s+/).length; // Conta palavras
@@ -142,3 +142,4 @@ document.addEventListener("DOMContentLoaded", function () {
         tempoElemento.innerHTML = ` ${tempoLeitura} min`;
     }
 });
+
