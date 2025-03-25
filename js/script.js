@@ -1,26 +1,22 @@
+// --------------------------- Ajuste de caminhos ------------------------------
 document.addEventListener("DOMContentLoaded", function () {
-    // Define o caminho base dinamicamente
     let basePath = window.location.pathname.includes("/posts/") ? "../" : "./";
 
-    // Carrega o header.html
     fetch(basePath + "header.html")
         .then(response => response.text())
         .then(data => {
-            // Insere o header no DOM
             document.getElementById("header-container").innerHTML = data;
 
-            // Adiciona os links de CSS via JavaScript
             const link1 = document.createElement("link");
             link1.rel = "stylesheet";
-            link1.href = basePath + "css/estilo-header.css"; // Caminho relativo para o CSS
+            link1.href = basePath + "css/estilo-header.css";
             document.head.appendChild(link1);
 
             const link2 = document.createElement("link");
             link2.rel = "stylesheet";
-            link2.href = basePath + "css/estilo.css"; // Caminho relativo para o CSS
+            link2.href = basePath + "css/estilo.css"; 
             document.head.appendChild(link2);
 
-            // Configura o menu dropdown
             const menuBtn = document.getElementById("menu-btn");
             const menu = document.querySelector("header ul");
 
@@ -30,51 +26,47 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
 
-            // Ajusta os links do header para funcionar no GitHub Pages e no Live Server
             const isGitHubPages = window.location.hostname.includes("github.io");
-            const repoName = "/ana-carolline-psi"; // Nome do repositório no GitHub Pages
+            const repoName = "/ana-carolline-psi"; 
 
             document.querySelectorAll("#header-container a").forEach(link => {
                 let href = link.getAttribute("href");
-                if (!href.startsWith("http") && !href.startsWith("#")) { // Evita modificar links externos e âncoras
+                if (!href.startsWith("http") && !href.startsWith("#")) { 
                     if (isGitHubPages) {
-                        // No GitHub Pages, adiciona o nome do repositório ao início do link
                         if (href.startsWith("../")) {
-                            href = href.replace(/^\.\.\//, "/"); // Remove o ../ e adiciona /
+                            href = href.replace(/^\.\.\//, "/"); 
                         }
                         link.setAttribute("href", repoName + href);
                     } else {
-                        // No Live Server, mantém o link como está
                         link.setAttribute("href", href);
                     }
                 }
             });
 
-            // Ajusta o caminho da imagem do logo
             const logo = document.querySelector("#header-container #logo img");
             if (logo) {
                 let src = logo.getAttribute("src");
                 if (isGitHubPages) {
-                    // No GitHub Pages, adiciona o nome do repositório ao início do caminho
                     if (src.startsWith("../")) {
-                        src = src.replace(/^\.\.\//, "/"); // Remove o ../ e adiciona /
+                        src = src.replace(/^\.\.\//, "/"); 
                     }
                     logo.setAttribute("src", repoName + src);
                 } else {
-                    // No Live Server, mantém o caminho como está
                     logo.setAttribute("src", src);
                 }
             }
         })
         .catch(error => console.error("Erro ao carregar o header:", error));
 
-    // Show foto  
+// --------------------- Show foto - Tô usando? -----------------------------------------
     document.querySelector(".foto-home")?.classList.add("show");
 
-    // Carrossel
+// ------------------------ Carrossel ---------------------------------------------------
     let currentIndex = 0;
     const slides = document.querySelectorAll(".slide");
     const dots = document.querySelectorAll(".dot");
+    const intervalTime = 5000; 
+    let autoSlide;
 
     if (slides.length > 0 && dots.length > 0) {
         function showSlide(index) {
@@ -93,17 +85,39 @@ document.addEventListener("DOMContentLoaded", function () {
             dots[currentIndex].classList.add("active");
         }
 
-        document.querySelector(".prev")?.addEventListener("click", () => showSlide(currentIndex - 1));
-        document.querySelector(".next")?.addEventListener("click", () => showSlide(currentIndex + 1));
-
-        dots.forEach((dot, i) => {
-            dot.addEventListener("click", () => showSlide(i));
-        });
-
-        showSlide(currentIndex);
+    function startAutoSlide() {
+        autoSlide = setInterval(() => {
+            showSlide(currentIndex + 1);
+        }, intervalTime);
     }
 
-    // FAQ
+    function resetAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
+    }
+
+    document.querySelector(".prev")?.addEventListener("click", () => {
+        showSlide(currentIndex - 1);
+        resetAutoSlide();
+    });
+
+    document.querySelector(".next")?.addEventListener("click", () => {
+        showSlide(currentIndex + 1);
+        resetAutoSlide();
+    });
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+            showSlide(i);
+            resetAutoSlide();
+        });
+    });
+
+    showSlide(currentIndex);
+    startAutoSlide(); 
+}
+
+// ------------------------------ FAQ -----------------------------------------------
     document.querySelectorAll(".faq-question").forEach(question => {
         question.addEventListener("click", function () {
             const faqItem = this.closest(".faq-item");
@@ -113,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Transparência botão back to top
+// -------------------------------- Transparência botão back to top ---------------------------
     window.addEventListener("scroll", function () {
         let btt = document.querySelector(".btt");
 
@@ -127,19 +141,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-// Tempo de leitura
+// ----------------------------- Tempo de leitura ---------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
-    const post = document.querySelector(".post-text"); // Seleciona o post
-    const texto = post.querySelector(".post-content").innerText; // Pega o conteúdo do post
-    const palavrasPorMinuto = 200; // Média de leitura
-    const numeroPalavras = texto.split(/\s+/).length; // Conta palavras
-    const tempoLeitura = Math.ceil(numeroPalavras / palavrasPorMinuto); // Arredonda o tempo
+    const post = document.querySelector(".post-text"); 
+    const texto = post.querySelector(".post-content").innerText;
+    const palavrasPorMinuto = 200; 
+    const numeroPalavras = texto.split(/\s+/).length; 
+    const tempoLeitura = Math.ceil(numeroPalavras / palavrasPorMinuto);
 
-    // Atualiza a div do tempo de leitura
     const tempoElemento = post.querySelector(".tempo-leitura");
     if (tempoElemento) {
         tempoElemento.innerHTML = ` ${tempoLeitura} min`;
     }
 });
-

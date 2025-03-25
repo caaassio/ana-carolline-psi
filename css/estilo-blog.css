@@ -1,12 +1,12 @@
 html, body {
-    height: 100%; /* Garante que o body ocupe toda a altura da tela */
+    height: 100%; 
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
 .content-wrapper {
-    flex: 1; /* Faz com que o conteúdo principal ocupe todo o espaço disponível */
+    flex: 1; 
 }
 
 #footer-container {
@@ -28,7 +28,6 @@ html, body {
 }
 
 .post{
-    /* background-color: F0F0F0; */
     background-color: #f0f0f0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
@@ -39,7 +38,6 @@ html, body {
 .post:hover{
     transform: scale(1.03);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-
 }
 
 .post span{
@@ -80,7 +78,6 @@ html, body {
     overflow: hidden; 
     text-overflow: ellipsis; 
 }
-
 
 @media (max-width: 1250px) {
 
