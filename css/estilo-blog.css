@@ -23,7 +23,7 @@ html, body {
     flex-wrap: wrap;
     box-sizing: border-box;
     padding: 50px 20px;
-    gap: 20px;
+    gap: 40px;
     background-color: white;
 }
 
@@ -34,6 +34,12 @@ html, body {
     width: 300px;
     height: 380px;
     box-sizing: border-box;
+}
+
+.post:hover{
+    transform: scale(1.03);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
 }
 
 .post span{
@@ -99,5 +105,21 @@ html, body {
 
     #blog{
         padding: 20px;
+    }
+}
+
+@media (max-width: 695px){
+
+    .post{
+        width: 400px;
+        height: 440px;
+    }
+
+    .post p{
+        margin: 15px 15px 0px 15px;
+    }
+
+    .post-container{
+        gap: 40px;
     }
 }

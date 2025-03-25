@@ -3,7 +3,7 @@
 footer {
     position: relative;
     z-index: 2;
-    height:6em;
+    height: 6em;
     background-color: var(--cor-base);
     font-family: var(--josefin);
     text-transform: uppercase;
@@ -27,7 +27,9 @@ footer {
         text-transform:inherit;
         text-align: center;
         justify-content: center;
-
+        white-space: pre-wrap;
+        
+        
     }
     
     footer span{
@@ -40,10 +42,5 @@ footer {
 
     footer #crp {
         margin-top: 0.3em;
-        display: block;
-    }
-
-    footer {
-        white-space: pre-wrap;
     }
 }
