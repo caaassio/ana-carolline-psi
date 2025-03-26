@@ -118,7 +118,8 @@ a:hover {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 80px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 #home button:hover{
@@ -767,6 +768,11 @@ footer {
 
     footer #crp {
         margin-top: 0.3em;
+    }
+    
+    #contato h1{
+        font-size: 42px !important;
+        
     }
 }
 
