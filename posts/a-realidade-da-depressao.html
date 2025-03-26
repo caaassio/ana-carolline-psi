@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>A realidade da depressão</title>
+    <link rel="stylesheet" href="../css/estilo-post.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+
+    <link rel="shortcut icon" href="../components/img/fav-icon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Começo do Header -->
+
+    <div id="header-container"></div>
+
+    <!-- Fim do Header -->
+
+        <!-- Começo Botão back to top -->
+
+        <a href="#logo">
+            <div class="btt">
+                <i class="fa-solid fa-chevron-up"></i>
+            </div>
+        </a>
+    
+        <!-- Fim Botão back to the top -->
+
+    <div class="content-wrapper">
+        <article class="container">
+    
+            <!-- blog container -->
+             <div class="post-container">
+                <a href="../blog.html">
+                    <div class="btn-voltar"><i class="fa-solid fa-circle-chevron-left"></i> Voltar</div>
+                </a>
+                
+                <!-- box 1 -->
+                    <div class="post-box">
+
+                        <!-- img -->
+                        <div class="post-img">
+
+                            <img src="../components/img/blog4-img.jpg" alt="">
+
+                        </div>
+
+                        <!-- text -->
+                        <article class="post-text">
+                            <div class="post-meta">
+
+                            <h2>Sentir-se Perdido: A Realidade da Depressão</h2>
+
+                            <div class="data-post">25 de março &#9679; <i class="fa-solid fa-clock"></i>
+                                <div class="tempo-leitura"> </div>
+                            </div>
+
+                            <div class="post-content">
+                                <p>
+                                    A depressão não é apenas tristeza. Não é algo que pode ser resolvido com um simples "anime-se" ou "pense positivo". É um estado profundo, uma sensação de estar preso em um ciclo de pensamentos e emoções que parecem não ter fim. Para quem nunca passou por isso, pode ser difícil entender. Mas, para quem vive, a depressão é uma batalha diária contra um peso invisível.
+                                    <br>
+                                    <br>
+                                    </p>
+                                    <p class="destaque-texto">
+                                    Os dias podem parecer iguais, sem cor, sem sentido. Atividades que antes traziam prazer se tornam tarefas exaustivas. Levantar da cama exige um esforço sobre-humano. O mundo lá fora continua girando, as pessoas seguem suas rotinas, mas, para quem está depressivo, tudo parece distante, como se houvesse um muro separando a própria existência da realidade.
+                                    </p>
+                                    <p>
+                                    <br>
+                                    A mente se torna um lugar barulhento, cheia de cobranças e autocríticas. "Por que me sinto assim?" "Por que não consigo melhorar?" <i>"O que há de errado comigo?"</i> Essas perguntas se repetem incessantemente, trazendo culpa e frustração. É como se a própria mente fosse uma prisão.
+                                    <br>
+                                    <br>
+                                    E há o cansaço. Não apenas físico, mas mental. A exaustão de fingir estar bem, de sorrir quando tudo dentro de si está desmoronando. O medo de ser julgado, de parecer fraco, faz com que muitos escondam o que sentem. Mas a depressão não é fraqueza. É uma condição que exige cuidado, apoio e, muitas vezes, ajuda profissional.
+                                    <br>
+                                    <br>
+                                    Se você está passando por isso, <b>saiba que não está sozinho</b>. Há caminhos para encontrar alívio, mesmo que pareça impossível no momento. Procurar ajuda não é sinal de fraqueza, mas de coragem. Conversar com alguém de confiança, buscar um profissional, dar um pequeno passo por vez — tudo isso pode fazer diferença.
+                                    <br>
+                                    <br>
+                                    A dor pode ser intensa, mas não define quem você é. Você não é sua depressão. E, por mais que agora pareça difícil de acreditar, existe um amanhã que pode ser mais leve.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+
+             </div>
+
+        </article>
+    </div>
+    
+    <!-- Começo do Footer -->
+
+    <div id="footer-container"></div>
+
+    <!-- Fim do Footer -->
+    
+    <script src="../js/script.js"></script>
+
+    <script>
+        
+        fetch("../header.html")
+            .then(response => {
+            if (!response.ok) {
+            throw new Error("Erro ao carregar o header: " + response.statusText);
+            }
+        return response.text();
+        })
+            .then(data => {
+            console.log("Header carregado com sucesso!");
+            document.getElementById("header-container").innerHTML = data;
+        })
+            .catch(error => {
+            console.error("Erro ao carregar o header:", error);
+        });
+
+        fetch("../footer.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("footer-container").innerHTML = data);
+
+    </script>
+    
+
+</body>
+</html>

@@ -9,6 +9,7 @@ body, html {
     --cor-base: rgb(106, 118, 126);
     --josefin: 'Josefin Sans', Arial, Helvetica, sans-serif;
     --cambria:  'Cambria', Times, serif;
+
 }
 
 .content-wrapper {
@@ -71,6 +72,7 @@ a:hover {
     justify-content: center;
 }
 
+
 /* Home ---------------------------------------------------------*/
 #home{
     padding: 30px 0 30px 0;
@@ -127,6 +129,84 @@ a:hover {
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
+@media (max-width: 1200px) and (min-width: 992px){
+
+    .foto-home img{
+        width: 350px;
+    }
+
+    #home{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px)  {
+
+    #home{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        gap: 0px;
+    }
+    
+    #home button {
+        margin-top: 30px;
+    }
+
+    .container {
+        width: 100%;
+        background-color: white; 
+        display: flex;
+        flex-direction: column;
+        gap: 20px; 
+    }
+
+    .foto-home {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        overflow: hidden; 
+        height: auto; 
+        max-height: 100%; 
+    }
+
+    .foto-home img {
+        max-width: 100%;
+        max-height: 100%;
+        height: auto; 
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        width: 100%;
+        display: flex;
+    }
+
+    #home{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        height: auto;
+        gap: 0;
+    } 
+
+    .foto-home img{
+        display: none;
+    }
+
+    .texto-home{
+        padding: 25px;
+    }
+
+    .texto-home h1{
+        margin: 30px 0;
+    }
+}
+
 /* Sobre ---------------------------------------------------------*/
 
 #sobre{
@@ -169,6 +249,85 @@ a:hover {
     border-radius: 20px;
 }
 
+@media (max-width: 1200px) and (min-width: 992px){
+
+    .foto-sobre img{
+        width: 300px;
+    }
+    
+    .content-sobre{
+        font-size: 0.9em;
+    }
+
+    .content-sobre h1{
+        margin: 5px; 
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px){
+
+    #sobre{
+        display: flex;
+        height: auto;
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+        gap: 0px;
+    }
+
+    .content-sobre{
+        margin: auto;
+        width: 500px;
+        height: auto;
+    }
+
+    .content-sobre h1{
+        margin: 15px;
+    }
+
+    .foto-sobre {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    .foto-sobre img {
+        display: flex;
+        width: 300px;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    
+    #sobre{
+        display: flex;
+        align-items: start;
+        text-align: center;
+        justify-content: center;
+        gap: 0;
+    }
+    
+    .content-sobre {
+        width: 500px;
+        box-sizing: border-box; 
+        padding: 25px;
+        text-align: center;
+    }
+    
+    .foto-sobre img{
+        display: none;
+    }
+
+    .content-sobre h1{
+        margin: 15px;
+    }
+
+    .content-sobre p{
+        margin: 15px 0;
+    }
+}
+
 /* Agende --------------------------------------------------------*/
 .agende{
     display: flex;
@@ -204,6 +363,17 @@ a:hover {
 .agende i{
     font-size: 1.3em;
     margin: 0 8px;
+}
+
+@media screen and (max-width: 768px){
+    .agende button {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+
+    .agende p{
+        display: none;
+    }
 }
 
 /* Depoimentos --------------------------------------------------*/
@@ -292,6 +462,16 @@ a:hover {
     font-weight: bold;
 }
 
+@media screen and (max-width: 768px){
+
+    .carousel {
+        position: relative;
+        width: 95%;
+        margin: auto;
+        overflow: hidden;
+    }
+}
+
 /* Serviços ------------------------------------------------------*/
 
 #servicos{
@@ -322,6 +502,61 @@ a:hover {
     text-align: justify;
 }
 
+@media (max-width: 1200px) and (min-width: 992px){
+
+    .content-servicos{
+        font-size: 0.9em;
+    }
+
+    .content-servicos h1{
+        margin: 5px; 
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px){
+
+    #servicos{
+        display: flex;
+        height: auto;
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+        gap: 0px;
+    }
+
+    .content-servicos{
+        margin: auto;
+        width: 500px;
+        height: auto;
+    }
+
+    .content-servicos h1{
+        margin: 15px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    
+    #servicos{
+        display: flex;
+        align-items: start;
+        text-align: center;
+        justify-content: center;
+        gap: 0;
+    }
+    
+    .content-servicos {
+        width: 500px;
+        box-sizing: border-box; 
+        padding: 25px;
+        text-align: center;
+    }
+
+    .content-servicos h1{
+        margin: 15px;
+    }
+}
+
 /* FAQ ---------------------------------------------------------------*/
 #faq {
     margin: 30px auto;
@@ -342,14 +577,13 @@ a:hover {
 .faq-item {
     width: 100%;
     min-height: 53px;
-    max-height: 90px;
+    max-height: 53px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
     margin-bottom: 15px;
     border-radius: 10px;
     overflow: hidden;
     transition: all 0.9s ease;   
     background-color: var(--cor-base);
-    line-height: 1.4em;
 }
 
 .faq-question {
@@ -366,6 +600,7 @@ a:hover {
 .faq-question:hover{
     filter: brightness(1.3) !important;
 }
+
 
 .faq-question p {
     margin: 0;
@@ -386,7 +621,7 @@ a:hover {
 }
 
 .faq-item.expanded {
-    max-height: 280px;
+    max-height: 200px;
 }
 
 .faq-item.expanded .faq-answer {
@@ -395,6 +630,28 @@ a:hover {
 
 .faq-item.expanded .plus-icon {
     transform: rotate(135deg);
+}
+
+@media (max-width: 1200px) and (min-width: 992px){
+
+    #faq {
+        width: auto;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px)  {
+
+    #faq {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 456px)  {
+
+    #faq {
+        width: 70%;
+    }
 }
 
 /* Contato------------------------------------------------------------ */
@@ -524,229 +781,15 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+  }
 
-@media (max-width: 1200px) and (min-width: 992px){
-
-    .foto-home img{
-        width: 350px;
-    }
-
-    #home{
-        gap: 20px;
-    }
-
-    .foto-sobre img{
-        width: 300px;
-    }
-    
-    .content-sobre{
-        font-size: 0.9em;
-    }
-
-    .content-sobre h1{
-        margin: 5px; 
-    }
-
-    .content-servicos{
-        font-size: 0.9em;
-    }
-
-    .content-servicos h1{
-        margin: 5px; 
-    }
-
-    #faq {
-        width: auto;
-        margin: 10px;
-    }
-}
-
-@media (max-width: 992px) and (min-width: 768px)  {
-
-    #home{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
-        gap: 0px;
-    }
-    
-    #home button {
-        margin-top: 30px;
-    }
-
-    .container {
-        width: 100%;
-        background-color: white; 
-        display: flex;
-        flex-direction: column;
-        gap: 20px; 
-    }
-
-    .foto-home {
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        overflow: hidden; 
-        height: auto; 
-        max-height: 100%; 
-    }
-
-    .foto-home img {
-        max-width: 100%;
-        max-height: 100%;
-        height: auto; 
-        width: auto;
-    }
-
-    #sobre{
-        display: flex;
-        height: auto;
-        flex-direction: column-reverse;
-        text-align: center;
-        justify-content: center;
-        gap: 0px;
-    }
-
-    .content-sobre{
-        margin: auto;
-        width: 500px;
-        height: auto;
-    }
-
-    .content-sobre h1{
-        margin: 15px;
-    }
-
-    .foto-sobre {
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-    }
-
-    .foto-sobre img {
-        display: flex;
-        width: 300px;
-        padding: 15px;
-    }
-
-    #servicos{
-        display: flex;
-        height: auto;
-        flex-direction: column-reverse;
-        text-align: center;
-        justify-content: center;
-        gap: 0px;
-    }
-
-    .content-servicos{
-        margin: auto;
-        width: 500px;
-        height: auto;
-    }
-
-    .content-servicos h1{
-        margin: 15px;
-    }
-
-    #faq {
-        width: 80%;
-    }
-
+@media (max-width: 992px) and (min-width: 768px){
     footer{
         font-size: 12px;
     }
 }
 
 @media screen and (max-width: 768px) {
-
-    .container {
-        width: 100%;
-        display: flex;
-    }
-
-    #home{
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        height: auto;
-        gap: 0;
-    } 
-
-    .foto-home img{
-        display: none;
-    }
-
-    .texto-home{
-        padding: 25px;
-    }
-
-    .texto-home h1{
-        margin: 30px 0;
-    }
-
-    #sobre{
-        display: flex;
-        align-items: start;
-        text-align: center;
-        justify-content: center;
-        gap: 0;
-    }
-    
-    .content-sobre {
-        width: 500px;
-        box-sizing: border-box; 
-        padding: 25px;
-        text-align: center;
-    }
-    
-    .foto-sobre img{
-        display: none;
-    }
-
-    .content-sobre h1{
-        margin: 15px;
-    }
-
-    .content-sobre p{
-        margin: 15px 0;
-    }
-
-    .agende button {
-        padding: 15px 30px;
-        font-size: 16px;
-    }
-
-    .agende p{
-        display: none;
-    }
-
-    .carousel {
-        position: relative;
-        width: 95%;
-        margin: auto;
-        overflow: hidden;
-    }
-
-    #servicos{
-        display: flex;
-        align-items: start;
-        text-align: center;
-        justify-content: center;
-        gap: 0;
-    }
-    
-    .content-servicos {
-        width: 500px;
-        box-sizing: border-box; 
-        padding: 25px;
-        text-align: center;
-    }
-
-    .content-servicos h1{
-        margin: 15px;
-    }
 
     footer {
         display: block;
@@ -768,12 +811,4 @@ footer {
     footer #crp {
         margin-top: 0.3em;
     }
-}
-
-@media (max-width: 768px) and (min-width: 456px)  {
-
-    #faq {
-        width: 70%;
-    }
-
 }
