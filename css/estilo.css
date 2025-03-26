@@ -781,6 +781,11 @@ footer {
     #logo img{
         margin: 0;
     }
+
+    .post-text{
+        top: -20px;
+        width: 72%;
+    }
 }
 
 @media (max-width: 768px) and (min-width: 456px)  {
