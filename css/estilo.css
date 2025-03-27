@@ -209,90 +209,78 @@ a:hover {
 
 /* Depoimentos --------------------------------------------------*/
 #depoimentos{
-    padding: 0 0 45px 0;
     width: 100%;
-    align-items: center;
+    height: 100%;
     display: flex;
-    margin: 0;
 }
 
-.carousel {
-    position: relative;
-    width: 70%;
-    margin: auto;
-    overflow: hidden;
-}
-
-.carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    margin: 0;
-}
-
-.slide {
-    min-width: 100%;
-    padding: 60px;
-    box-sizing: border-box;
-    text-align: center;
-    
-}
-
-/* Setas de navegação */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+.swiper-button-prev,
+.swiper-button-next {
     color: #00000054;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 50px;
-    z-index: 1;
-    background-color: rgba(153, 205, 50, 0);
-}
-
-.prev { 
-    left: 0px; 
-}
-
-.next { 
-    right: 0px; 
-}
-
-.dots {
-    text-align: center;
-    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
     position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    font-weight: bold;
+    transform: translateY(-50%);
+    background-color: rgba(153, 205, 50, 0);
+    overflow: visible;
+    display: flex;
+    z-index: 15; 
 }
 
-.dot {
-    height: 8px;
-    width: 8px;
-    margin: 0 5px;
-    background-color: #bbbbbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: background 0.3s;
+.swiper-button-prev{
+    left: 0;
 }
 
-.dot.active {
-    background-color: rgb(61, 61, 61);
+.swiper-button-prev{
+    right: 0;
+}
+
+.swiper-pagination{
+
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-pagination-bullet {
+    background-color: #00000080;
+}
+
+.swiper-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .quote{
     font-style: italic;
     font-size: 24px;
     font-family: var(--cambria);
+    box-sizing: border-box;
+    display: flex;
+    z-index: 13;
+    padding: 30px 50px;
+    display: block;
+    margin: 0;
 }
 
 .autor{
-    font-size: 20px;
     font-weight: bold;
+    font-size: 22px;
+    padding: 30px;
+    display: block;
+    box-sizing: border-box;
 }
+
 
 /* Serviços ------------------------------------------------------*/
 
@@ -724,21 +712,19 @@ footer {
         display: none;
     }
 
-    .carousel {
-        position: relative;
-        width: 95%;
-        margin: auto;
-        overflow: hidden;
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: rgb(230, 230, 230);
     }
 
-    .slide {
-        padding: 25px;
-        display: flex;
-        flex-direction: column;
+    .quote{
+        font-size: 20px;
+        text-align: justify;
+        padding: 30px 50px 0 50px;
     }
 
-    .slide span{
-        padding: 0 0 20px 0;
+    .autor{
+        font-size: 22px;
     }
 
     #servicos{

@@ -154,3 +154,24 @@ document.addEventListener("DOMContentLoaded", function () {
         tempoElemento.innerHTML = ` ${tempoLeitura} min`;
     }
 });
+
+// ------------------------- Swipe -----------------------------------------------
+document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".swiper", {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        autoplay: {
+            delay: 30000,  // Tempo de transição (em milissegundos)
+            disableOnInteraction: false,
+        },
+        spaceBetween: 20,
+        grabCursor: true,
+    });
+});

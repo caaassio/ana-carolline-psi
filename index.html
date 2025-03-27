@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="css/estilo.css">
 
     <link rel="shortcut icon" href="components/img/fav-icon.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,11 +101,10 @@
         <article class="container">
         
             <!-- Começo dos Depoimentos -->
-             <section id="depoimentos">
-                <div class="carousel">
-                    <button class="prev">&#10094;</i></i></button> <!-- Seta esquerda -->
-                    <div class="carousel-container">
-                        <div class="slide active">
+            <section id="depoimentos">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
                             <p class="quote">
                                 "No meu aniversário, resolvi me dar um presente diferente: uma sessão de terapia. Foi assim que encontrei a Ana, e desde 2020 essa tem sido uma das melhores decisões da minha vida. Cada sessão é um espaço seguro, cheio de acolhimento, onde me redescubro um pouco mais. Tem sido um processo árduo de autoconhecimento, daqueles que a gente nem imagina o quanto vai fazer bem até começar. Ana consegue, com maestria, abordar situações e emoções de forma tão profissional e humanizada que, muitas vezes, nem percebo. Seu carinho e cuidado são impressionantes e inspiradores."
                             </p>
@@ -109,14 +112,7 @@
                                 Elysnay Oliveira
                             </span>
                         </div>
-                        <div class="slide">
-                            <p class="quote">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores omnis ratione.
-                            </p>
-                            <span class="autor">
-                                Fausto Silva
-                            </span></div>
-                        <div class="slide">
+                        <div class="swiper-slide">
                             <p class="quote">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores omnis ratione.
                             </p>
@@ -124,7 +120,15 @@
                                 Fausto Silva
                             </span>
                         </div>
-                        <div class="slide">
+                        <div class="swiper-slide">
+                            <p class="quote">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores omnis ratione.
+                            </p>
+                            <span class="autor">
+                                Fausto Silva
+                            </span>
+                        </div>
+                        <div class="swiper-slide">
                             <p class="quote">
                                 Em volta do buraco tudo é beira.
                             </p>
@@ -132,7 +136,7 @@
                                 Ariano Suassuna
                             </span>
                         </div>
-                        <div class="slide">
+                        <div class="swiper-slide">
                             <p class="quote">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores omnis ratione.
                             </p>
@@ -141,16 +145,15 @@
                             </span>
                         </div>
                     </div>
-                    <button class="next">&#10095;</button> <!-- Seta direita -->
-                    <div class="dots">
-                        <span class="dot active" onclick="goToSlide(0)"></span>
-                        <span class="dot" onclick="goToSlide(1)"></span>
-                        <span class="dot" onclick="goToSlide(2)"></span>
-                        <span class="dot" onclick="goToSlide(3)"></span>
-                        <span class="dot" onclick="goToSlide(4)"></span>
-                    </div>
+                    <!-- Botões de navegação -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+            
+                    <!-- Paginação -->
+                    <div class="swiper-pagination"></div>
                 </div>
-             </section>
+            </section>
+            
             <!-- Fim dos Depoimentos -->
 
             <!-- Começo dos Depoimentos -->
