@@ -231,12 +231,11 @@ a:hover {
     left: 0;
 }
 
-.swiper-button-prev{
+.swiper-button-next{
     right: 0;
 }
 
 .swiper-pagination{
-
     display: flex;
     justify-content: center;
 }
@@ -280,7 +279,6 @@ a:hover {
     display: block;
     box-sizing: border-box;
 }
-
 
 /* Serviços ------------------------------------------------------*/
 
@@ -715,16 +713,17 @@ footer {
     .swiper-button-prev,
     .swiper-button-next {
         color: rgb(230, 230, 230);
+        display: none;
     }
 
     .quote{
         font-size: 20px;
         text-align: justify;
-        padding: 30px 50px 0 50px;
+        padding: 30px 40px 0 40px;
     }
 
     .autor{
-        font-size: 22px;
+        font-size: 21px;
     }
 
     #servicos{
