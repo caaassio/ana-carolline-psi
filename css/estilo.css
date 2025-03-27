@@ -234,6 +234,7 @@ a:hover {
     padding: 60px;
     box-sizing: border-box;
     text-align: center;
+    
 }
 
 /* Setas de navegação */
@@ -728,6 +729,16 @@ footer {
         width: 95%;
         margin: auto;
         overflow: hidden;
+    }
+
+    .slide {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slide span{
+        padding: 0 0 20px 0;
     }
 
     #servicos{
