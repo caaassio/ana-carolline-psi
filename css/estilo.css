@@ -810,9 +810,8 @@ footer {
     }
     
     .content-servicos {
-        width: 500px;
         box-sizing: border-box; 
-        padding: 25px;
+        padding: 20px;
         text-align: center;
     }
 
@@ -826,7 +825,7 @@ footer {
     }
     
     .content-servicos p{
-        font-size: 1em;
+        font-size: 1.1em;
         text-align: justify;
         align-items: center;
         display: flex;
