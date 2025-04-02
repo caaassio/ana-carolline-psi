@@ -171,19 +171,42 @@ a:hover {
 }
 
 /* Agende --------------------------------------------------------*/
-.agende{
+.agende {
     display: flex;
-    background-color: var(--cor-base);
-    height: 100px;
+    height: 200px;
     align-items: center;
     justify-content: space-around;
     color: #f0f0f0;
+    background-color: var(--cor-base); 
+    position: relative;
+    overflow: hidden;
+}
+
+.agende::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../components/img/agende.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.05; 
+    z-index: 0;
+}
+
+.agende * {
+    position: relative;
+    z-index: 1;
 }
 
 .agende button {
-    padding: 15px 35px;
+    padding: 20px 40px;
     background-color: #f0f0f0;
-    font-size: 16px;
+    font-size: 1em;
     font-family: var(--josefin);
     font-weight: 600;
     color: var(--cor-base);
@@ -193,13 +216,19 @@ a:hover {
 }
 
 .agende button:hover{
-    filter: brightness(0.9);
+    filter: brightness(1.1);
     transform: scale(1.03);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
+.agende p{
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
 .agende a{
     color: var(--cor-base);
+    font-size: 1.3em;
 }
 
 .agende i{
@@ -287,11 +316,11 @@ a:hover {
     background-color: #f0f0f0;
     justify-content: space-around;
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 
 .content-servicos{
-    width: 800px;
+    width: 900px;
     font-family: var(--cambria);
     font-weight: 500;
     text-align: center;
@@ -301,9 +330,18 @@ a:hover {
     padding: 30px 0 30px 0;
 }
 
+.content-servicos i{
+    font-size: 2.5em;
+    padding: 15px 25px 15px 15px;
+    color: var(--cor-base);
+}
+
 .content-servicos p{
     font-size: 1.3em;
     text-align: justify;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 /* FAQ ---------------------------------------------------------------*/
@@ -729,12 +767,22 @@ footer {
     }
 
     .agende button {
-        padding: 15px 30px;
-        font-size: 16px;
+        padding: 15px 30px !important;
+        font-size: 16px !important;
     }
 
     .agende p{
         display: none;
+    }
+    
+    .agende a{
+        color: var(--cor-base);
+        font-size: 1em;
+    }
+    
+    .agende i{
+        font-size: 1.2em;
+        margin: 0 8px;
     }
 
     .swiper-button-prev,
@@ -770,6 +818,18 @@ footer {
 
     .content-servicos h1{
         margin: 15px;
+    }
+    
+    .content-servicos i{
+        padding: 0px 10px 0px 0px;
+        color: var(--cor-base);
+    }
+    
+    .content-servicos p{
+        font-size: 1em;
+        text-align: justify;
+        align-items: center;
+        display: flex;
     }
 
     footer {
