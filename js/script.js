@@ -141,10 +141,35 @@ accordionItemHeaders.forEach(accordionItemHeader =>{
     });
 });
 
+// ---------------------- efeito de transição do accordion ----------------------
+
+document.querySelectorAll(".accordion-item").forEach(item => {
+    item.addEventListener("mouseleave", () => {
+        item.style.transition = "filter 0.5s ease-out, transform 0.5s ease-out";
+        
+        setTimeout(() => {
+            item.style.transition = ""; 
+        }, 500);
+    });
+});
+
+
+// ------------------ efeito de transição dos buttons --------------------------
+
+document.querySelectorAll("button").forEach(item => {
+    item.addEventListener("mouseleave", () => {
+        item.style.transition = "filter 0.5s ease-out, transform 0.5s ease-out";
+        
+        setTimeout(() => {
+            item.style.transition = ""; 
+        }, 500);
+    });
+});
+
 
 // -------------------------------- Transparência botão back to top ---------------------------
-    window.addEventListener("scroll", function () {
-        let btt = document.querySelector(".btt");
+window.addEventListener("scroll", function () {
+    let btt = document.querySelector(".btt");
 
         if (btt) {
             if (window.scrollY > 0) {
