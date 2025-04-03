@@ -745,6 +745,7 @@ footer {
         justify-content: center;
         height: auto;
         gap: 0;
+        box-shadow: none;
     } 
 
     h1{
@@ -886,8 +887,10 @@ footer {
     }
     
     #faq {
-        margin: 30px auto;
-        width: 90%;
+        margin: 0;
+        padding: 30px auto;
+        width: 100%;
+        height: 100%;
         box-shadow: none;
     }
 
