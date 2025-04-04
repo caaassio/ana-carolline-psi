@@ -4,6 +4,7 @@ body, html {
     scroll-behavior: smooth;
     font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
     color: #222;
+    line-height: 1.3;
 }
 
 :root{
@@ -469,7 +470,6 @@ a:hover {
 #contato h1 {
     font-family: var(--cambria);
     font-weight: 700;
-    /* font-size: 2.5em; */
     padding: 30px 0px 30px 0;
     margin: 0px;
     flex-wrap: nowrap;
@@ -502,28 +502,21 @@ a:hover {
     color: #333;
     padding: 5px;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
     text-align: center;
     position: relative; 
     overflow: hidden; 
-    z-index: 1; 
+    z-index: 1;
 }
 
-.contato-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--cor-base); 
-    filter: brightness(1); 
-    z-index: -1; 
-    opacity: 0; 
+.contato-info a{
+    padding: 10px 40px 10px 40px;
+    gap: 5px;
 }
 
-.contato-item:hover::before {
-    opacity: 1; 
-    filter: brightness(1.9); 
+.contato-item:hover{
+    background-color: #eed0ce;
 }
 
 .contato a:link{
@@ -566,23 +559,9 @@ a:hover {
     ; 
 }
 
-.redes-sociais a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--cor-base); 
-    filter: brightness(1); 
-    z-index: -1; 
-    opacity: 0; 
-    border-radius: 50px; 
-}
+.redes-sociais a:hover{
+    background-color: #eed0ce;
 
-.redes-sociais a:hover::before {
-    opacity: 1; 
-    filter: brightness(1.9); 
 }
 
 footer {
