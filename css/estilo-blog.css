@@ -29,7 +29,7 @@ html, body {
 
 .post{
     background-color: #f0f0f0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.03);
     width: 30%;
     min-height: 380px;
     max-height: 100%;
@@ -71,7 +71,7 @@ html, body {
 
 .post p {
     color: #666;
-    height: 75px;
+    height: 95px;
     font-size: 1em;
     margin: 15px;
     display: -webkit-box;
