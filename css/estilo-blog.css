@@ -5,8 +5,13 @@ html, body {
     flex-direction: column;
 }
 
+:root{
+    --cambria:  'Cambria', Times, serif;
+}
+
 .content-wrapper {
-    flex: 1; 
+    flex: 1;
+    font-family: var(--cambria) !important;
 }
 
 #footer-container {
