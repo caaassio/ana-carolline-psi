@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+    color: #222;
+    line-height: 1.3;
+}
+
+:root{
+    --cor-base: #db8e87;
+    --josefin: 'Josefin Sans', Arial, Helvetica, sans-serif;
+    --cambria:  'Cambria', Times, serif;
+}
+
+.content-wrapper {
+    width: 70%;
+    background-color: #f0f0f0; 
+    display: flex;
+    justify-content: center; 
+  }
+
+.container {
+    width: 50%;
+    background-color: white; 
+    display: flex;
+    flex-direction: column;
+}
+
+#depoimentos{
+    width: 100%;
+    height: 100%;
+    padding: 30px 0px 20px 0;
+    margin: 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    font-family: var(--cambria);
+    box-sizing: border-box;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0, 0.01);
+}
+
+#depoimentos h1{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin: 40px 0 10px 0 ;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: #00000054;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    font-weight: bold;
+    transform: translateY(-50%);
+    background-color: rgba(153, 205, 50, 0);
+    overflow: visible;
+    display: flex;
+    z-index: 15; 
+}
+
+.swiper-button-prev{
+    left: 0;
+}
+
+.swiper-button-next{
+    right: 0;
+}
+
+.swiper-pagination{
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-pagination-bullet {
+    background-color: #00000080;
+}
+
+.swiper-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.swiper-slide {
+    box-sizing: border-box;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    width: auto;
+    height: auto;
+}
+
+.quote{
+    font-style: italic;
+    font-size: 24px;
+    font-family: var(--cambria);
+    box-sizing: border-box;
+    text-align: start;
+    display: flex;
+    z-index: 13;
+    padding: 30px 60px 30px 60px;
+    display: block;
+    margin: 0;
+}
+
+.autor{
+    font-weight: bold;
+    font-size: 22px;
+    padding: 30px;
+    display: block;
+    box-sizing: border-box;
+}
+
+    </style>
+</head>
+<body>
+
+    <section id="depoimentos">
+        <div class="swiper">
+            <h1>Depoimentos</h1>
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <p class="quote">
+                        “Há alguns anos, a Ana faz parte da minha história, e desde o começo ela transformou nossas conversas em um verdadeiro espaço de compreensão e acolhimento. Ela me proporcionou um ambiente seguro onde pude explorar meus sentimentos e enfrentar meus desafios com mais confiança. Quando precisei, ela foi uma ouvinte atenta, e também uma guia, oferecendo orientações valiosas. Ela busca comigo a minha melhor versão.<br>
+                        Obrigada, Ana. Você torna essa jornada da vida muito mais leve”
+                    </p>
+                    <span class="autor">
+                        Daniela Ito
+                    </span>
+                </div>
+
+                <div class="swiper-slide">
+                    <p class="quote">
+                        "No meu aniversário, resolvi me dar um presente diferente: uma sessão de terapia. Foi assim que encontrei a Ana, e desde 2020 essa tem sido uma das melhores decisões da minha vida.<br> Cada sessão é um espaço seguro, cheio de acolhimento, onde me redescubro um pouco mais. Tem sido um processo árduo de autoconhecimento, daqueles que a gente nem imagina o quanto vai fazer bem até começar.<br> Ana consegue, com maestria, abordar situações e emoções de forma tão profissional e humanizada que, muitas vezes, nem percebo.<br> Seu carinho e cuidado são impressionantes e inspiradores."
+                    </p>
+                    <span class="autor">
+                        Elysnay Oliveira
+                    </span>
+                </div>
+
+                <div class="swiper-slide">
+                    <p class="quote">
+                        "Me consulto com a Ana desde 2021. E certamente ela contribuiu muito para minha evolução pessoal, mesmo diante a cenários críticos!<br>
+
+                        Indico a Ana de olhos fechados, profissional competente, qualificada, e o principal, trata os pacientes com humanidade!<br>
+
+                        Sempre me atendeu com toda paciência do mundo, e, sou imensamente grata pelo seu trabalho! Como sempre falamos, “minha evolução depende dela e de mim”, mas sem ela, eu não seria metade de quem sou hoje!
+                    </p>
+                    <span class="autor">
+                        Amanda Dias
+                    </span>
+                    
+                </div>
+                <div class="swiper-slide">
+                    <p class="quote">
+                        "Contar com a Ana Carolline no meu processo de desenvolvimento pessoal tem sido essencial! <br> Nossa jornada ainda está em andamento, mas, com sua ajuda, já conquistei uma maior compreensão sobre minhas inseguranças e aprendi a respeitar meu próprio tempo.<br> Além disso, ela sempre traz uma perspectiva clara e prática para as questões levantadas, tornando a reflexão mais leve e direcionada."
+                    </p>
+                    <span class="autor">
+                        Sofia Rocha
+                    </span>
+                </div>
+                <div class="swiper-slide">
+                    <p class="quote">
+                        "Sou paciente da Ana há quatro anos e posso dizer que ela transformou a minha vida. A escuta empática dela e todo o processo terapêutico que construímos ao longo das sessões têm me proporcionado um nível profundo de autoconhecimento. Compreender melhor a minha história e o meu funcionamento tem me trazido paz por ser quem sou e me ajudado a me relacionar com mais leveza com as outras pessoas e suas singularidades.<br>
+                        Admiro a capacidade que a Ana tem de me acolher e de criar um espaço seguro, onde me sinto à vontade para trazer até os temas mais difíceis. Ao final de cada sessão, saio com mais confiança para enfrentá-los — ou com mais disposição para refletir sobre eles com carinho.<br>
+                        Hoje, sei que tenho ferramentas para lidar com os desafios da vida com muito mais segurança e coragem. Obrigada, de coração!"
+                    </p>
+                    <span class="autor">
+                        Barbara Pasqualini
+                    </span>
+                </div>
+
+                <div class="swiper-slide">
+                    <p class="quote">
+                        "Desde a nossa primeira sessão no início de 2022, sinto que iniciei uma incrível jornada de autoconhecimento, superação de desafios e uma grande melhora na forma como enxergo e reajo às situações ao meu redor. Acredito que tive muita sorte em encontrá-la, pois sempre me senti muito confortável durante nossas conversas. Sua dinâmica, profissionalismo e carisma me motivam a continuar o processo terapêutico. Sem dúvidas, consigo indicar seu trabalho sem receio algum!"
+                    </p>
+                    <span class="autor">
+                        Flora Silva
+                    </span>
+                </div>
+
+                <div class="swiper-slide">
+                    <p class="quote">
+                        "Ana Carolline é uma profissional excelente!! O processo terapêutico com ela tem sido enriquecedor porque ela oferece uma escuta atenta e humana durante as sessões, o que nos deixa confortável para abordar nossas vulnerabilidades. Além de sempre nos conduzir para reflexões importantes."
+                    </p>
+                    <span class="autor">
+                        Rafaely Cruz
+                    </span>
+                </div>
+
+                <div class="swiper-slide">
+                    <p class="quote">
+                        "Comecei a fazer terapia com Ana após uma indicação em 2023, onde me encontrei em um momento complicado. A Ana é atenciosa e gentil, uma profissional competente e humana. Só posso agradecê-la por tornar possível continuar seguindo."
+                    </p>
+                    <span class="autor">
+                        Louise Andrade
+                    </span>
+                </div>
+
+                <div class="swiper-slide">
+                    <p class="quote">
+                        "A Ana realmente é uma profissional fora da curva — empática, atenciosa, sempre me fazendo refletir profundamente sobre como quero viver minha vida. Faço terapia com ela há, acredito, mais de três anos, e posso dizer que ela foi uma salvação para mim. <br>
+                        
+                        Passei por um psicólogo pela primeira vez aos 14 anos e tive uma experiência tão ruim que nunca mais quis saber de terapia. Lembro que, quando resolvi dar uma segunda chance, fiquei pesquisando uma psicóloga em um app e simpatizei com ela — mas acabei nem marcando uma sessão, e nem lembro o motivo. Chame de Deus, sorte ou destino, mas foi ela quem acabou me chamando, e aí marcamos uma sessão!
+                        <br>
+                        
+                        Desde então, minha vida tem melhorado a cada encontro. Minha relação comigo mesma, com as outras pessoas, meus problemas com a raiva, o luto pela perda da minha avó... Todas as mudanças que aconteceram de lá pra cá continuam sendo intensas, mas, por causa da Ana, consigo enfrentar as adversidades da vida de uma forma menos destrutiva para comigo mesma.
+                        <br>
+                    
+                        Ela sempre diz o que eu preciso ouvir, sem me julgar ou me olhar torto. Fico muito feliz por ter a Ana como psicóloga na minha vida e, como já falei para ela, espero que ela nunca me dê alta — porque a maluca aqui vai precisar dela pro resto da vida rs.
+                        <br>
+                        
+                        Obrigada por ser a melhor psicóloga que eu poderia ter! E, para quem ainda está em dúvida sobre fazer ou não uma sessão, minha dica é: vá de olhos fechados e coração aberto. Não vão se arrepender!"
+                    </p>
+                    <span class="autor">
+                        Camila Honório
+                    </span>
+                </div>
+
+                <div class="swiper-slide">
+                    <p class="quote">
+                        "Já estou fazendo terapia com a Ana por cerca de 3 anos, e eu acredito muito que pra ter um bom resultado nas sessões é importante um psicólogo que a gente se identifique com a abordagem usada, a Ana é uma excelente profissional, muito dedicada aos pacientes, sempre me ouviu com atenção, me deixou confortável e me orientou muito bem, graças a ajuda dela que hoje estou livre das crises de ansiedade e sigo buscando cuidar da minha saúde mental 🙌❤"
+                    </p>
+                    <span class="autor">
+                        Amanda Molon
+                    </span>
+                </div>
+
+                <div class="swiper-slide">
+                    <p class="quote">
+                        "Eu e a Ana demos match na primeira Sessão e isso é muito bom para o processo terapêutico, pois precisamos nos sentir a vontade e acolhidos para tratar acerca das nossas questões diarias e da vida.
+                        <br>
+                        Tambem, posso afirmar que alem de ser uma ótima psicologa, ela tambem é extremamente responsavel, pontual e comprometida dentro do seu papel.
+                        <br>
+                        Recomendo de olhos fechados tê-la como psicologa e que a enxergue como um investimento no seu auto conhecimento e desenvolvimento ❤️"
+                    </p>
+                    <span class="autor">
+                        Iara Quintans
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <script>
+
+let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+    const intervalTime = 30000; 
+    let autoSlide;
+
+    if (slides.length > 0 && dots.length > 0) {
+        function showSlide(index) {
+            if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else if (index >= slides.length) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+
+            document.querySelector(".carousel-container").style.transform =
+                `translateX(${-currentIndex * 100}%)`;
+
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[currentIndex].classList.add("active");
+        }
+
+    function startAutoSlide() {
+        autoSlide = setInterval(() => {
+            showSlide(currentIndex + 1);
+        }, intervalTime);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
+    }
+
+    document.querySelector(".prev")?.addEventListener("click", () => {
+        showSlide(currentIndex - 1);
+        resetAutoSlide();
+    });
+
+    document.querySelector(".next")?.addEventListener("click", () => {
+        showSlide(currentIndex + 1);
+        resetAutoSlide();
+    });
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+            showSlide(i);
+            resetAutoSlide();
+        });
+    });
+
+    showSlide(currentIndex);
+    startAutoSlide(); 
+}
+
+// ------------------------- Swipe -----------------------------------------------
+document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".swiper", {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        autoplay: {
+            delay: 30000,  // Tempo de transição (em milissegundos)
+            disableOnInteraction: false,
+        },
+        spaceBetween: 20,
+        grabCursor: true,
+    });
+});
+
+
+
+    </script>
+    
+</body>
+</html>

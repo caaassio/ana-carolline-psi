@@ -117,7 +117,7 @@ html, body {
 
     .post{
         width: 400px;
-        height: 380px;
+        height: auto;
     }
 
     .post p{
