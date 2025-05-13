@@ -14,14 +14,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- fontawesome pro -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+
     <script>
+
+        // Carregamento header
         fetch("header.html")
           .then(response => response.text())
           .then(data => document.getElementById("header-container").innerHTML = data);
 
+        // Carregamento footer
         fetch("footer.html")
           .then(response => response.text())
           .then(data => document.getElementById("footer-container").innerHTML = data);
+
+        // Opacidade BTT  
+        window.addEventListener("scroll", function () {
+            let btt = document.querySelector(".btt");
+
+            if (btt) {
+                if (window.scrollY > 0) {
+                    btt.style.opacity = "0.5";
+                } else {
+                    btt.style.opacity = "1";
+                }
+            }
+    });
 
     </script>
 
@@ -34,15 +53,15 @@
 
     <!-- Fim do Header -->
 
-        <!-- Começo Botão back to top -->
+    <!-- Começo Botão back to top -->
 
-        <a href="#logo">
-            <div class="btt">
-                <i class="fa-solid fa-chevron-up"></i>
-            </div>
-        </a>
-    
-        <!-- Fim Botão back to the top -->
+    <a href="#logo">
+        <div class="btt">
+            <i class="fa-solid fa-chevron-up"></i>
+        </div>
+    </a>
+
+    <!-- Fim Botão back to the top -->
 
     <div class="content-wrapper">
         <article class="container">
@@ -150,7 +169,7 @@
     <div id="footer-container"></div>
 
     <!-- Fim do Footer -->
-    
+
     <script src="./js/script.js"></script>
 
 </body>

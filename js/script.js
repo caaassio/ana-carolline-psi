@@ -1,62 +1,73 @@
-// --------------------------- Ajuste de caminhos ------------------------------
+// ---------------- ajuste de caminho -----------------------
 document.addEventListener("DOMContentLoaded", function () {
-    let basePath = window.location.pathname.includes("/posts/") ? "../" : "./";
+  // Definir o basePath com base no ambiente
+  const isGitHubPages = window.location.hostname.includes("github.io");
+  const repoName = "/ spi";
+  const basePath = isGitHubPages ? repoName + "/" : "/";
 
-    fetch(basePath + "header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header-container").innerHTML = data;
+  // Carregar o header
+  fetch(basePath + "header.html")
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.text();
+    })
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
 
-            const link1 = document.createElement("link");
-            link1.rel = "stylesheet";
-            link1.href = basePath + "css/estilo-header.css";
-            document.head.appendChild(link1);
+      // Adicionar CSS dinamicamente
+      const link1 = document.createElement("link");
+      link1.rel = "stylesheet";
+      link1.href = basePath + "css/estilo-header.css";
+      document.head.appendChild(link1);
 
-            const link2 = document.createElement("link");
-            link2.rel = "stylesheet";
-            link2.href = basePath + "css/estilo.css"; 
-            document.head.appendChild(link2);
+      const link2 = document.createElement("link");
+      link2.rel = "stylesheet";
+      link2.href = basePath + "css/estilo.css";
+      document.head.appendChild(link2);
 
-            const menuBtn = document.getElementById("menu-btn");
-            const menu = document.querySelector("header ul");
+      // Configurar o menu toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.querySelector("header ul");
+      if (menuBtn && menu) {
+        menuBtn.addEventListener("click", function () {
+          menu.classList.toggle("show");
+        });
+      }
 
-            if (menuBtn && menu) {
-                menuBtn.addEventListener("click", function () {
-                    menu.classList.toggle("show");
-                });
-            }
+      // Ajustar links e logo
+      document.querySelectorAll("#header-container a, #header-container #logo img").forEach(element => {
+        let attr = element.tagName === "A" ? "href" : "src";
+        let value = element.getAttribute(attr);
+        if (!value.startsWith("http") && !value.startsWith("#")) {
+          if (isGitHubPages) {
+            value = value.replace(/^\.\.\//, "/");
+            element.setAttribute(attr, repoName + value);
+          } else {
+            element.setAttribute(attr, value.startsWith("../") ? value.replace(/^\.\.\//, "/") : value);
+          }
+        }
+      });
+    })
+    .catch(error => {
+      console.error("Erro ao carregar o header:", error);
+      console.log("URL tentada:", basePath + "header.html");
+    });
 
-            const isGitHubPages = window.location.hostname.includes("github.io");
-            const repoName = "/ana-carolline-psi"; 
+  // Carregar o footer
+  fetch(basePath + "footer.html")
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.text();
+    })
+    .then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    })
+    .catch(error => {
+      console.error("Erro ao carregar o footer:", error);
+      console.log("URL tentada:", basePath + "footer.html");
+    });
+});
 
-            document.querySelectorAll("#header-container a").forEach(link => {
-                let href = link.getAttribute("href");
-                if (!href.startsWith("http") && !href.startsWith("#")) { 
-                    if (isGitHubPages) {
-                        if (href.startsWith("../")) {
-                            href = href.replace(/^\.\.\//, "/"); 
-                        }
-                        link.setAttribute("href", repoName + href);
-                    } else {
-                        link.setAttribute("href", href);
-                    }
-                }
-            });
-
-            const logo = document.querySelector("#header-container #logo img");
-            if (logo) {
-                let src = logo.getAttribute("src");
-                if (isGitHubPages) {
-                    if (src.startsWith("../")) {
-                        src = src.replace(/^\.\.\//, "/"); 
-                    }
-                    logo.setAttribute("src", repoName + src);
-                } else {
-                    logo.setAttribute("src", src);
-                }
-            }
-        })
-        .catch(error => console.error("Erro ao carregar o header:", error));
 
 // --------------------- Show foto - Tô usando? -----------------------------------------
     document.querySelector(".foto-home")?.classList.add("show");
@@ -179,40 +190,26 @@ window.addEventListener("scroll", function () {
             }
         }
     });
-});
-
-// ----------------------------- Tempo de leitura ---------------------------------------
-document.addEventListener("DOMContentLoaded", function () {
-    const post = document.querySelector(".post-text"); 
-    const texto = post.querySelector(".post-content").innerText;
-    const palavrasPorMinuto = 200; 
-    const numeroPalavras = texto.split(/\s+/).length; 
-    const tempoLeitura = Math.ceil(numeroPalavras / palavrasPorMinuto);
-
-    const tempoElemento = post.querySelector(".tempo-leitura");
-    if (tempoElemento) {
-        tempoElemento.innerHTML = ` ${tempoLeitura} min`;
-    }
-});
 
 // ------------------------- Swipe -----------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
-    var swiper = new Swiper(".swiper", {
-        loop: true,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        autoplay: {
-            delay: 30000,  // Tempo de transição (em milissegundos)
-            disableOnInteraction: false,
-        },
-        spaceBetween: 20,
-        grabCursor: true,
-    });
+    if (typeof Swiper !== "undefined") {
+        new Swiper(".swiper", {
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 30000,
+                disableOnInteraction: false,
+            },
+            spaceBetween: 20,
+            grabCursor: true,
+        });
+    }
 });
-

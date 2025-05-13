@@ -6,6 +6,7 @@
     <title>Por que sentimos culpa ao nos priorizar?</title>
     <link rel="stylesheet" href="../css/estilo-post.css">
     <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/footer-estilo.css">
 
     <link rel="shortcut icon" href="../components/img/fav-icon.png">
     
@@ -18,6 +19,18 @@
     <!-- fontawesome pro -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
 
+    <script>
+        
+        fetch("../header.html")
+          .then(response => response.text())
+          .then(data => document.getElementById("header-container").innerHTML = data);
+
+        fetch("../footer.html")
+          .then(response => response.text())
+          .then(data => document.getElementById("footer-container").innerHTML = data);
+
+    </script>
+
 </head>
 <body>
 
@@ -27,15 +40,15 @@
 
     <!-- Fim do Header -->
 
-        <!-- Começo Botão back to top -->
+    <!-- Começo Botão back to top -->
 
-        <a href="#logo">
-            <div class="btt">
-                <i class="fa-solid fa-chevron-up"></i>
-            </div>
-        </a>
-    
-        <!-- Fim Botão back to the top -->
+    <a href="#logo">
+        <div class="btt">
+            <i class="fa-solid fa-chevron-up"></i>
+        </div>
+    </a>
+
+    <!-- Fim Botão back to the top -->
 
     <div class="content-wrapper">
         <article class="container">
@@ -100,30 +113,6 @@
     <!-- Fim do Footer -->
     
     <script src="../js/script.js"></script>
-
-    <script>
-        
-        fetch("../header.html")
-            .then(response => {
-            if (!response.ok) {
-            throw new Error("Erro ao carregar o header: " + response.statusText);
-            }
-        return response.text();
-        })
-            .then(data => {
-            console.log("Header carregado com sucesso!");
-            document.getElementById("header-container").innerHTML = data;
-        })
-            .catch(error => {
-            console.error("Erro ao carregar o header:", error);
-        });
-
-        fetch("../footer.html")
-            .then(response => response.text())
-            .then(data => document.getElementById("footer-container").innerHTML = data);
-
-    </script>
-    
-
+       
 </body>
 </html>
