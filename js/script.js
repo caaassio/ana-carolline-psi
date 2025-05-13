@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Definir o basePath com base no ambiente
   const isGitHubPages = window.location.hostname.includes("github.io");
-  const repoName = "/ spi";
+  const repoName = "/ana-carolline-psi"; // Corrigido de "/ spi" para "/ana-carolline-psi"
   const basePath = isGitHubPages ? repoName + "/" : "/";
 
   // Carregar o header
@@ -40,9 +40,14 @@ document.addEventListener("DOMContentLoaded", function () {
         let value = element.getAttribute(attr);
         if (!value.startsWith("http") && !value.startsWith("#")) {
           if (isGitHubPages) {
+            // Garantir que o caminho não tenha ../ e adicionar o repoName
             value = value.replace(/^\.\.\//, "/");
+            if (!value.startsWith("/")) {
+              value = "/" + value; // Adicionar / se necessário
+            }
             element.setAttribute(attr, repoName + value);
           } else {
+            // No Live Server, usar caminhos relativos à raiz
             element.setAttribute(attr, value.startsWith("../") ? value.replace(/^\.\.\//, "/") : value);
           }
         }
@@ -67,6 +72,20 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("URL tentada:", basePath + "footer.html");
     });
 });
+
+  // Carregar o footer
+  fetch(basePath + "footer.html")
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.text();
+    })
+    .then(data => {
+      document.getElementById("footer-container").innerHTML = data;
+    })
+    .catch(error => {
+      console.error("Erro ao carregar o footer:", error);
+      console.log("URL tentada:", basePath + "footer.html");
+    });
 
 
 // --------------------- Show foto - Tô usando? -----------------------------------------
