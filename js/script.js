@@ -184,28 +184,11 @@ document.addEventListener("DOMContentLoaded", function () {
         clickable: true,
       },
       autoplay: {
-        delay: 90000,
+        delay: 30000,
         disableOnInteraction: false,
       },
       spaceBetween: 20,
       grabCursor: true,
     });
   }
-});
-
-// ------------------------ leia mais ------------------------------
-document.querySelectorAll(".leia-mais").forEach((botao) => {
-  botao.addEventListener("click", function () {
-    const secao = document.getElementById("depoimentos");
-
-    if (secao.style.height === "97vh") {
-      secao.style.height = "75vh";
-      this.textContent = "Mostrar mais";
-      this.classList.add("active"); 
-    } else {
-      secao.style.height = "97vh";
-      this.textContent = "Mostrar menos";
-      this.classList.remove("active"); 
-    }
-  });
 });
