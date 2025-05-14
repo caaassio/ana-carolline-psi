@@ -179,7 +179,7 @@ a:hover {
     border-radius: 20px;
 }
 
-/* Agende --------------------------------------------------------*/
+/* ------------ Agende ------------------------------------------*/
 .agende {
     display: flex;
     height: 200px;
@@ -246,7 +246,7 @@ a:hover {
     margin: 0 8px;
 }
 
-/* Depoimentos --------------------------------------------------*/
+/* -------------- Depoimentos --------------------------------------*/
 #depoimentos{
     width: 100%;
     height: auto;
@@ -341,9 +341,7 @@ a:hover {
     flex-direction: column;
     margin: 0;
     position: relative;
-
     overflow-y: scroll;
-    
     margin: 30px 60px;
 }
 
@@ -358,10 +356,9 @@ a:hover {
     position: relative;
 }
 
-/* Alvo geral */
 .quote::-webkit-scrollbar {
-  width: 10px; /* largura vertical */
-  height: 10px; /* altura horizontal */
+  width: 10px;
+  height: 10px; 
 }
 
 .quote::-webkit-scrollbar-track {
@@ -378,8 +375,7 @@ a:hover {
   background: #dba29c;
 }
 
-
-/* Serviços ------------------------------------------------------*/
+/* -----------------Serviços ---------------------------------------*/
 
 #servicos{
     background-color: #f0f0f0;
@@ -414,7 +410,7 @@ a:hover {
     margin: 10px 0;
 }
 
-/* FAQ ---------------------------------------------------------------*/
+/* -------------------FAQ ------------------------------------*/
 
 #faq{
     margin:0;
@@ -511,7 +507,7 @@ a:hover {
     max-height: 1000px;
 }
 
-/* Contato------------------------------------------------------------ */
+/* ---------------------Contato--------------------------------- */
 
 #contato{
     background-color: #f0f0f0;
@@ -869,7 +865,6 @@ footer {
     .content-sobre p{
         width: 100% !important;
         margin: 15px 0;
-        
     }
 
     .agende button {
@@ -902,8 +897,8 @@ footer {
         text-align: justify;
         padding: 0;
         margin: 15px 0;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* Internet Explorer */
+        scrollbar-width: none; 
+        -ms-overflow-style: none; 
     }
 
     .autor{
@@ -1007,6 +1002,4 @@ footer {
     p{
         font-size: 18px !important;
     }
-
 }
-

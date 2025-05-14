@@ -1,9 +1,9 @@
+//----------------- header e toggle do menu ---------------
 document.addEventListener("DOMContentLoaded", function () {
   const isGitHubPages = window.location.hostname.includes("github.io");
   const repoName = "/ana-carolline-psi";
   const basePath = isGitHubPages ? repoName + "/" : "/";
 
-  // Carregar header
   fetch(basePath + "header.html")
     .then(response => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(data => {
       document.getElementById("header-container").innerHTML = data;
 
-      // Adicionar CSS
       const link1 = document.createElement("link");
       link1.rel = "stylesheet";
       link1.href = basePath + "css/estilo-header.css";
@@ -56,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      // ⬇️ Insira aqui os scripts que dependem do header, se houver
     })
     .catch(error => {
       console.error("Erro ao carregar o header:", error);
@@ -75,8 +73,10 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Erro ao carregar o footer:", error);
     });
 
+
   // --------------------- FOTO-HOME -------------------------
   document.querySelector(".foto-home")?.classList.add("show");
+
 
   // --------------------- CARROSSEL -------------------------
   let currentIndex = 0;
