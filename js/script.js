@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
         clickable: true,
       },
       autoplay: {
-        delay: 30000,
+        delay: 90000,
         disableOnInteraction: false,
       },
       spaceBetween: 20,
@@ -192,3 +192,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// ------------------------ leia mais ------------------------------
+document.querySelectorAll(".leia-mais").forEach((botao) => {
+  botao.addEventListener("click", function () {
+    const secao = document.getElementById("depoimentos");
+
+    if (secao.style.height === "97vh") {
+      secao.style.height = "75vh";
+      this.textContent = "Mostrar mais";
+      this.classList.add("active"); // Remove sublinhado
+    } else {
+      secao.style.height = "97vh";
+      this.textContent = "Mostrar menos";
+      this.classList.remove("active"); // Adiciona sublinhado
+    }
+  });
+});
+
+
