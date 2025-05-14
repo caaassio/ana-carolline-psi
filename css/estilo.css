@@ -498,8 +498,8 @@ a:hover {
 .accordion-item-body-content{
     padding: 20px;
     line-height: 1.5rem;
-    border-top: 1px solid #34495e;
-    border-image: linear-gradient(to right, transparent,  #34495e, transparent) 1;
+    border-top: 1px solid #8b8b8b;
+    border-image: linear-gradient(to right, transparent,  #a5a5a5, transparent) 1;
     color: #000;
     background-color: var(--cor-base);
     filter: brightness(1.5);

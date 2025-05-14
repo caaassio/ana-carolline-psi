@@ -26,9 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
       // Menu toggle
       const menuBtn = document.getElementById("menu-btn");
       const menu = document.querySelector("header ul");
+
       if (menuBtn && menu) {
         menuBtn.addEventListener("click", function () {
           menu.classList.toggle("show");
+        });
+
+        // Recolher menu ao clicar em um link
+        const links = menu.querySelectorAll("a");
+        links.forEach(link => {
+          link.addEventListener("click", () => {
+            menu.classList.remove("show");
+          });
         });
       }
 

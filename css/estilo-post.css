@@ -259,8 +259,10 @@ a{
 
     .post-text{
         top: -20px;
-        width: 75%;
+        width: 79% !important;
     }
+
+
     
 
 }
