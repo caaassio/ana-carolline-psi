@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     startAutoSlide();
   }
 
-  // --------------------- FAQ -------------------------
+// --------------------- FAQ -------------------------
   const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
 
   accordionItemHeaders.forEach(accordionItemHeader => {
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ---------------------- Transição dos accordions ----------------------
+// ---------------------- Transição dos accordions ----------------------
   document.querySelectorAll(".accordion-item").forEach(item => {
     item.addEventListener("mouseleave", () => {
       item.style.transition = "filter 0.5s ease-out, transform 0.5s ease-out";
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ---------------------- Transição dos botões ----------------------
+// ---------------------- Transição dos botões ----------------------
   document.querySelectorAll("button").forEach(item => {
     item.addEventListener("mouseleave", () => {
       item.style.transition = "filter 0.5s ease-out, transform 0.5s ease-out";
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ---------------------- Back to Top ----------------------
+// ---------------------- Back to Top ----------------------
   window.addEventListener("scroll", function () {
     let btt = document.querySelector(".btt");
     if (btt) {
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // ---------------------- Swiper ----------------------
+// ---------------------- Swiper ----------------------
   if (typeof Swiper !== "undefined") {
     new Swiper(".swiper", {
       loop: true,
@@ -201,13 +201,11 @@ document.querySelectorAll(".leia-mais").forEach((botao) => {
     if (secao.style.height === "97vh") {
       secao.style.height = "75vh";
       this.textContent = "Mostrar mais";
-      this.classList.add("active"); // Remove sublinhado
+      this.classList.add("active"); 
     } else {
       secao.style.height = "97vh";
       this.textContent = "Mostrar menos";
-      this.classList.remove("active"); // Adiciona sublinhado
+      this.classList.remove("active"); 
     }
   });
 });
-
-
