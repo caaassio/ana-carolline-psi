@@ -336,7 +336,7 @@ a:hover {
     text-align: start;
     display: flex;
     z-index: 13;
-    padding: 30px 60px;
+    padding: 5px 5px;
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -344,18 +344,40 @@ a:hover {
 
     overflow-y: scroll;
     
+    margin: 30px 60px;
 }
 
 .autor{
     font-weight: bold;
     font-size: 22px;
-    padding: 50px 30px 10px 30px;
+    padding: 50px 30px 15px 30px;
     display: flex;
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
     position: relative;
 }
+
+/* Alvo geral */
+.quote::-webkit-scrollbar {
+  width: 10px; /* largura vertical */
+  height: 10px; /* altura horizontal */
+}
+
+.quote::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.quote::-webkit-scrollbar-thumb {
+  background: #f5dddb;
+  
+  border-radius: 8px;
+}
+
+.quote::-webkit-scrollbar-thumb:hover {
+  background: #dba29c;
+}
+
 
 /* Serviços ------------------------------------------------------*/
 
@@ -985,4 +1007,6 @@ footer {
     p{
         font-size: 18px !important;
     }
+
 }
+
