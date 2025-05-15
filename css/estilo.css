@@ -1014,12 +1014,20 @@ footer {
 
     .post-text{
         top: -20px;
-        width: 72%;
+        width: 79% !important;
     }
 }
 
 @media (max-width: 576px) {
     p{
         font-size: 18px !important;
+    }
+
+    .post-text{
+        top: -30px;
+        width: auto !important;
+
+        box-sizing: border-box;
+        margin: 0 20px;
     }
 }
