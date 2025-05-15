@@ -81,11 +81,11 @@ a:hover {
 
 /* Home ---------------------------------------------------------*/
 #home{
-    padding: 30px 0 30px 0;
+    padding: 30px 10px;
     justify-content: space-around;
     align-items: center;
     display: flex;
-    gap: 10%px;
+    gap: 10px;
     box-shadow: 5px 5px 5px 0px rgba(0,0,0, 0.01);
     z-index: 1;
 }
@@ -96,7 +96,7 @@ a:hover {
     font-family: var(--cambria);
     font-weight: 500;
     text-align: center;
-    padding: 15px 25px 15px 35px;
+    padding: 15px 30px 15px 30px;
     display: flex;
     flex-direction: column; 
     align-items: center; 
@@ -111,7 +111,6 @@ a:hover {
     display: block;
     width: 400px;
     border-radius: 20px;
-    margin-right: 10px;
 }
 
 #home button {
@@ -141,7 +140,7 @@ a:hover {
     justify-content: space-around;
     display: flex;
     gap: 15px;
-    padding: 30px 0;
+    padding: 30px 10px;
     box-sizing: border-box;
 }
 
@@ -151,7 +150,7 @@ a:hover {
     font-weight: 500;
     text-align: center;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center; 
     padding: 0px 15px;
 }
@@ -168,7 +167,8 @@ a:hover {
 
 .foto-sobre{
     border-radius: 20px;
-    width: 400px;
+    min-width: 400px;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -626,13 +626,13 @@ footer {
 
     .foto-home img{
         width: 350px;
+        margin: 0;
     }
 
     #home{
         gap: 20px;
         display: flex;
         box-sizing: border-box;
-
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
@@ -644,20 +644,39 @@ footer {
         height: auto;
     }
 
-     #home button{
+    #home button{
         margin: 10px 0;
-    } 
+    }
+    
+    #sobre{
+        display: flex;
+        flex-direction: column-reverse;
+        box-sizing: border-box;
+        width: 100%;
+        gap: 0;
+    }
+
+    .foto-sobre{
+        padding: 15px 0;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .foto-sobre img{
-        width: 300px;
+        width: 400px;
     }
     
     .content-sobre{
         font-size: 0.9em;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .content-sobre h1{
-        margin: 5px; 
+        margin: 10px;
+        font-size: 40px; 
     }
 
     .content-servicos{
@@ -748,29 +767,30 @@ footer {
     .foto-sobre img {
         height: auto; 
         width: auto;
-    } 
-
-    .swiper{
-        width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-        z-index: 0;
     }
 
-    .swiper-slide p{
-        padding: 30px 0 !important;
-        margin: 0 !important;
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+    }
+
+    .swiper-slide p.quote {
+        width: 600px;
+        margin: 0 auto;
     }
 
     .swiper-button-prev{
-        left: -20px;
+        left: 0;
         z-index: 22;
-        overflow: visible;
     }
 
     .swiper-button-next{
-        right: -20px;
+        right: 0px;
         z-index: 22;
+    }
+
+    .autor{
+        padding: 30px 0 40px 0;
     }
 
     #servicos{
