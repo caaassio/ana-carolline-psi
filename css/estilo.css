@@ -1023,11 +1023,16 @@ footer {
         font-size: 18px !important;
     }
 
+    .post-container{
+        padding-bottom: 25px;
+    }
+
     .post-text{
         top: -30px;
         width: auto !important;
 
         box-sizing: border-box;
         margin: 0 20px;
+        padding: 0 15px 15px 15px;
     }
 }
