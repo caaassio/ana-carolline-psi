@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
-      // Corrigir links do header
+      // Links do header
       document.querySelectorAll("#header-container a, #header-container #logo img").forEach(element => {
         let attr = element.tagName === "A" ? "href" : "src";
         let value = element.getAttribute(attr);
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Erro ao carregar o header:", error);
     });
 
-  // Carregar footer
+  // Footer
   fetch(basePath + "footer.html")
     .then(response => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", function () {
     let btt = document.querySelector(".btt");
     if (btt) {
-      btt.style.opacity = window.scrollY > 0 ? "0.5" : "1";
+      btt.style.opacity = window.scrollY > 0 ? "0.3" : "1";
     }
   });
 

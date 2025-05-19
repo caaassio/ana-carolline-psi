@@ -707,6 +707,10 @@ footer {
         margin-top: 30px;
     }
 
+    header a{
+        font-size: 14px;
+    }
+
     .texto-home{
         margin: auto;
         width: 600px;
