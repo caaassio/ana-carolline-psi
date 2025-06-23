@@ -74,61 +74,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-  // --------------------- FOTO-HOME -------------------------
+// --------------------- FOTO-HOME -------------------------
   document.querySelector(".foto-home")?.classList.add("show");
 
 
-  // --------------------- CARROSSEL -------------------------
-  let currentIndex = 0;
-  const slides = document.querySelectorAll(".slide");
-  const dots = document.querySelectorAll(".dot");
-  const intervalTime = 30000;
-  let autoSlide;
+// ----------------------- CARROSSEL ABOUT --------------------
 
-  if (slides.length > 0 && dots.length > 0) {
-    function showSlide(index) {
-      if (index < 0) currentIndex = slides.length - 1;
-      else if (index >= slides.length) currentIndex = 0;
-      else currentIndex = index;
+  const slides = document.querySelectorAll('.foto-slide');
+  let indexAtual = 0;
 
-      document.querySelector(".carousel-container").style.transform =
-        `translateX(${-currentIndex * 100}%)`;
+  setInterval(() => {
+    slides[indexAtual].classList.remove('ativo');
+    indexAtual = (indexAtual + 1) % slides.length;
+    slides[indexAtual].classList.add('ativo');
+  }, 8000); 
 
-      dots.forEach(dot => dot.classList.remove("active"));
-      dots[currentIndex].classList.add("active");
-    }
-
-    function startAutoSlide() {
-      autoSlide = setInterval(() => {
-        showSlide(currentIndex + 1);
-      }, intervalTime);
-    }
-
-    function resetAutoSlide() {
-      clearInterval(autoSlide);
-      startAutoSlide();
-    }
-
-    document.querySelector(".prev")?.addEventListener("click", () => {
-      showSlide(currentIndex - 1);
-      resetAutoSlide();
-    });
-
-    document.querySelector(".next")?.addEventListener("click", () => {
-      showSlide(currentIndex + 1);
-      resetAutoSlide();
-    });
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        showSlide(i);
-        resetAutoSlide();
-      });
-    });
-
-    showSlide(currentIndex);
-    startAutoSlide();
-  }
 
 // --------------------- FAQ -------------------------
   const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");

@@ -109,8 +109,11 @@ a:hover {
 
 .foto-home img{
     display: block;
-    width: 400px;
+    width: 375px;
+    max-height: 630px;
     border-radius: 20px;
+    object-fit: cover;
+
 }
 
 #home button {
@@ -140,7 +143,7 @@ a:hover {
     justify-content: space-around;
     display: flex;
     gap: 15px;
-    padding: 30px 10px;
+    padding: 30px 10px 50px 10px;
     box-sizing: border-box;
 }
 
@@ -166,18 +169,33 @@ a:hover {
 }
 
 .foto-sobre{
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 750px;
+    overflow: hidden;
     border-radius: 20px;
-    min-width: 400px;
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.foto-sobre img{
+.foto-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
     border-radius: 20px;
 }
+
+.foto-slide.ativo {
+    opacity: 1;
+    z-index: 1;
+}
+
 
 /* ------------ Agende ------------------------------------------*/
 .agende {
@@ -408,6 +426,18 @@ a:hover {
     align-items: center;
     display: flex;
     margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.2);
+
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 5px rgba(0,0,0, 0.05);
+    transition: 0.7s ease-in-out;
+
+}
+
+.content-servicos p:hover{
+    transform: scale(1.04);
+    transition: 0.7s ease-in-out;
 }
 
 /* -------------------FAQ ------------------------------------*/
@@ -672,6 +702,7 @@ footer {
         display: flex;
         margin-left: auto;
         margin-right: auto;
+        padding-bottom: 30px;
     }
 
     .content-sobre h1{
@@ -735,7 +766,7 @@ footer {
     }
 
     .foto-home img {
-        max-width: 100%;
+        max-width: 90%;
         max-height: 100%;
         height: auto; 
         width: auto;
@@ -743,34 +774,29 @@ footer {
 
     #sobre{
         display: flex;
-        height: auto;
         flex-direction: column-reverse;
-        text-align: center;
-        justify-content: center;
-        gap: 0px;
     }
 
     .content-sobre{
         margin: auto;
         width: 600px;
-        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .content-sobre p{
+        font-size: 1.2em;
     }
 
     .content-sobre h1{
         margin: 15px;
     }
 
-    .foto-sobre {
-        display: flex;
+    .foto-sobre{
+        width: 100%;
+        max-width: 450px;
+        height: 700px;
         margin-left: auto;
         margin-right: auto;
-        height: auto; 
-        padding: 15px;
-    }
-
-    .foto-sobre img {
-        height: auto; 
-        width: auto;
     }
 
     .swiper-slide {
@@ -852,8 +878,30 @@ footer {
         font-size: 2em;
     }
 
+    #home{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .foto-home{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        order: -1;
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+    }
+
     .foto-home img{
-        display: none;
+        object-fit: cover;
+        object-position: center 105px;
+        transition: 0.7s ease-in-out;
+    }
+
+    .foto-home img:hover{
+        transform: scale(1.1);
     }
 
     .texto-home{
@@ -865,10 +913,12 @@ footer {
     }
 
     #sobre{
-        display: block;
+        display: flex;
+        flex-direction: column-reverse;
         gap: 0;
         margin: 0;
         padding: 0;
+        padding-bottom: 30px;
     }
     
     .content-sobre {
@@ -877,9 +927,17 @@ footer {
         padding: 25px;
         text-align: center;
     }
+
+    .foto-sobre{
+        border-radius: 40px;
+        max-width: 350px;
+        height: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
     
     .foto-sobre img{
-        display: none;
+        display: flex;
     }
 
     .content-sobre h1{
