@@ -19,8 +19,6 @@ body, html {
     background-color: #f0f0f0; 
     display: flex;
     justify-content: center; 
-    padding-top: 5em;
-
 }
 
 .container {
@@ -118,6 +116,9 @@ a:hover {
     gap: 10px;
     box-shadow: var(--sombra);
     z-index: 1;
+
+    position: relative;
+    height: 100%;
 }
 
 .texto-home{
