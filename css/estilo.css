@@ -28,6 +28,13 @@ body, html {
     flex-direction: column;
 }
 
+.crp {
+    all: unset;         
+    font: inherit;      
+    color: inherit;
+    user-select: text;
+}
+
 h1{
     font-size: 2.5em;
 }
