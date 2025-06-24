@@ -19,13 +19,30 @@ body, html {
     background-color: #f0f0f0; 
     display: flex;
     justify-content: center; 
-  }
+    padding-top: 5em;
+
+}
 
 .container {
     width: 70%;
     background-color: white; 
     display: flex;
     flex-direction: column;
+}
+
+.btn-whatsapp {
+    font-family: var(--josefin);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.btn-whatsapp:hover{
+    filter: brightness(1.2);
+    transform: scale(1.03);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .crp {
@@ -36,6 +53,10 @@ body, html {
 }
 
 h1{
+    font-size: 2.5em;
+}
+
+h2{
     font-size: 2.5em;
 }
 
@@ -66,6 +87,7 @@ a:hover {
     z-index: 10;
     opacity: 1; 
     transition: opacity 0.3s ease-in-out; 
+    cursor: pointer;
 }
 
 .btt:hover{
@@ -124,25 +146,15 @@ a:hover {
     box-shadow: var(--sombra);
 }
 
-#home button {
+#home .btn-whatsapp {
     padding: 15px 35px;
     background-color: var(--cor-base);
-    font-size: 16px;
-    font-family: var(--josefin);
-    font-weight: 600;
+    font-size: 1em;
     color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-#home button:hover{
-    filter: brightness(1.2);
-    transform: scale(1.03);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
 
 /* Sobre ---------------------------------------------------------*/
 
@@ -164,7 +176,7 @@ a:hover {
     font-family: var(--cambria);
 }
 
-.header-about h1{
+.header-about h2{
     font-size: 2.5em;
     padding: 0;
     margin: 0;
@@ -262,22 +274,11 @@ a:hover {
     z-index: 1;
 }
 
-.agende button {
+.agende .btn-whatsapp {
     padding: 20px 40px;
     background-color: #f0f0f0;
-    font-size: 1em;
-    font-family: var(--josefin);
-    font-weight: 600;
+    font-size: 1.3em;
     color: var(--cor-base);
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.agende button:hover{
-    filter: brightness(1.1);
-    transform: scale(1.03);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .agende p{
@@ -312,7 +313,7 @@ a:hover {
     overflow: visible;
 }
 
-#depoimentos h1{
+#depoimentos h2{
     display: flex;
     position: relative;
     align-items: center;
@@ -482,7 +483,7 @@ a:hover {
     z-index: 1;
 }
 
-#faq h1 {
+#faq h2 {
     font-family: var(--cambria);
     font-weight: 600;
     padding: 0px 0px 20px 0;
@@ -574,7 +575,7 @@ a:hover {
     background-color: #f0f0f0;
 }
 
-#contato h1 {
+#contato h2 {
     font-family: var(--cambria);
     font-weight: 700;
     padding: 30px 0px 30px 0;
@@ -705,7 +706,7 @@ footer {
         margin: 0;
     }
 
-    #home button{
+    #home .btn-whatsapp{
         margin: 10px 0;
     }
     
@@ -741,7 +742,7 @@ footer {
         padding-bottom: 30px;
     }
 
-    .content-sobre h1{
+    .content-sobre h2{
         margin: 10px;
         font-size: 40px; 
     }
@@ -750,7 +751,7 @@ footer {
         font-size: 0.9em;
     }
 
-    .content-servicos h1{
+    .content-servicos h2{
         margin: 5px; 
     }
 
@@ -776,7 +777,7 @@ footer {
         gap: 0px;
     }
     
-    #home button {
+    #home .btn-whatsapp {
         margin-top: 30px;
     }
 
@@ -902,7 +903,7 @@ footer {
         height: auto;
     }
 
-    .content-servicos h1{
+    .content-servicos h2{
         margin: 15px;
     }
 
@@ -940,7 +941,7 @@ footer {
         display: none;
     }
 
-    h1{
+    h2{
         font-size: 2em;
     }
 
@@ -975,7 +976,7 @@ footer {
         padding: 25px;
     }
 
-    .texto-home h1{
+    .texto-home h2{
         margin: 30px 0;
     }
 
@@ -1029,7 +1030,7 @@ footer {
         height: 700px;
     }
 
-    .content-sobre h1{
+    .content-sobre h2{
         margin: 15px;
     }
 
@@ -1038,7 +1039,7 @@ footer {
         margin: 15px 0;
     }
 
-    .agende button {
+    .agende .btn-whatsapp {
         padding: 15px 30px !important;
         font-size: 16px !important;
     }
@@ -1081,7 +1082,7 @@ footer {
         height: auto;
     }
 
-    #depoimentos h1{
+    #depoimentos h2{
         margin: 15px;
     }
 
@@ -1099,7 +1100,7 @@ footer {
         text-align: center;
     }
 
-    .content-servicos h1{
+    .content-servicos h2{
         margin: 15px;
     }
     
@@ -1144,7 +1145,7 @@ footer {
         box-shadow: none;
     }
 
-    #faq h1 {
+    #faq h2 {
         font-family: var(--cambria);
         /* font-size: 2em; */
         padding: 0px 0px 15px 0;
@@ -1196,7 +1197,7 @@ footer {
         box-sizing: border-box;
     }
 
-    .texto-home h1{
+    .texto-home h2{
         margin: 15px;
     }
 

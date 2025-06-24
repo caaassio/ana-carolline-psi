@@ -2,16 +2,26 @@ header {
     background-color: var(--cor-base);
     display: flex;
     height: 5em;
+    transition: transform 0.3s ease-in-out;
     align-items: center;
     justify-content: space-between;
     color: white;
     padding: 0 30px;
     box-sizing: border-box;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    will-change: transform;
 }
 
 header ul {
     display: flex;
     list-style: none;
+
 }
 
 header ul li {

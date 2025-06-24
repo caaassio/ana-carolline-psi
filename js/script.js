@@ -55,6 +55,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
+      const header = document.querySelector("#header-container header");
+      let lastScrollTop = 0;
+
+      window.addEventListener("scroll", function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop && scrollTop > 50) {
+          header.style.transform = "translateY(-100%)";
+        } else {
+          header.style.transform = "translateY(0)";
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+
     })
     .catch(error => {
       console.error("Erro ao carregar o header:", error);
@@ -133,12 +148,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 // ---------------------- Back to Top ----------------------
-  window.addEventListener("scroll", function () {
-    let btt = document.querySelector(".btt");
-    if (btt) {
-      btt.style.opacity = window.scrollY > 0 ? "0.3" : "1";
-    }
+function ativarBtt() {
+  const btt = document.querySelector(".btt");
+  
+  window.addEventListener("scroll", () => {
+    btt.style.opacity = window.scrollY > 0 ? "0.3" : "1";
   });
+  
+  btt.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({top: 0, behavior: "smooth"});
+  });
+  
+}
+
+document.addEventListener("DOMContentLoaded", ativarBtt);
+
+setTimeout(ativarBtt, 500);
 
 // ---------------------- Swiper ----------------------
   if (typeof Swiper !== "undefined") {
@@ -161,3 +187,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+

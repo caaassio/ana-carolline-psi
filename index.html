@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <title>Psicóloga Ana Carolline</title>
+    <meta name="description" content="Psicóloga Ana Carolline (CRP 06/154233). Atendimento psicológico online com base na psicanálise. Agende sua consulta e cuide da sua saúde mental com acolhimento e escuta humanizada.">
+    <meta property="og:title" content="Psicóloga Ana Carolline | Atendimento Psicológico Online">
+    <meta property="og:description" content="Atendimento humanizado com base na psicanálise. Sessões online com a psicóloga Ana Carolline. Agende agora.">
+    <meta property="og:image" content="https://seudominio.com/components/img/image-home.jpg">
+    <meta property="og:url" content="https://seudominio.com">
+    <meta property="og:type" content="website">
+
+    <title>Psicóloga Ana Carolline | Atendimento Psicológico Online</title>
     <link rel="stylesheet" href="css/estilo.css">
 
     <link rel="shortcut icon" href="components/img/fav-icon.png">
@@ -23,8 +30,34 @@
 
     <script>
         fetch("header.html")
-          .then(response => response.text())
-          .then(data => document.getElementById("header-container").innerHTML = data);
+            .then(response => response.text())
+            .then(data => {
+                const container = document.getElementById("header-container");
+                container.innerHTML = data;
+
+                // Carrega o CSS do header
+                const link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href = "css/estilo-header.css"; // ajuste o caminho conforme seu projeto
+                document.head.appendChild(link);
+
+                const header = container.querySelector("header");
+
+                // Mostrar/esconder o header na rolagem
+                let lastScrollTop = 0;
+
+                window.addEventListener("scroll", function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop && scrollTop > 50) {
+                    header.style.transform = "translateY(-100%)";
+                } else {
+                    header.style.transform = "translateY(0)";
+                }
+
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                });
+            });
 
         fetch("footer.html")
             .then(response => response.text())
@@ -43,11 +76,9 @@
 
         <!-- Começo Botão back to top -->
 
-        <a href="#logo">
-            <div class="btt">
-                <i class="fa-solid fa-chevron-up"></i>
-            </div>
-        </a>
+        <div class="btt" role="button" tabindex="0" aria-label="Voltar ao topo">
+            <i class="fa-solid fa-chevron-up"></i>
+        </div>
 
         <!-- Fim Botão back to the top -->
 
@@ -63,13 +94,12 @@
                         Atendo on-line desde 2019, com base na psicanálise freudiana e um olhar contemporâneo para os desafios da vida atual. Já acompanhei mais de 600 pessoas no Brasil e no exterior. Meu trabalho é feito com escuta, presença e humanidade.
                     </p>
 
-                    <button>
-                        <a href="https://wa.me/5511949186999?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank">AGENDE SEU ATENDIMENTO</a>
-                    </button>
+                    <a href="https://wa.me/5511949186999?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" aria-label="Agendar consulta pelo WhatsApp" rel="noopener noreferrer" class="btn-whatsapp">AGENDE SEU ATENDIMENTO</a>
+                    
 
                 </div>
                 <div class="foto-home">
-                    <img src="./components/img/image-home.jpg">
+                    <img src="./components/img/image-home.jpg" alt="Foto da Psicóloga Ana Carolline sorrindo" loading="lazy">
                 </div>
             </section>
             <!-- Fim do home -->
@@ -78,14 +108,14 @@
             <section id="sobre">
 
                 <div class="header-about">
-                    <h1>Conheça a Ana</h1>
+                    <h2>Conheça a Ana</h2>
                 </div>
 
                 <div class="about-container">
                     <div class="foto-sobre">
-                        <img src="./components/img/image-about-1.jpg" class="foto-slide ativo" alt="Foto 1">
-                        <img src="./components/img/image-about-2.jpg" class="foto-slide" alt="Foto 2">
-                        <img src="./components/img/image-about-3.jpg" class="foto-slide" alt="Foto 3">
+                        <img src="./components/img/image-about-1.jpg" class="foto-slide ativo" alt="Foto da Psicóloga Ana Carolline" loading="lazy">
+                        <img src="./components/img/image-about-2.jpg" class="foto-slide" alt="Foto da Psicóloga Ana Carolline com sua filha" loading="lazy">
+                        <img src="./components/img/image-about-3.jpg" class="foto-slide" alt="Foto da Psicóloga Ana Carolline com seu gato" loading="lazy">
                     </div>
 
 
@@ -119,7 +149,7 @@
 
             <!-- Começo dos Depoimentos -->
             <section id="depoimentos">
-                <h1>Depoimentos</h1>
+                <h2>Depoimentos</h2>
                 <div class="swiper">
                     <div class="swiper-wrapper">
 
@@ -265,11 +295,14 @@
             <!-- Começo de Agende sua consulta -->
              <section class="agende">
                 <p>AGENDE SUA CONSULTA</p>
-                <button>
-                    <a href="https://wa.me/5511949186999?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank"><i class="fa-brands fa-whatsapp"></i>
-                        FAZER AGENDAMENTO</a>
-                    
-                </button>
+                    <a href="https://wa.me/5511949186999?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" 
+                        target="_blank" 
+                        aria-label="Agendar consulta pelo WhatsApp" 
+                        rel="noopener noreferrer"
+                        class="btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                            FAZER AGENDAMENTO
+                    </a>
              </section>
             <!-- Fim de Agende sua consulta -->
 
@@ -279,7 +312,7 @@
             <!-- Começo de Serviços -->
             <section id="servicos">
                 <div class="content-servicos">
-                    <h1>Serviços</h1>
+                    <h2>Serviços</h2>
                     
                     <p><i class="fa-solid fa-brain"></i> Atendimento psicológico online, proporcionando acolhimento e suporte emocional no conforto da sua casa.</p>
                     
@@ -297,7 +330,7 @@
 
             <!-- Começo do FAQ -->
             <section id="faq">
-                <h1>Dúvidas frequentes</h1>
+                <h2>Dúvidas frequentes</h2>
 
                 <div class="accordion">
 
@@ -377,17 +410,17 @@
             <section id="contato">
                 <div class="contato-wrapped">
                     
-                    <h1>Entre em contato</h1>
+                    <h2>Entre em contato</h2>
                     
                     <div class="contato-info">
-                        <a href="mailto:anacpsicologa@icloud.com" class="contato-item">
+                        <a href="mailto:anacpsicologa@icloud.com" class="contato-item" aria-label="Marcar consulta por email" rel="noopener noreferrer">
                             <i class="fa-regular fa-envelope"></i> anacpsicologa@icloud.com
                         </a>
-                        <a href="tel:+5511949186999" class="contato-item">
+                        <a href="tel:+5511949186999" class="contato-item" aria-label="Agendar consulta pelo telefone" rel="noopener noreferrer">
                             <i class="fa-regular fa-phone"></i>
                             +55 11 94918 6999
                         </a>
-                        <a href="https://wa.me/5511949186999" target="_blank" class="contato-item">
+                        <a href="https://wa.me/5511949186999" target="_blank" class="contato-item" aria-label="Agendar consulta pelo WhatsApp" rel="noopener noreferrer">
                             <i class="fa-brands fa-whatsapp"></i>
                             WhatsApp
                         </a>
@@ -395,11 +428,11 @@
                     <div class="redes-sociais">
                         <ul>
                             <li>
-                                <a href="https://www.facebook.com/anacpsicologa" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/anacpsicologa" target="_blank"><i class="fa-brands fa-facebook" aria-label="Link para o facebook" rel="noopener noreferrer"></i></a>
                                 
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/anacpsicologa" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.instagram.com/anacpsicologa" target="_blank"><i class="fa-brands fa-instagram" aria-label="Link para o instagram da psicóloga Ana Carolline" rel="noopener noreferrer"></i></a>
                             </li>
                         </ul>
                     </div>
