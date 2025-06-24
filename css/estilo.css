@@ -114,7 +114,7 @@ a:hover {
     max-height: 630px;
     border-radius: 20px;
     object-fit: cover;
-
+    box-shadow: var(--sombra);
 }
 
 #home button {
@@ -141,11 +141,36 @@ a:hover {
 
 #sobre{
     background-color:  #f0f0f0;
-    justify-content: space-around;
     display: flex;
+    flex-direction: column;
     gap: 15px;
     padding: 30px 10px 50px 10px;
     box-sizing: border-box;
+}
+
+.header-about{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 30px 0;
+    font-family: var(--cambria);
+}
+
+.header-about h1{
+    font-size: 2.5em;
+    padding: 0;
+    margin: 0;
+}
+
+.about-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 15px;
+    flex-basis: 1 1;
 }
 
 .content-sobre{
@@ -157,11 +182,7 @@ a:hover {
     flex-direction: column;
     align-items: center; 
     padding: 0px 15px;
-}
-
-.content-sobre h1{
-    margin: 10px 0 30px 0;
-}
+    flex-basis: 2 1;}
 
 .content-sobre p{
     margin: 0;
@@ -172,12 +193,15 @@ a:hover {
 .foto-sobre{
     position: relative;
     width: 100%;
-    max-width: 450px;
+    max-width: 650px;
+    
     margin-top: auto;
     margin-bottom: auto;
-    height: 750px;
+    height: 90%;
     overflow: hidden;
     border-radius: 20px;
+
+    box-shadow: var(--sombra);
 }
 
 .foto-slide {
