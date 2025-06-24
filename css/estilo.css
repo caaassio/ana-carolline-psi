@@ -939,11 +939,28 @@ footer {
 
     #sobre{
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         gap: 0;
         margin: 0;
         padding: 0;
         padding-bottom: 30px;
+    }
+
+    .about-container{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-about{
+        display: flex;
+        padding: 30px 0 0 0;
+        margin: 0;
     }
     
     .content-sobre {
@@ -951,6 +968,10 @@ footer {
         box-sizing: border-box; 
         padding: 25px;
         text-align: center;
+    }
+
+    .content-sobre p{
+        margin: 0 !important;
     }
 
     .foto-sobre{
