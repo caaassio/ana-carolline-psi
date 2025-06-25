@@ -121,7 +121,7 @@ a:hover {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url(../components/img/bg-home.jpg);
+    background-image: url(/ana-carolline-psi/components/img/bg-home.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* 👈 Efeito parallax */
