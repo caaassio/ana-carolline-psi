@@ -17,32 +17,7 @@
     <!-- fontawesome pro -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
 
-    <script>
-
-        // Carregamento header
-        fetch("header.html")
-          .then(response => response.text())
-          .then(data => document.getElementById("header-container").innerHTML = data);
-
-        // Carregamento footer
-        fetch("footer.html")
-          .then(response => response.text())
-          .then(data => document.getElementById("footer-container").innerHTML = data);
-
-        // Opacidade BTT  
-        window.addEventListener("scroll", function () {
-            let btt = document.querySelector(".btt");
-
-            if (btt) {
-                if (window.scrollY > 0) {
-                    btt.style.opacity = "0.5";
-                } else {
-                    btt.style.opacity = "1";
-                }
-            }
-    });
-
-    </script>
+    <script src="../js/script-post.js" defer></script>
 
 </head>
 <body>
@@ -55,11 +30,9 @@
 
     <!-- Começo Botão back to top -->
 
-    <a href="#logo">
-        <div class="btt">
+    <div class="btt" role="button" tabindex="0" aria-label="Voltar ao topo">
             <i class="fa-solid fa-chevron-up"></i>
-        </div>
-    </a>
+    </div>
 
     <!-- Fim Botão back to the top -->
 

@@ -18,7 +18,8 @@ body, html {
     font-family: var(--cambria) !important;
     background-color: #f0f0f0; 
     display: flex;
-    justify-content: center; 
+    justify-content: center;
+    margin-top: 5em; 
 
   }
 
@@ -79,13 +80,6 @@ a:hover {
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
-}
-
-#footer-container {
-    width: 100%;
-    background: #333;
-    color: white;
-    text-align: center;
 }
 
 .post-container{
@@ -152,6 +146,13 @@ a:hover {
     -webkit-box-orient: vertical;
     overflow: hidden; 
     text-overflow: ellipsis; 
+}
+
+#footer-container {
+    width: 100%;
+    background: #333;
+    color: white;
+    text-align: center;
 }
 
 @media (max-width: 1250px) {
