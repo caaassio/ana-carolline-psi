@@ -187,5 +187,3 @@ setTimeout(ativarBtt, 500);
     });
   }
 });
-
-

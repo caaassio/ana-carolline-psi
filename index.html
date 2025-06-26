@@ -28,43 +28,6 @@
     <!-- fontawesome pro -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
 
-    <script>
-        fetch("header.html")
-            .then(response => response.text())
-            .then(data => {
-                const container = document.getElementById("header-container");
-                container.innerHTML = data;
-
-                // Carrega o CSS do header
-                const link = document.createElement("link");
-                link.rel = "stylesheet";
-                link.href = "css/estilo-header.css"; // ajuste o caminho conforme seu projeto
-                document.head.appendChild(link);
-
-                const header = container.querySelector("header");
-
-                // Mostrar/esconder o header na rolagem
-                let lastScrollTop = 0;
-
-                window.addEventListener("scroll", function () {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                if (scrollTop > lastScrollTop && scrollTop > 50) {
-                    header.style.transform = "translateY(-100%)";
-                } else {
-                    header.style.transform = "translateY(0)";
-                }
-
-                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-                });
-            });
-
-        fetch("footer.html")
-            .then(response => response.text())
-            .then(data => document.getElementById("footer-container").innerHTML = data);
-
-    </script>
-
 </head>
 <body>
 
@@ -85,367 +48,373 @@
         <!-- Fim Botão back to the top -->
 
         <!-- Começo do home -->
-        <section id="home">
+        <section id="home" data-jarallax data-speed="0.5">
+            <img class="jarallax-img" src="components/img/bg-home2.jpg" alt="Fundo psicologia" />
+
             <div class="texto-home">
                 <h1>Às vezes, a vida vai ficando silenciosamente pesada</h1>
-                
+
                 <p>
-                    O que antes se resolvia com tempo ou distração, <b>já não parece funcionar</b>.
-                    Você vem acumulando inquietações no seu dia a dia. Talvez você ainda não saiba exatamente o que quer, mas sente que algo precisa <b>mudar</b>.<br>
-                    É nesse ponto que muitas pessoas chegam até mim.
+                O que antes se resolvia com tempo ou distração, <b>já não parece funcionar</b>.
+                Você vem acumulando inquietações no seu dia a dia. Talvez você ainda não saiba exatamente o que quer, mas sente que algo precisa <b>mudar</b>.<br>
+                É nesse ponto que muitas pessoas chegam até mim.
                 </p>
 
-                <a href="https://wa.me/5511949186999?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" aria-label="Agendar consulta pelo WhatsApp" rel="noopener noreferrer" class="btn-whatsapp">COMECE A SUA MUDANÇA POR AQUI</a>
+                <a href="https://wa.me/5511949186999?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta"
+                target="_blank"
+                aria-label="Agendar consulta pelo WhatsApp"
+                rel="noopener noreferrer"
+                class="btn-whatsapp">COMECE A SUA MUDANÇA POR AQUI</a>
+            </div>
+        </section>
+
+        <!-- Fim do home -->
+
+        <!-- Começo do Sobre -->
+        <section id="sobre">
+
+            <div class="header-about">
+                <h2>Conheça a Ana</h2>
+            </div>
+
+            <div class="grid">                
+
+                <!-- texto topo -->
+                <div class="content-sobre"> 
+                    <p>
+                    Meu nome é Ana Carolline, mas pode me chamar de Ana ou de Carol. Sou psicóloga (CRP 06/154233) formada pela Universidade Paulista (2018), com início da graduação na Universidade Federal do Amazonas em 2012. Atuo na clínica desde 2019, em atendimentos on-line com adolescentes e adultos. Já acompanhei mais de 600 pessoas, residentes no Brasil e também no exterior.
+                    <br><br>
+                    Minha base é a psicanálise freudiana, mas com um olhar adaptado ao tempo em que vivemos. Acredito que, para cuidar de alguém hoje, é preciso entender os desafios da atualidade, não dá pra manter tudo como era há cem anos. Trago essa escuta para o meu trabalho: profunda, mas também contemporânea, acolhendo o que pulsa no agora.
+                    <br><br>
+                    Gosto de pensar que assim como árvores, temos raízes que nos sustentam (nossas vivências, aprendizados, cicatrizes e feridas) e a psicanálise me ajuda a olhar para essas raízes, mas também para o que floresce no presente: nossos relacionamentos, angústias, escolhas, desejos e repetições. O que dói hoje tem história, mas também tem urgência.
+                    <br><br>
+                    Sou mãe, e a maternidade me atravessa como um rio: às vezes manso, às vezes agitado, mas sempre presente.
+                    Ela transformou minha forma de estar no mundo, de ouvir o outro, de cuidar com mais presença e verdade.
+                    Essa experiência me fez mais atenta ao que não é dito, mais sensível ao cansaço, ao invisível e às perguntas que não têm resposta fácil.
+                    </p>
+                </div>
+
+                <div class="foto-sobre">
+                    <img src="./components/img/image-home.jpg" alt="Foto da Psicóloga Ana Carolline sorrindo" loading="lazy">
+                </div>
+
+                <div class="content-sobre-inferior"> 
+                    <p>
+                        
+                        Vivo com meu marido, minha filha pequena e nossos gatos no interior de São Paulo. Já mudei de cidade algumas vezes e conheço o caminho, nem sempre fácil, de recomeçar e se readaptar.
+                        <br><br>
+                        Tenho formações complementares nas áreas de ansiedade, adultez emergente, compulsão alimentar, comunicação não violenta, atitude autocompassiva e psicanálise.
+                        Atendo principalmente mulheres jovens que estão lidando com ansiedade, conflitos familiares e amorosos, TOC, depressão, burnout, maternidade e outras questões.
+                        <br><br>
+                        Meu trabalho é feito de encontros reais.
+                        De uma escuta que não apressa, não julga, não cobra. Só acolhe.
+                        Com presença, afeto e a paciência de quem sabe que viver, às vezes, é por si só um bonito esforço.
+                    </p>
+                </div>
+
+
+            </div>
+
+            <div class="foto-sobre-inferior">
+                <img src="./components/img/image-about-1.jpg" class="foto-slide ativo" alt="Foto da Psicóloga Ana Carolline" loading="lazy">
+                <img src="./components/img/image-about-2.jpg" class="foto-slide" alt="Foto da Psicóloga Ana Carolline com sua filha" loading="lazy">
+                <img src="./components/img/image-about-3.jpg" class="foto-slide" alt="Foto da Psicóloga Ana Carolline com seu gato" loading="lazy">
+            </div>
+            
+        </section>
+        <!-- Fim do Sobre -->
+
+        <!-- Começo dos Depoimentos -->
+        <section id="depoimentos">
+            <h2>Depoimentos</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+
+                        <p class="quote">
+                            “Há alguns anos, a Ana faz parte da minha história, e desde o começo ela transformou nossas conversas em um verdadeiro espaço de compreensão e acolhimento. 
+                            <br><br>Ela me proporcionou um ambiente seguro onde pude explorar meus sentimentos e enfrentar meus desafios com mais confiança. 
+                            <br><br>Quando precisei, ela foi uma ouvinte atenta, e também uma guia, oferecendo orientações valiosas. Ela busca comigo a minha melhor versão.
+                            <br><br>Obrigada, Ana. Você torna essa jornada da vida muito mais leve”
+                            <span class="autor">Daniela Ito</span>
+                        </p>
+
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="quote">
+                            "No meu aniversário, resolvi me dar um presente diferente: uma sessão de terapia. Foi assim que encontrei a Ana, e desde 2020 essa tem sido uma das melhores decisões da minha vida.<br><br> Cada sessão é um espaço seguro, cheio de acolhimento, onde me redescubro um pouco mais. Tem sido um processo árduo de autoconhecimento, daqueles que a gente nem imagina o quanto vai fazer bem até começar.<br><br> Ana consegue, com maestria, abordar situações e emoções de forma tão profissional e humanizada que, muitas vezes, nem percebo.<br><br> Seu carinho e cuidado são impressionantes e inspiradores."
+                            <span class="autor">
+                                Elysnay Oliveira
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="quote">
+                            "Me consulto com a Ana desde 2021. E certamente ela contribuiu muito para minha evolução pessoal, mesmo diante a cenários críticos!<br><br>
+
+                            Indico a Ana de olhos fechados, profissional competente, qualificada, e o principal, trata os pacientes com humanidade!<br><br>
+
+                            Sempre me atendeu com toda paciência do mundo, e, sou imensamente grata pelo seu trabalho! Como sempre falamos, “minha evolução depende dela e de mim”, mas sem ela, eu não seria metade de quem sou hoje!
+                            <span class="autor">
+                                Amanda Dias
+                            </span>
+                        </p>
+                        
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="quote">
+                            "Contar com a Ana Carolline no meu processo de desenvolvimento pessoal tem sido essencial! <br><br> Nossa jornada ainda está em andamento, mas, com sua ajuda, já conquistei uma maior compreensão sobre minhas inseguranças e aprendi a respeitar meu próprio tempo.<br><br> Além disso, ela sempre traz uma perspectiva clara e prática para as questões levantadas, tornando a reflexão mais leve e direcionada."
+                            <span class="autor">
+                                Sofia Rocha
+                            </span>
+                        </p>
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="quote">
+                            "Sou paciente da Ana há quatro anos e posso dizer que ela transformou a minha vida. 
+                            <br><br>A escuta empática dela e todo o processo terapêutico que construímos ao longo das sessões têm me proporcionado um nível profundo de autoconhecimento. Compreender melhor a minha história e o meu funcionamento tem me trazido paz por ser quem sou e me ajudado a me relacionar com mais leveza com as outras pessoas e suas singularidades.<br><br>
+                            Admiro a capacidade que a Ana tem de me acolher e de criar um espaço seguro, onde me sinto à vontade para trazer até os temas mais difíceis. Ao final de cada sessão, saio com mais confiança para enfrentá-los — ou com mais disposição para refletir sobre eles com carinho.<br><br>
+                            Hoje, sei que tenho ferramentas para lidar com os desafios da vida com muito mais segurança e coragem. Obrigada, de coração!"
+                            <span class="autor">
+                                Barbara Pasqualini
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="quote">
+                            "Desde a nossa primeira sessão no início de 2022, sinto que iniciei uma incrível jornada de autoconhecimento, superação de desafios e uma grande melhora na forma como enxergo e reajo às situações ao meu redor. <br><br>Acredito que tive muita sorte em encontrá-la, pois sempre me senti muito confortável durante nossas conversas. Sua dinâmica, profissionalismo e carisma me motivam a continuar o processo terapêutico. Sem dúvidas, consigo indicar seu trabalho sem receio algum!"
+                            <span class="autor">
+                                Flora Silva
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="quote">
+                            "Ana Carolline é uma profissional excelente!! O processo terapêutico com ela tem sido enriquecedor porque ela oferece uma escuta atenta e humana durante as sessões, o que nos deixa confortável para abordar nossas vulnerabilidades. Além de sempre nos conduzir para reflexões importantes."
+                            <span class="autor">
+                                Rafaely Cruz
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="quote">
+                            "Comecei a fazer terapia com Ana após uma indicação em 2023, onde me encontrei em um momento complicado.<br><br> A Ana é atenciosa e gentil, uma profissional competente e humana. Só posso agradecê-la por tornar possível continuar seguindo."
+                            <span class="autor">
+                                Louise Andrade
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="quote">
+                            "A Ana realmente é uma profissional fora da curva — empática, atenciosa, sempre me fazendo refletir profundamente sobre como quero viver minha vida. Faço terapia com ela há, acredito, mais de três anos, e posso dizer que ela foi uma salvação para mim. <br><br>
+                            
+                            Passei por um psicólogo pela primeira vez aos 14 anos e tive uma experiência tão ruim que nunca mais quis saber de terapia. Lembro que, quando resolvi dar uma segunda chance, fiquei pesquisando uma psicóloga em um app e simpatizei com ela — mas acabei nem marcando uma sessão, e nem lembro o motivo. Chame de Deus, sorte ou destino, mas foi ela quem acabou me chamando, e aí marcamos uma sessão!
+                            <br><br>
+                            
+                            Desde então, minha vida tem melhorado a cada encontro. Minha relação comigo mesma, com as outras pessoas, meus problemas com a raiva, o luto pela perda da minha avó... Todas as mudanças que aconteceram de lá pra cá continuam sendo intensas, mas, por causa da Ana, consigo enfrentar as adversidades da vida de uma forma menos destrutiva para comigo mesma.
+                            <br><br>
+                        
+                            Ela sempre diz o que eu preciso ouvir, sem me julgar ou me olhar torto. Fico muito feliz por ter a Ana como psicóloga na minha vida e, como já falei para ela, espero que ela nunca me dê alta — porque a maluca aqui vai precisar dela pro resto da vida rs.
+                            <br><br>
+                            
+                            Obrigada por ser a melhor psicóloga que eu poderia ter! E, para quem ainda está em dúvida sobre fazer ou não uma sessão, minha dica é: vá de olhos fechados e coração aberto. Não vão se arrepender!"
+                            
+                            <span class="autor">
+                                Camila Honório
+                            </span>
+                        </p>
+
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="quote">
+                            "Já estou fazendo terapia com a Ana por cerca de 3 anos, e eu acredito muito que pra ter um bom resultado nas sessões é importante um psicólogo que a gente se identifique com a abordagem usada, a Ana é uma excelente profissional, muito dedicada aos pacientes, sempre me ouviu com atenção, me deixou confortável e me orientou muito bem, graças a ajuda dela que hoje estou livre das crises de ansiedade e sigo buscando cuidar da minha saúde mental 🙌❤"
+                            <span class="autor">
+                                Amanda Molon
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <p class="quote">
+                            "Eu e a Ana demos match na primeira sessão e isso é muito bom para o processo terapêutico, pois precisamos nos sentir a vontade e acolhidos para tratar acerca das nossas questões diárias e da vida.
+                            <br><br>
+                            Também, posso afirmar que alem de ser uma ótima psicóloga, ela tambem é extremamente responsável, pontual e comprometida dentro do seu papel.
+                            <br><br>
+                            Recomendo de olhos fechados tê-la como psicóloga e que a enxergue como um investimento no seu auto conhecimento e desenvolvimento ❤️"
+                            <span class="autor">
+                                Iara Quintans
+                            </span>
+                        </p>
+                    </div> 
+
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+        
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        
+        <!-- Fim dos Depoimentos -->
+
+        <!-- Começo de Agende sua consulta -->
+            <section class="agende">
+            <p>AGENDE SUA CONSULTA</p>
+                <a href="https://wa.me/5511949186999?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" 
+                    target="_blank" 
+                    aria-label="Agendar consulta pelo WhatsApp" 
+                    rel="noopener noreferrer"
+                    class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                        FAZER AGENDAMENTO
+                </a>
+            </section>
+        <!-- Fim de Agende sua consulta -->
+
+        <!-- Começo de Serviços -->
+        <section id="servicos">
+            <div class="content-servicos">
+                <h2>Serviços</h2>
+                
+                <p><i class="fa-solid fa-brain"></i> Atendimento psicológico online, proporcionando acolhimento e suporte emocional no conforto da sua casa.</p>
+                
+                <p><i class="fa-solid fa-brain-circuit"></i> Psicoterapia Individual: Acompanhamento personalizado para ajudar você a lidar com desafios emocionais, autoconhecimento e bem-estar mental.</p>
+                
+                <p><i class="fa-solid fa-head-side-brain"></i> Atendimento para Adolescentes e Adultos: Sessões voltadas para diferentes fases da vida, respeitando as particularidades e necessidades de cada pessoa.</p>
+                
+                <p><i class="fa-solid fa-head-side"></i> Aconselhamento Psicológico: uma técnica terapêutica que visa resolver problemas e dilemas específicos, como crises emocionais, conflitos interpessoais e decisões importantes.</p>   
+                
+                <p><i class="fa-solid fa-pipe-smoking"></i> Abordagem Psicanalítica: 
+                Um espaço de escuta e reflexão, baseado na psicanálise, para compreender suas emoções, pensamentos e padrões de comportamento.</p>
+            </div>
+        </section>
+        <!-- Fim de Serviços -->
+
+        <!-- Começo do FAQ -->
+        <section id="faq">
+            <h2>Dúvidas frequentes</h2>
+
+            <div class="accordion">
+
+                <div class="accordion-item">
+                    <div class="accordion-item-header">
+                        Quanto tempo dura uma sessão?
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            50 minutos.
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="accordion-item">
+                    <div class="accordion-item-header">
+                        Qual a frequência das sessões?
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            O mais comum é uma vez por semana, mas pode variar conforme a necessidade da pessoa e recomendação do terapeuta.
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="accordion-item">
+                    <div class="accordion-item-header">
+                        Quanto tempo leva para ver resultados?
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            Isso varia de pessoa para pessoa. Algumas pessoas percebem melhorias em poucas sessões, enquanto outras precisam de meses ou anos de acompanhamento.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-item-header">
+                        Tudo o que eu disser na terapia é sigiloso?
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            Sim, com exceção de casos onde há risco à sua vida ou à vida de terceiros.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-item-header">
+                        A terapia funciona para todos?
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            A terapia pode ser benéfica para qualquer pessoa, mas os resultados dependem do compromisso do paciente e da relação com o terapeuta.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-item-header">
+                        Schwarzenegger
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolorem esse eligendi voluptatibus necessitatibus inventore saepe optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur adipisci in quas minus sapiente quia alias, quos fugit voluptatibus sed laborum possimus architecto atque hic optio. Voluptates deserunt quasi maiores!
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
         </section>
-        <!-- Fim do home -->
+        
+        <!-- Fim do FAQ -->
 
-
-            <!-- Começo do Sobre -->
-            <section id="sobre">
-
-                <div class="header-about">
-                    <h2>Conheça a Ana</h2>
+        <!-- Começo de Contato -->
+        <section id="contato">
+            <div class="contato-wrapped">
+                
+                <h2>Entre em contato</h2>
+                
+                <div class="contato-info">
+                    <a href="mailto:anacpsicologa@icloud.com" class="contato-item" aria-label="Marcar consulta por email" rel="noopener noreferrer">
+                        <i class="fa-regular fa-envelope"></i> anacpsicologa@icloud.com
+                    </a>
+                    <a href="tel:+5511949186999" class="contato-item" aria-label="Agendar consulta pelo telefone" rel="noopener noreferrer">
+                        <i class="fa-regular fa-phone"></i>
+                        +55 11 94918 6999
+                    </a>
+                    <a href="https://wa.me/5511949186999" target="_blank" class="contato-item" aria-label="Agendar consulta pelo WhatsApp" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
                 </div>
-
-                <div class="grid">                
-
-                    <!-- texto topo -->
-                    <div class="content-sobre"> 
-                        <p>
-                        Meu nome é Ana Carolline, mas pode me chamar de Ana ou de Carol. Sou psicóloga (CRP 06/154233) formada pela Universidade Paulista (2018), com início da graduação na Universidade Federal do Amazonas em 2012. Atuo na clínica desde 2019, em atendimentos on-line com adolescentes e adultos. Já acompanhei mais de 600 pessoas, residentes no Brasil e também no exterior.
-                        <br><br>
-                        Minha base é a psicanálise freudiana, mas com um olhar adaptado ao tempo em que vivemos. Acredito que, para cuidar de alguém hoje, é preciso entender os desafios da atualidade, não dá pra manter tudo como era há cem anos. Trago essa escuta para o meu trabalho: profunda, mas também contemporânea, acolhendo o que pulsa no agora.
-                        <br><br>
-                        Gosto de pensar que assim como árvores, temos raízes que nos sustentam (nossas vivências, aprendizados, cicatrizes e feridas) e a psicanálise me ajuda a olhar para essas raízes, mas também para o que floresce no presente: nossos relacionamentos, angústias, escolhas, desejos e repetições. O que dói hoje tem história, mas também tem urgência.
-                        <br><br>
-                        Sou mãe, e a maternidade me atravessa como um rio: às vezes manso, às vezes agitado, mas sempre presente.
-                        Ela transformou minha forma de estar no mundo, de ouvir o outro, de cuidar com mais presença e verdade.
-                        Essa experiência me fez mais atenta ao que não é dito, mais sensível ao cansaço, ao invisível e às perguntas que não têm resposta fácil.
-                        </p>
-                    </div>
-
-                    <div class="foto-sobre">
-                        <img src="./components/img/image-home.jpg" alt="Foto da Psicóloga Ana Carolline sorrindo" loading="lazy">
-                    </div>
-
-                    <div class="content-sobre-inferior"> 
-                        <p>
+                <div class="redes-sociais">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/anacpsicologa" target="_blank"><i class="fa-brands fa-facebook" aria-label="Link para o facebook" rel="noopener noreferrer"></i></a>
                             
-                            Vivo com meu marido, minha filha pequena e nossos gatos no interior de São Paulo. Já mudei de cidade algumas vezes e conheço o caminho, nem sempre fácil, de recomeçar e se readaptar.
-                            <br><br>
-                            Tenho formações complementares nas áreas de ansiedade, adultez emergente, compulsão alimentar, comunicação não violenta, atitude autocompassiva e psicanálise.
-                            Atendo principalmente mulheres jovens que estão lidando com ansiedade, conflitos familiares e amorosos, TOC, depressão, burnout, maternidade e outras questões.
-                            <br><br>
-                            Meu trabalho é feito de encontros reais.
-                            De uma escuta que não apressa, não julga, não cobra. Só acolhe.
-                            Com presença, afeto e a paciência de quem sabe que viver, às vezes, é por si só um bonito esforço.
-                        </p>
-                    </div>
-
-
-                </div>
-
-                <div class="foto-sobre-inferior">
-                    <img src="./components/img/image-about-1.jpg" class="foto-slide ativo" alt="Foto da Psicóloga Ana Carolline" loading="lazy">
-                    <img src="./components/img/image-about-2.jpg" class="foto-slide" alt="Foto da Psicóloga Ana Carolline com sua filha" loading="lazy">
-                    <img src="./components/img/image-about-3.jpg" class="foto-slide" alt="Foto da Psicóloga Ana Carolline com seu gato" loading="lazy">
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/anacpsicologa" target="_blank"><i class="fa-brands fa-instagram" aria-label="Link para o instagram da psicóloga Ana Carolline" rel="noopener noreferrer"></i></a>
+                        </li>
+                    </ul>
                 </div>
                 
-            </section>
-            <!-- Fim do Sobre -->
-
-            <!-- Começo dos Depoimentos -->
-            <section id="depoimentos">
-                <h2>Depoimentos</h2>
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-
-                            <p class="quote">
-                                “Há alguns anos, a Ana faz parte da minha história, e desde o começo ela transformou nossas conversas em um verdadeiro espaço de compreensão e acolhimento. 
-                                <br><br>Ela me proporcionou um ambiente seguro onde pude explorar meus sentimentos e enfrentar meus desafios com mais confiança. 
-                                <br><br>Quando precisei, ela foi uma ouvinte atenta, e também uma guia, oferecendo orientações valiosas. Ela busca comigo a minha melhor versão.
-                                <br><br>Obrigada, Ana. Você torna essa jornada da vida muito mais leve”
-                                <span class="autor">Daniela Ito</span>
-                            </p>
-
-                        </div>
-
-                        <div class="swiper-slide">
-                            <p class="quote">
-                                "No meu aniversário, resolvi me dar um presente diferente: uma sessão de terapia. Foi assim que encontrei a Ana, e desde 2020 essa tem sido uma das melhores decisões da minha vida.<br><br> Cada sessão é um espaço seguro, cheio de acolhimento, onde me redescubro um pouco mais. Tem sido um processo árduo de autoconhecimento, daqueles que a gente nem imagina o quanto vai fazer bem até começar.<br><br> Ana consegue, com maestria, abordar situações e emoções de forma tão profissional e humanizada que, muitas vezes, nem percebo.<br><br> Seu carinho e cuidado são impressionantes e inspiradores."
-                                <span class="autor">
-                                    Elysnay Oliveira
-                                </span>
-                            </p>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <p class="quote">
-                                "Me consulto com a Ana desde 2021. E certamente ela contribuiu muito para minha evolução pessoal, mesmo diante a cenários críticos!<br><br>
-
-                                Indico a Ana de olhos fechados, profissional competente, qualificada, e o principal, trata os pacientes com humanidade!<br><br>
-
-                                Sempre me atendeu com toda paciência do mundo, e, sou imensamente grata pelo seu trabalho! Como sempre falamos, “minha evolução depende dela e de mim”, mas sem ela, eu não seria metade de quem sou hoje!
-                                <span class="autor">
-                                    Amanda Dias
-                                </span>
-                            </p>
-                            
-                        </div>
-                        <div class="swiper-slide">
-                            <p class="quote">
-                                "Contar com a Ana Carolline no meu processo de desenvolvimento pessoal tem sido essencial! <br><br> Nossa jornada ainda está em andamento, mas, com sua ajuda, já conquistei uma maior compreensão sobre minhas inseguranças e aprendi a respeitar meu próprio tempo.<br><br> Além disso, ela sempre traz uma perspectiva clara e prática para as questões levantadas, tornando a reflexão mais leve e direcionada."
-                                <span class="autor">
-                                    Sofia Rocha
-                                </span>
-                            </p>
-                        </div>
-                        <div class="swiper-slide">
-                            <p class="quote">
-                                "Sou paciente da Ana há quatro anos e posso dizer que ela transformou a minha vida. 
-                                <br><br>A escuta empática dela e todo o processo terapêutico que construímos ao longo das sessões têm me proporcionado um nível profundo de autoconhecimento. Compreender melhor a minha história e o meu funcionamento tem me trazido paz por ser quem sou e me ajudado a me relacionar com mais leveza com as outras pessoas e suas singularidades.<br><br>
-                                Admiro a capacidade que a Ana tem de me acolher e de criar um espaço seguro, onde me sinto à vontade para trazer até os temas mais difíceis. Ao final de cada sessão, saio com mais confiança para enfrentá-los — ou com mais disposição para refletir sobre eles com carinho.<br><br>
-                                Hoje, sei que tenho ferramentas para lidar com os desafios da vida com muito mais segurança e coragem. Obrigada, de coração!"
-                                <span class="autor">
-                                    Barbara Pasqualini
-                                </span>
-                            </p>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <p class="quote">
-                                "Desde a nossa primeira sessão no início de 2022, sinto que iniciei uma incrível jornada de autoconhecimento, superação de desafios e uma grande melhora na forma como enxergo e reajo às situações ao meu redor. <br><br>Acredito que tive muita sorte em encontrá-la, pois sempre me senti muito confortável durante nossas conversas. Sua dinâmica, profissionalismo e carisma me motivam a continuar o processo terapêutico. Sem dúvidas, consigo indicar seu trabalho sem receio algum!"
-                                <span class="autor">
-                                    Flora Silva
-                                </span>
-                            </p>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <p class="quote">
-                                "Ana Carolline é uma profissional excelente!! O processo terapêutico com ela tem sido enriquecedor porque ela oferece uma escuta atenta e humana durante as sessões, o que nos deixa confortável para abordar nossas vulnerabilidades. Além de sempre nos conduzir para reflexões importantes."
-                                <span class="autor">
-                                    Rafaely Cruz
-                                </span>
-                            </p>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <p class="quote">
-                                "Comecei a fazer terapia com Ana após uma indicação em 2023, onde me encontrei em um momento complicado.<br><br> A Ana é atenciosa e gentil, uma profissional competente e humana. Só posso agradecê-la por tornar possível continuar seguindo."
-                                <span class="autor">
-                                    Louise Andrade
-                                </span>
-                            </p>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <p class="quote">
-                                "A Ana realmente é uma profissional fora da curva — empática, atenciosa, sempre me fazendo refletir profundamente sobre como quero viver minha vida. Faço terapia com ela há, acredito, mais de três anos, e posso dizer que ela foi uma salvação para mim. <br><br>
-                                
-                                Passei por um psicólogo pela primeira vez aos 14 anos e tive uma experiência tão ruim que nunca mais quis saber de terapia. Lembro que, quando resolvi dar uma segunda chance, fiquei pesquisando uma psicóloga em um app e simpatizei com ela — mas acabei nem marcando uma sessão, e nem lembro o motivo. Chame de Deus, sorte ou destino, mas foi ela quem acabou me chamando, e aí marcamos uma sessão!
-                                <br><br>
-                                
-                                Desde então, minha vida tem melhorado a cada encontro. Minha relação comigo mesma, com as outras pessoas, meus problemas com a raiva, o luto pela perda da minha avó... Todas as mudanças que aconteceram de lá pra cá continuam sendo intensas, mas, por causa da Ana, consigo enfrentar as adversidades da vida de uma forma menos destrutiva para comigo mesma.
-                                <br><br>
-                            
-                                Ela sempre diz o que eu preciso ouvir, sem me julgar ou me olhar torto. Fico muito feliz por ter a Ana como psicóloga na minha vida e, como já falei para ela, espero que ela nunca me dê alta — porque a maluca aqui vai precisar dela pro resto da vida rs.
-                                <br><br>
-                                
-                                Obrigada por ser a melhor psicóloga que eu poderia ter! E, para quem ainda está em dúvida sobre fazer ou não uma sessão, minha dica é: vá de olhos fechados e coração aberto. Não vão se arrepender!"
-                                
-                                <span class="autor">
-                                    Camila Honório
-                                </span>
-                            </p>
-
-                        </div>
-
-                        <div class="swiper-slide">
-                            <p class="quote">
-                                "Já estou fazendo terapia com a Ana por cerca de 3 anos, e eu acredito muito que pra ter um bom resultado nas sessões é importante um psicólogo que a gente se identifique com a abordagem usada, a Ana é uma excelente profissional, muito dedicada aos pacientes, sempre me ouviu com atenção, me deixou confortável e me orientou muito bem, graças a ajuda dela que hoje estou livre das crises de ansiedade e sigo buscando cuidar da minha saúde mental 🙌❤"
-                                <span class="autor">
-                                    Amanda Molon
-                                </span>
-                            </p>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <p class="quote">
-                                "Eu e a Ana demos match na primeira sessão e isso é muito bom para o processo terapêutico, pois precisamos nos sentir a vontade e acolhidos para tratar acerca das nossas questões diárias e da vida.
-                                <br><br>
-                                Também, posso afirmar que alem de ser uma ótima psicóloga, ela tambem é extremamente responsável, pontual e comprometida dentro do seu papel.
-                                <br><br>
-                                Recomendo de olhos fechados tê-la como psicóloga e que a enxergue como um investimento no seu auto conhecimento e desenvolvimento ❤️"
-                                <span class="autor">
-                                    Iara Quintans
-                                </span>
-                            </p>
-                        </div> 
-
-                    </div>
-
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-            
-                    <div class="swiper-pagination"></div>
-                </div>
-            </section>
-            
-            <!-- Fim dos Depoimentos -->
-
-            <!-- Começo de Agende sua consulta -->
-             <section class="agende">
-                <p>AGENDE SUA CONSULTA</p>
-                    <a href="https://wa.me/5511949186999?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" 
-                        target="_blank" 
-                        aria-label="Agendar consulta pelo WhatsApp" 
-                        rel="noopener noreferrer"
-                        class="btn-whatsapp">
-                        <i class="fa-brands fa-whatsapp"></i>
-                            FAZER AGENDAMENTO
-                    </a>
-             </section>
-            <!-- Fim de Agende sua consulta -->
-
-            <!-- Começo de Serviços -->
-            <section id="servicos">
-                <div class="content-servicos">
-                    <h2>Serviços</h2>
-                    
-                    <p><i class="fa-solid fa-brain"></i> Atendimento psicológico online, proporcionando acolhimento e suporte emocional no conforto da sua casa.</p>
-                    
-                    <p><i class="fa-solid fa-brain-circuit"></i> Psicoterapia Individual: Acompanhamento personalizado para ajudar você a lidar com desafios emocionais, autoconhecimento e bem-estar mental.</p>
-                    
-                    <p><i class="fa-solid fa-head-side-brain"></i> Atendimento para Adolescentes e Adultos: Sessões voltadas para diferentes fases da vida, respeitando as particularidades e necessidades de cada pessoa.</p>
-                    
-                    <p><i class="fa-solid fa-head-side"></i> Aconselhamento Psicológico: uma técnica terapêutica que visa resolver problemas e dilemas específicos, como crises emocionais, conflitos interpessoais e decisões importantes.</p>   
-                    
-                    <p><i class="fa-solid fa-pipe-smoking"></i> Abordagem Psicanalítica: 
-                    Um espaço de escuta e reflexão, baseado na psicanálise, para compreender suas emoções, pensamentos e padrões de comportamento.</p>
-                </div>
-            </section>
-            <!-- Fim de Serviços -->
-
-            <!-- Começo do FAQ -->
-            <section id="faq">
-                <h2>Dúvidas frequentes</h2>
-
-                <div class="accordion">
-
-                    <div class="accordion-item">
-                        <div class="accordion-item-header">
-                            Quanto tempo dura uma sessão?
-                        </div>
-                        <div class="accordion-item-body">
-                            <div class="accordion-item-body-content">
-                                50 minutos.
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="accordion-item">
-                        <div class="accordion-item-header">
-                            Qual a frequência das sessões?
-                        </div>
-                        <div class="accordion-item-body">
-                            <div class="accordion-item-body-content">
-                                O mais comum é uma vez por semana, mas pode variar conforme a necessidade da pessoa e recomendação do terapeuta.
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="accordion-item">
-                        <div class="accordion-item-header">
-                            Quanto tempo leva para ver resultados?
-                        </div>
-                        <div class="accordion-item-body">
-                            <div class="accordion-item-body-content">
-                                Isso varia de pessoa para pessoa. Algumas pessoas percebem melhorias em poucas sessões, enquanto outras precisam de meses ou anos de acompanhamento.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-item-header">
-                            Tudo o que eu disser na terapia é sigiloso?
-                        </div>
-                        <div class="accordion-item-body">
-                            <div class="accordion-item-body-content">
-                                Sim, com exceção de casos onde há risco à sua vida ou à vida de terceiros.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-item-header">
-                            A terapia funciona para todos?
-                        </div>
-                        <div class="accordion-item-body">
-                            <div class="accordion-item-body-content">
-                                A terapia pode ser benéfica para qualquer pessoa, mas os resultados dependem do compromisso do paciente e da relação com o terapeuta.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-item-header">
-                            Schwarzenegger
-                        </div>
-                        <div class="accordion-item-body">
-                            <div class="accordion-item-body-content">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit dolorem esse eligendi voluptatibus necessitatibus inventore saepe optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur adipisci in quas minus sapiente quia alias, quos fugit voluptatibus sed laborum possimus architecto atque hic optio. Voluptates deserunt quasi maiores!
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </section>
-            
-            <!-- Fim do FAQ -->
-
-            <!-- Começo de Contato -->
-            <section id="contato">
-                <div class="contato-wrapped">
-                    
-                    <h2>Entre em contato</h2>
-                    
-                    <div class="contato-info">
-                        <a href="mailto:anacpsicologa@icloud.com" class="contato-item" aria-label="Marcar consulta por email" rel="noopener noreferrer">
-                            <i class="fa-regular fa-envelope"></i> anacpsicologa@icloud.com
-                        </a>
-                        <a href="tel:+5511949186999" class="contato-item" aria-label="Agendar consulta pelo telefone" rel="noopener noreferrer">
-                            <i class="fa-regular fa-phone"></i>
-                            +55 11 94918 6999
-                        </a>
-                        <a href="https://wa.me/5511949186999" target="_blank" class="contato-item" aria-label="Agendar consulta pelo WhatsApp" rel="noopener noreferrer">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            WhatsApp
-                        </a>
-                    </div>
-                    <div class="redes-sociais">
-                        <ul>
-                            <li>
-                                <a href="https://www.facebook.com/anacpsicologa" target="_blank"><i class="fa-brands fa-facebook" aria-label="Link para o facebook" rel="noopener noreferrer"></i></a>
-                                
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/anacpsicologa" target="_blank"><i class="fa-brands fa-instagram" aria-label="Link para o instagram da psicóloga Ana Carolline" rel="noopener noreferrer"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                </div>
-            </section>
-            <!-- Fim de Contato -->
+            </div>
+        </section>
+        <!-- Fim de Contato -->
     
     </div>
+    <!-- Fim do Container -->
+
     <!-- Começo do Footer -->
 
     <div id="footer-container"></div>
@@ -453,6 +422,10 @@
     <!-- Fim do Footer -->
     
     <script src="js/script.js"></script>
+
+    <!-- Jarallax (JS + CSS) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
 
 </body>
 </html>
