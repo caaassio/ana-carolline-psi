@@ -11,7 +11,7 @@ body, html {
     --cor-base: #db8e87;
     --josefin: 'Josefin Sans', Arial, Helvetica, sans-serif;
     --cambria:  'Cambria', Times, serif;
-    --sombra: 5px 5px 5px 0px rgba(0,0,0, 0.01);
+    --sombra: 5px 5px 5px 1px rgba(0,0,0, 0.06);
 }
 
 .container {
@@ -30,6 +30,12 @@ body, html {
     cursor: pointer;
     border-radius: 5px;
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    box-shadow: var(--sombra),
+                inset 2px 2px 3px rgba(255, 255, 255, 0.3);
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+    text-align: center;
 }
 
 .btn-whatsapp:hover{
@@ -109,7 +115,6 @@ a:hover {
     align-items: center;
     display: flex;
     gap: 10px;
-    box-shadow: var(--sombra);
     z-index: 1;
     box-sizing: border-box;
     position: relative;
@@ -121,11 +126,11 @@ a:hover {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url(../components/img/bg-home.jpg);
+    background-image: url(../components/img/bg-home2.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
-    opacity: 0.3;
+    /* opacity: 0.3;  */
     z-index: 0;
     pointer-events: none;
 }
@@ -158,7 +163,6 @@ a:hover {
     display: block;
     width: 375px;
     max-height: 630px;
-    border-radius: 20px;
     object-fit: cover;
     box-shadow: var(--sombra);
 }
@@ -168,7 +172,7 @@ a:hover {
     position: relative;
     padding: 15px 35px;
     background-color: var(--cor-base);
-    font-size: 1em;
+    font-size: 1.2em;
     color: white;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -196,7 +200,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px 0 30px 0;
+    margin: 0;
     font-family: var(--cambria);
 }
 
@@ -211,7 +215,7 @@ a:hover {
     grid-template-columns: repeat(5, 1fr); 
     grid-template-rows: auto auto;         
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -234,14 +238,14 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
 }
 
 .foto-sobre img {
     max-width: 100%;
-    width: 76%;
+    width: 72%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 20px;
     object-fit: cover;
 }
 
@@ -266,7 +270,6 @@ a:hover {
     overflow: hidden;
     position: relative;
     max-width: 100%;
-    border-radius: 15px;
 }
 
 .foto-slide {
@@ -275,7 +278,7 @@ a:hover {
     transition: opacity 1s ease-in-out;
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 20px;
     object-fit: cover;
 }
 
@@ -295,7 +298,7 @@ a:hover {
     background-color: var(--cor-base); 
     position: relative;
     overflow: hidden;
-    box-shadow: 5px 5px 5px 0px rgba(0,0,0, 0.01);
+    box-shadow: var(--sombra);
 }
 
 .agende::before {
@@ -346,7 +349,7 @@ a:hover {
     width: 70%;
     height: auto;
     background-color: #fff;
-    padding: 20px 0px;
+    padding: 30px 0px;
     margin: 0px;
     display: block;
     flex-wrap: nowrap;
@@ -365,7 +368,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    margin: 15px 0 10px 0 ;
+    margin: 0 0 10px 0 ;
 }
 
 .swiper-button-prev,
@@ -453,22 +456,21 @@ a:hover {
 }
 
 .quote::-webkit-scrollbar {
-  width: 10px;
-  height: 10px; 
+    width: 10px;
+    height: 10px; 
 }
 
 .quote::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 
 .quote::-webkit-scrollbar-thumb {
-  background: #f5dddb;
-  
-  border-radius: 8px;
+    background: #f5dddb;
+    border-radius: 8px;
 }
 
 .quote::-webkit-scrollbar-thumb:hover {
-  background: #dba29c;
+    background: #dba29c;
 }
 
 /* -----------------Serviços ---------------------------------------*/
@@ -477,7 +479,7 @@ a:hover {
     background-color: #f0f0f0;
     justify-content: space-around;
     display: flex;
-    margin: 30px;
+    padding: 30px;
     gap: 20px;
 }
 
@@ -497,6 +499,11 @@ a:hover {
     font-size: 2.5em;
     padding: 15px 25px 15px 0px;
     color: var(--cor-base);
+}
+
+.content-servicos h2{
+    margin: 0;
+    padding: 0 0 10px 0;
 }
 
 .content-servicos p{
@@ -523,7 +530,7 @@ a:hover {
 
 #faq{
     margin:0;
-    padding: 20px 0 30px 0;
+    padding: 30px 0 30px 0;
     width: 70%;
     height: 100%;
     box-shadow: 5px 5px 5px 0px rgba(0,0,0, 0.01);
@@ -536,7 +543,7 @@ a:hover {
 #faq h2 {
     font-family: var(--cambria);
     font-weight: 600;
-    padding: 0px 0px 20px 0;
+    padding: 0px 0px 10px 0;
     margin: 0px;
     flex-wrap: nowrap;
     display: flex;
@@ -623,12 +630,13 @@ a:hover {
 
 #contato{
     background-color: #f0f0f0;
+    margin: 30px;
 }
 
 #contato h2 {
     font-family: var(--cambria);
     font-weight: 700;
-    padding: 30px 0px 30px 0;
+    padding: 0 0px 30px 0;
     margin: 0px;
     flex-wrap: nowrap;
 }
@@ -641,7 +649,6 @@ a:hover {
     display: flex;
     flex-direction: column;
     text-align: start;
-    padding: 0px 20px 20px 20px;
     max-width: 500px;
     margin: 0 auto;
     align-items: center;
@@ -903,6 +910,7 @@ footer {
         height: 700px;
         margin-left: auto;
         margin-right: auto;
+
     }
 
     .foto-sobre img{
@@ -1061,7 +1069,7 @@ footer {
 
     .foto-sobre{
         display: block;
-        border-radius: 40px;
+        border-radius: 50%;
         margin-left: auto;
         margin-right: auto;
         width: 100%;
@@ -1069,6 +1077,7 @@ footer {
         min-height: 700px;
         height: 700px;
     }
+
 
     .content-sobre h2{
         margin: 15px;
@@ -1125,7 +1134,7 @@ footer {
     }
 
     #depoimentos h2{
-        margin: 15px;
+        margin: 0 0 15px 0;
     }
 
     #servicos{
@@ -1140,7 +1149,7 @@ footer {
     
     .content-servicos {
         box-sizing: border-box; 
-        padding: 20px;
+        padding: 30px 20px;
         text-align: center;
         width: 100%;
     }
@@ -1160,28 +1169,7 @@ footer {
         align-items: center;
         display: flex;
     }
-
-    footer {
-        font-size: 16px;
-        text-transform:inherit;
-        text-align: center;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    footer span{
-        align-items: center;
-    }
-
-    footer #nome {
-        display: block;
-    }
-
-    footer #crp {
-        margin-top: 0;
-    }
-    
+   
     #faq {
         margin: 0;
         padding: 30px auto;
@@ -1212,6 +1200,27 @@ footer {
     .post-text{
         top: -20px;
         width: 79% !important;
+    }
+
+    footer {
+        font-size: 16px;
+        text-transform:inherit;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    footer span{
+        align-items: center;
+    }
+
+    footer #nome {
+        display: block;
+    }
+
+    footer #crp {
+        margin-top: 0;
     }
 }
 
@@ -1284,16 +1293,22 @@ footer {
     }
 
     .foto-sobre {
-        width: 90%;
-        margin: 0 auto;
         display: flex;
-        justify-content: center;
+        width: 300px;
+        height: 300px;
+        min-height: 300px;
+        max-width: 300px;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin-bottom: 20px;
     }
 
     .foto-sobre img {
+        padding-top: 190px;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: 500px;
+        display: flex;
+        object-fit: cover !important;
     }
     .content-sobre{
         order: 2;
@@ -1321,11 +1336,19 @@ footer {
     }
 
     .foto-sobre img{
-        border-radius: 20px;
         object-fit: cover;
     }
     .foto-slide {
         width: 90%;
         height: auto;
+        border-radius: 20px;
+    }
+
+    #servicos{
+        padding: 0;
+    }
+
+    #servicos h2{
+        margin: 0;
     }
 }
