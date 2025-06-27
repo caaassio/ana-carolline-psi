@@ -121,11 +121,11 @@ a:hover {
     height: auto;
     width: 100%;
     overflow: hidden;
-    font-family: var(--cambria);
 
+    background-color: var(--cor-base);
 }
 
-.jarallax-img {
+#home .jarallax-img {
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -291,25 +291,11 @@ a:hover {
     box-shadow: var(--sombra);
 }
 
-.agende::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+.agende .jarallax-img {
+    object-fit: cover;
     width: 100%;
     height: 100%;
-    background-image: url(../components/img/agende.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    opacity: 0.05; 
-    z-index: 0;
-}
-
-.agende * {
-    position: relative;
-    z-index: 1;
+    opacity: 0.05;
 }
 
 .agende .btn-whatsapp {
@@ -840,11 +826,9 @@ footer {
 
     .container {
         width: 100%;
-        background-color: white; 
         display: flex;
         box-sizing: border-box;
         flex-direction: column;
-        gap: 20px;
     }
 
     .foto-home {
@@ -871,6 +855,12 @@ footer {
         justify-content: center;
         box-sizing: border-box;
         min-height: 100vh;
+        width: 100%;
+    }
+
+    .grid{
+        display: flex;
+        flex-direction: column;
     }
 
     .about-container{
@@ -884,12 +874,18 @@ footer {
 
     .content-sobre{
         margin: auto;
-        width: 700px;
+        width: auto;
         padding-bottom: 20px;
     }
 
     .content-sobre p{
-        font-size: 1.2em;
+        font-size: 1em;
+        line-height: 1.3em;
+    }
+
+    .content-sobre-inferior p{
+        font-size: 1em;
+        line-height: 1.3em;
     }
 
     .foto-sobre{
@@ -900,7 +896,7 @@ footer {
         height: 700px;
         margin-left: auto;
         margin-right: auto;
-
+        order: -1;
     }
 
     .foto-sobre img{
@@ -910,9 +906,19 @@ footer {
         object-fit: cover;
     }
 
+    #depoimentos{
+        z-index: 0;
+        margin: 0;
+        width: 100%;
+    }
+
     .swiper-slide {
         display: flex;
         justify-content: center;
+
+        padding-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .swiper-slide p.quote {
@@ -921,12 +927,12 @@ footer {
     }
 
     .swiper-button-prev{
-        left: 0;
+        left: 5px;
         z-index: 22;
     }
 
     .swiper-button-next{
-        right: 0px;
+        right:5px;
         z-index: 22;
     }
 
@@ -941,6 +947,7 @@ footer {
         text-align: center;
         justify-content: center;
         gap: 0px;
+        padding: 30px 0;
     }
 
     .content-servicos{
@@ -950,13 +957,23 @@ footer {
     }
 
     .content-servicos h2{
-        margin: 15px;
+        margin: 0;
     }
 
     #faq {
-        width: 80%;
+        width: 100%;
+        padding: 30px 0;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .accordion{
+        width: 80%;
+    }
+
+    #contato{
+        margin: 0;
+        padding: 30px 0;
     }
 
     footer{
@@ -1028,6 +1045,15 @@ footer {
         margin: 0;
         padding: 0;
         padding-bottom: 30px;
+
+        width: 100%;
+
+    }
+
+    .grid{
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
     }
 
     .about-container{
@@ -1049,25 +1075,41 @@ footer {
     .content-sobre {
         width: auto;
         box-sizing: border-box; 
-        padding: 25px;
-        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+
     }
 
     .content-sobre p{
         margin: 0 !important;
     }
 
-    .foto-sobre{
-        display: block;
-        border-radius: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        max-width: 450px;
-        min-height: 700px;
-        height: 700px;
+    .content-sobre-inferior p{
+        margin: 0 !important;
     }
 
+    .foto-sobre{
+        display: flex;
+        order: -1;
+        box-sizing: border-box;
+        margin: 30px 0;
+        overflow: hidden;
+        width: 450px;
+        height: 450px;
+        min-height: 450px;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 50%;
+    }
+
+    .foto-sobre img{
+        padding-top: 190px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        object-fit: cover;
+    }
 
     .content-sobre h2{
         margin: 15px;
@@ -1134,14 +1176,16 @@ footer {
         justify-content: center;
         gap: 0;
         margin: 0;
+        padding: 0;
         width: 100%;
+        box-sizing: border-box;
     }
     
     .content-servicos {
         box-sizing: border-box; 
         padding: 30px 20px;
         text-align: center;
-        width: 100%;
+        width: 90%;
     }
 
     .content-servicos h2{
