@@ -33,6 +33,9 @@ header ul li {
 
 header ul li a {
     text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    border-radius: 5px;
 }
 
 header #escrito {
@@ -53,11 +56,11 @@ header a:visited {
 }
 
 header a:hover {
-    background: var(--cor-base);
-    filter: brightness(1.4);
-    transition: background-color 0.3s ease, color 0.3s ease-in-out;
-    box-sizing: border-box;
+    transition: all 0.3s ease, color 0.3s ease-in-out;
+    border: 1px solid white;
+    border-radius: 5px;
 }
+
 
 header a:active {
     color: rgba(136, 136, 136, 0.8);
