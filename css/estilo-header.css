@@ -21,7 +21,8 @@ header {
 header ul {
     display: flex;
     list-style: none;
-
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 header ul li {
@@ -41,10 +42,8 @@ header #escrito {
 #logo img {
     display: block;
     float: left;
-    height: 65px;
-    margin-top: 5px;
+    height: 60px;
     filter: invert(100%);
-    margin-left: 30px;
 }
 
 header a:link,
@@ -75,6 +74,10 @@ header a:active {
 @media (max-width: 1200px) and (min-width: 992px){
     header ul li{
         margin: 0 5px;
+    }
+
+    header {
+        width: auto;
     }
 }
 
