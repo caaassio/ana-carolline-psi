@@ -679,15 +679,18 @@ a:hover {
     position: relative; 
     overflow: hidden; 
     z-index: 1;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
 }
 
 .contato-info a{
-    padding: 10px 40px 10px 40px;
+    padding: 10px 40px;
     gap: 5px;
 }
 
 .contato-item:hover{
-    background-color: #eed0ce;
+    border: 1px solid black;
+    transition: all 0.3s ease-in-out;
 }
 
 .contato a:link{
@@ -719,6 +722,8 @@ a:hover {
     position: relative;
     overflow: hidden; 
     z-index: 1; 
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
 }
 
 .redes-sociais a:link,
@@ -730,7 +735,8 @@ a:hover {
 }
 
 .redes-sociais a:hover{
-    background-color: #eed0ce;
+    border: 1px solid black;
+    transition: all 0.3s ease-in-out;
 }
 
 footer {
