@@ -326,21 +326,14 @@ a:hover {
 
 /* -------------- Depoimentos --------------------------------------*/
 #depoimentos{
-    max-width: 1200px;       
     width: 100%;
-    height: auto;
-    background-color: #fff;
-    padding: 30px 0px;
     margin: 0px;
     display: block;
+    position: relative;
     flex-wrap: nowrap;
     font-family: var(--cambria);
     box-sizing: border-box;
-    box-shadow: 5px 5px 5px 0px rgba(0,0,0, 0.01);
-    transition: all 0.6s ease-in-out;
     overflow: visible;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #depoimentos h2{
@@ -352,6 +345,18 @@ a:hover {
     margin: 0 0 10px 0 ;
 }
 
+.swiper{
+    max-width: 1200px;       
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    padding: 30px 0px;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0, 0.01);
+    transition: all 0.6s ease-in-out;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
     color: #00000054 !important;
@@ -360,7 +365,13 @@ a:hover {
     transform: translateY(-50%);
     overflow: visible;
     display: flex;
-    z-index: 15; 
+    z-index: 15;
+    padding: 15px; 
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after{
+    font-size: 4em;
 }
 
 .swiper-button-prev{
@@ -373,11 +384,15 @@ a:hover {
 
 .swiper-pagination{
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     background-color: white;
-    height: 50px;
-    bottom: -20px !important;
+    height: 40px;
+    max-width: 1200px;       
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .swiper-pagination-bullet {
@@ -416,7 +431,7 @@ a:hover {
     text-align: start;
     display: flex;
     z-index: 13;
-    padding: 5px 5px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -849,6 +864,17 @@ footer {
         margin: 25px 35px;
     }
 
+    .swiper-button-next,
+    .swiper-button-prev{
+        padding: 0;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after{
+    font-size: 3em;
+    
+}
+
     #servicos{
         width: 100%;
     }
@@ -999,11 +1025,13 @@ footer {
     .swiper-button-prev{
         left: 5px;
         z-index: 22;
+        padding: 0;
     }
-
+    
     .swiper-button-next{
-        right:5px;
+        right: 5px;
         z-index: 22;
+        padding: 0;
     }
 
     .autor{

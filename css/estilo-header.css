@@ -8,7 +8,6 @@ header {
     color: white;
     padding: 0 30px;
     box-sizing: border-box;
-
     position: fixed;
     top: 0;
     left: 0;
@@ -36,6 +35,7 @@ header ul li a {
     transition: all 0.3s ease;
     border: 1px solid transparent;
     border-radius: 5px;
+    padding: 15px;
 }
 
 header #escrito {
@@ -52,7 +52,6 @@ header #escrito {
 header a:link,
 header a:visited {
     color: white;
-    padding: 15px;
 }
 
 header a:hover {
@@ -66,8 +65,15 @@ header a:active {
     color: rgba(136, 136, 136, 0.8);
 }
 
+.link-logo{
+    border: 1px solid transparent;
+    transition: none;
+}
+
 .link-logo:hover{
     background-color: transparent;
+    border: 1px solid transparent;
+    transition: none;
 }
 
 #menu-btn{

@@ -22,7 +22,7 @@ body, html {
 
 .container {
     width: 70%;
-    background-color: white; 
+    background-color: rgba(255, 255, 255, 0); 
     display: flex;
     flex-direction: column;
 }
@@ -109,6 +109,7 @@ a{
     box-sizing: border-box;
     flex-direction: column;
     padding-bottom: 40px;
+    padding-top: 5em;
 }
 
 .btn-voltar {
@@ -136,7 +137,8 @@ a{
 .post-box{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    max-width: 1200px;
+    width: 100%;
     background-color: #ffffff;
     box-sizing: border-box;
     margin-left: auto;
@@ -155,10 +157,12 @@ a{
 .post-img{
     width: 100%;
     height: 500px;
-    padding: 20px 20px 0 20px;
+    padding: 20px 20px 0 20px !important;
+    padding: 0;
     box-sizing: border-box;
     object-fit: contain;
     z-index: 0;
+    position: relative;
 }
 
 .post-img img{
@@ -171,15 +175,23 @@ a{
 
 .post-text{
     width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: -10%;
+    margin: -10% auto 20px auto;
     background-color: #f0f0f0;
-    padding: 5px 20px 20px 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     z-index: 2;
     position: relative;
+}
+
+.post-text h2{
+    font-size: 2em;
+    margin: 0 !important;
+}
+
+.post-text h3{
+    font-size: 1.3em;
+    margin: 10px 0 !important;
 }
 
 .post-text img{
@@ -188,16 +200,47 @@ a{
     width: 100%;
 }
 
+.author-post {
+    font-size: 0.8em;
+    color: #555;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.author{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.author img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.author span{
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: normal;
+}
+
 .data-post {
-    padding-bottom: 15px;
     margin: 0;
     font-weight: 500;
     display: inline-block;
     color: #2b2b2b;
+    gap: 10px;
+    font-size: 1em;
 }
 
 .data-post i{
-    font-size: 14px;
+    font-size: 1em;
 }
 
 .tempo-leitura {
@@ -258,8 +301,9 @@ a{
     }
 
     .post-text{
-        top: -20px;
+        top: -60px !important;
         width: 79% !important;
+        padding: 15px !important;
     }
 
 }
