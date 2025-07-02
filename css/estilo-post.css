@@ -174,14 +174,15 @@ a{
 }
 
 .post-text{
-    width: 80%;
-    margin: -10% auto 20px auto;
+    width: 960px;
+    margin: -10% auto 40px auto;
     background-color: #f0f0f0;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     z-index: 2;
     position: relative;
+    box-sizing: border-box;
 }
 
 .post-text h2{
@@ -199,6 +200,8 @@ a{
     box-sizing: border-box;
     width: 100%;
 }
+
+/* Autor post ------------------------------------------------------------- */
 
 .author-post {
     font-size: 0.8em;
@@ -230,6 +233,102 @@ a{
     font-weight: normal;
 }
 
+/* Fim autor post --------------------------------------------------------- */
+
+.autor-box{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 960px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+
+}
+
+.autor{
+    display: flex;
+    padding: 20px !important;
+    margin: 0 !important;
+    gap: 30px;
+    
+}
+
+.autor img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.autor-perfil{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.autor h2{
+    font-size: 1.1em;
+    margin: 0;
+    font-weight: 600;
+}
+
+.autor p{
+    font-size: 0.7em;
+    margin: 0;
+    font-weight: 500;
+}
+
+.sociais-redes{
+    display: flex;
+    gap: 10px;
+    background-color: #f0f0f0;
+    padding: 10px 0 10px 20px;
+}
+
+.autor::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(to right, #fd505000, #5a5a5a, #f7f75c00);
+    z-index: 10;
+}
+
+.sociais-redes ul{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sociais-redes ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    width: 30px;
+    height: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sociais-redes ul li:hover{
+    border: 1px solid black;
+    transition: all 0.3s ease-in-out;
+}
+
+.sociais-redes i{
+    color: rgb(43, 43, 43);
+    font-size: 1.5em;
+}
+
 .data-post {
     margin: 0;
     font-weight: 500;
@@ -237,6 +336,7 @@ a{
     color: #2b2b2b;
     gap: 10px;
     font-size: 1em;
+    padding: 8px 0;
 }
 
 .data-post i{
@@ -266,7 +366,11 @@ a{
 
 @media (max-width: 1250px) {
 
-    .post-box{
+    .post-text{
+        width: 80%;
+    }
+
+    .autor-box{
         width: 80%;
     }
 }
@@ -275,6 +379,11 @@ a{
     .post-box{
         width: 70%;
     }
+
+    .sociais-redes i{
+    color: rgb(43, 43, 43);
+    font-size: 1.8em;
+}
 }
 
 @media (max-width: 765px) {
@@ -292,6 +401,28 @@ a{
         width: 100%;
     }
 
+    .autor{
+        gap: 15px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .autor-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .autor img{
+        width: 150px;
+        height: 150px;
+    }
+
+    .sociais-redes{
+        padding: 10px 0 !important;
+    }
+
     .btn-voltar{
         padding: 20px 20px 0 20px;
     }
@@ -304,6 +435,17 @@ a{
         top: -60px !important;
         width: 79% !important;
         padding: 15px !important;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .autor-box{
+        max-width: 100%;
+        width: auto;
+        margin: 0 20px 20px 20px !important;
+        box-sizing: border-box;
     }
 
 }
