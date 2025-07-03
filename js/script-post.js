@@ -12,15 +12,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// ----------------- header loader ------------------------
-fetch("../header.html")
+// ------------- header, footer and author-box loader ---------------
+fetch("../components/elements/header.html")
           .then(response => response.text())
           .then(data => document.getElementById("header-container").innerHTML = data);
 
 
-        fetch("../footer.html")
-          .then(response => response.text())
-          .then(data => document.getElementById("footer-container").innerHTML = data);
+fetch("../components/elements/footer.html")
+    .then(response => response.text())
+    .then(data => document.getElementById("footer-container").innerHTML = data);
+
+
+fetch("../components/elements/author-box.html")
+    .then(response => response.text())
+    .then(data => document.getElementById("author-box").innerHTML = data);
 
 // ------------------ Opacidade BTT  -----------------------------
     window.addEventListener("scroll", function () {

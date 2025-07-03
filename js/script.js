@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const repoName = "/ana-carolline-psi";
   const basePath = isGitHubPages ? repoName + "/" : "/";
 
-  fetch(basePath + "header.html")
+  fetch(basePath + "components/elements/header.html")
     .then(response => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       return response.text();
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   // Footer
-  fetch(basePath + "footer.html")
+  fetch(basePath + "components/elements/footer.html")
     .then(response => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       return response.text();
@@ -87,6 +87,16 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => {
       console.error("Erro ao carregar o footer:", error);
     });
+
+    // Botão  para voltar ao topo
+    fetch(basePath + "components/elements/btt.html")
+      .then(response => response.text())
+      .then(data => document.getElementById("btt").innerHTML = data);
+
+    // Botão voltar blog/post
+    fetch(basePath + "components/elements/btn-voltar.html")
+      .then(response => response.text())
+      .then(data => document.getElementById("btn-voltar").innerHTML = data);
 
 
 // --------------------- FOTO-HOME -------------------------

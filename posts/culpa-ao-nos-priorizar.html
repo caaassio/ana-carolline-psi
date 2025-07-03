@@ -6,7 +6,6 @@
     <title>Afinal, me priorizar é egoísmo?</title>
     <link rel="stylesheet" href="../css/estilo-post.css">
     
-
     <link rel="shortcut icon" href="../components/img/fav-icon.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,9 +30,7 @@
 
     <!-- Começo Botão back to top -->
 
-        <div class="btt" role="button" tabindex="0" aria-label="Voltar ao topo">
-            <i class="fa-solid fa-chevron-up"></i>
-        </div>
+    <div id="btt"></div>
 
     <!-- Fim Botão back to the top -->
 
@@ -42,18 +39,15 @@
     
             <!-- blog container -->
              <div class="post-container">
-                <a href="../blog.html">
-                    <div class="btn-voltar"><i class="fa-solid fa-circle-chevron-left"></i> Voltar</div>
-                </a>
-                
+
+                <div id="btn-voltar"></div>
+
                 <!-- box 1 -->
                     <div class="post-box">
 
                         <!-- img -->
                         <div class="post-img">
-
                             <img src="../components/img/photo-post-2.jpg" alt="">
-
                         </div>
 
                         <!-- text -->
@@ -64,8 +58,15 @@
                             
                             <h3>Você não nasceu se sentindo culpada — aprendeu isso.</h3>
 
-                            <div class="data-post">06 de maio <i class="fa-solid fa-clock"></i>
-                                <div class="tempo-leitura"> </div>
+                            <div class="author-post">
+
+                                <div class="author">
+                                    <span>Por Ana Carolline</span>
+                                </div>
+
+                                <div class="data-post">06 de maio, 2025 <i class="fa-solid fa-clock"></i>
+                                    <div class="tempo-leitura"> </div>
+                                </div>
                             </div>
 
                             <div class="post-content">
@@ -79,42 +80,14 @@
                                     <br><br>
                                     A culpa não precisa ser um guia. Ela é só um reflexo de um modelo que talvez já não sirva mais pra você.
                                     <br><br>
-                                    E se, aos poucos, você começasse a se escolher — sem se desculpar por isso?
+                                    E se, aos poucos, você começasse a se escolher sem se desculpar por isso?
 
                                 </p>
                             </div>
                             </div>
                         </article>
 
-                        <div class="autor-box">
-                            <div class="autor">
-                                <img src="../components/img/photo-author.jpg" alt="">
-
-                                <div class="autor-perfil">
-                                    <h2>Ana Carolline Coelho</h2>
-                                    <p>Sou psicóloga (CRP 06/154233) com atuação clínica desde 2019, em atendimentos online para adolescentes e adultos. Trabalho com base na psicanálise, adaptada aos desafios do presente.
-                                    <br>
-                                    Acredito em uma escuta profunda, sensível e acolhedora. Tenho formações complementares em temas como ansiedade, TOC, compulsão, burnout e comunicação não violenta. Atendo principalmente mulheres jovens, com presença e afeto — respeitando o tempo de cada processo..</p>
-                                </div>
-                            </div>
-
-                            <div class="sociais-redes">
-                                <ul>
-                                    <li>
-                                        <a href="https://www.facebook.com/anacpsicologa" target="_blank"><i class="fa-brands fa-instagram" aria-label="Link para o facebook" rel="noopener noreferrer"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.facebook.com/anacpsicologa" target="_blank"><i class="fa-brands fa-facebook" aria-label="Link para o facebook" rel="noopener noreferrer"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.facebook.com/anacpsicologa" target="_blank"><i class="fa-brands fa-whatsapp" aria-label="Link para o facebook" rel="noopener noreferrer"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.facebook.com/anacpsicologa" target="_blank"><i class="fa-regular fa-envelope" aria-label="Link para o facebook" rel="noopener noreferrer"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <div id="author-box"></div>
 
                     </div>
 
