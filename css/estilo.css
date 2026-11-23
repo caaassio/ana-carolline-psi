@@ -12,6 +12,7 @@ body, html {
     --josefin: 'Josefin Sans', Arial, Helvetica, sans-serif;
     --cambria:  'Cambria', Times, serif;
     --sombra: 5px 5px 5px 1px rgba(0,0,0, 0.06);
+    --hover-contato: #a3a3a3;
 }
 
 .container {
@@ -704,7 +705,7 @@ a:hover {
 }
 
 .contato-item:hover{
-    border: 1px solid black;
+    border: 1px solid var(--hover-contato);
     transition: all 0.3s ease-in-out;
 }
 
@@ -750,7 +751,7 @@ a:hover {
 }
 
 .redes-sociais a:hover{
-    border: 1px solid black;
+    border: 1px solid var(--hover-contato);
     transition: all 0.3s ease-in-out;
 }
 
